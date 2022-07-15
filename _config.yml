@@ -1,3 +1,3 @@
-theme: jekyll-theme-hacker
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
 title: Jinwoo's Workspace
 description: Paper reviews, projects and more!
