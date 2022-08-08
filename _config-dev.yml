@@ -109,14 +109,11 @@ defaults:
 
 # Site Author
 author:
-  name: Michael Rose
+  name: Jinwoo Hwang
   picture: /images/michael-rose-photo.jpg
   email:
   twitter: mmistakes
   links:
-    - title: Twitter
-      url: https://twitter.com/mmistakes
-      icon: fab fa-twitter-square
     - title: Instagram
       url: https://instagram.com/mmistakes
       icon: fab fa-instagram
