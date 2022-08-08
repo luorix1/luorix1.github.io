@@ -14,6 +14,11 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/test/hidden-post/"
       },{
+        "title": "Siammot: Siamese multi-object tracking",
+        "excerpt":"[arxiv] @inproceedings{shuai2021siammot, title={Siammot: Siamese multi-object tracking}, author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph}, booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages={12372--12382}, year={2021}}Faster-RCNN object detection Region Proposal Network (RPN) region-based detection networkSiamMOT Faster-RCNN + region-based Siamese tracker Siamese tracker can...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/siammot/"
+      },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
         "tags": [],

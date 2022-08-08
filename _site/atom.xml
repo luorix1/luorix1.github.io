@@ -1,4 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-07-15T13:42:40+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Michael Rose</name></author><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/test/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+09:00</published><updated>2018-02-25T00:00:00+09:00</updated><id>http://localhost:4000/test/hidden-post</id><content type="html" xml:base="http://localhost:4000/test/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Michael Rose</name></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">MathJax Example</title><link href="http://localhost:4000/test/mathjax-example/" rel="alternate" type="text/html" title="MathJax Example" /><published>2015-08-10T21:08:50+09:00</published><updated>2015-08-10T21:08:50+09:00</updated><id>http://localhost:4000/test/mathjax-example</id><content type="html" xml:base="http://localhost:4000/test/mathjax-example/">&lt;p&gt;&lt;a href=&quot;http://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt; is a simple, yet powerful, way of
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-08-08T14:51:00+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Jinwoo Hwang</name></author><entry><title type="html">Siammot: Siamese multi-object tracking</title><link href="http://localhost:4000/test/siammot/" rel="alternate" type="text/html" title="Siammot: Siamese multi-object tracking" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/siammot</id><content type="html" xml:base="http://localhost:4000/test/siammot/">&lt;p&gt;[&lt;a href=&quot;http://arxiv.org/abs/2105.11595&quot;&gt;arxiv&lt;/a&gt;]&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{shuai2021siammot,
+  title={Siammot: Siamese multi-object tracking},
+  author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  pages={12372--12382},
+  year={2021}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;faster-rcnn-object-detection&quot;&gt;Faster-RCNN object detection&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Region Proposal Network (RPN)&lt;/li&gt;
+  &lt;li&gt;region-based detection network&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;siammot&quot;&gt;SiamMOT&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Faster-RCNN + region-based Siamese tracker&lt;/li&gt;
+  &lt;li&gt;Siamese tracker can model “instance-level motion”
+    &lt;ul&gt;
+      &lt;li&gt;comparing frames at $t’=t$ and $t’=t+\delta$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7cc4599-8d90-4445-a1b1-2c43729f0c3d/Untitled.png&quot; alt=&quot;Overview of SiamMOT architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Overview of SiamMOT architecture&lt;/p&gt;
+
+&lt;h3 id=&quot;motion-modelling-with-siamese-tracker&quot;&gt;Motion modelling with Siamese tracker&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$i$ is detected at $t’=t$ in frame $\mathbf{I}^t$&lt;/li&gt;
+  &lt;li&gt;$R_i^t$ is “contextual window” around position of $i$ in frame $\mathbf{I}^t$&lt;/li&gt;
+  &lt;li&gt;$\tau$ is Siamese tracker&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;adjacent frame is $I^{t+\delta}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;define search region $S_i^{t+\delta}$ by expanding $R_i^t$ by fixed factor $r (&amp;gt; 1)$&lt;/li&gt;
+  &lt;li&gt;define $v_i^{t+\delta}$ as confidence of visibility for $i$ in frame $I^{t+\delta}$&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ are outputs from ROIAlign layer of Mask-RCNN (feature extraction)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$(v_i^{t+\delta}, \tilde{R_i}^{t+\delta}) = \tau(f_{R_i}^t, f_{S_i}^{t+\delta}; \Theta)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Two possible ways to model motion!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;implicit-motion-model-imm&quot;&gt;Implicit Motion Model (IMM)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;concatenate $f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ and feed into MLP&lt;/li&gt;
+  &lt;li&gt;predict
+    &lt;ul&gt;
+      &lt;li&gt;confidence of visibility $v_i$&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;relative location &amp;amp; scale change&lt;/p&gt;
+
+        &lt;p&gt;$\Delta x / w^t$, $\Delta y/h^t$, $log(\frac{w^{t+\delta}}{w^t})$, $log(\frac{h^{t+\delta}}{h^t})$&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/34ef081a-f002-4f10-8232-61e157963f24/Untitled.png&quot; alt=&quot;Loss used for training IMM (* indicates GT values)&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;Loss used for training IMM (* indicates GT values)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;explicit-motion-model-emm&quot;&gt;Explicit Motion Model (EMM)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;channel-wise cross-correlation operator&lt;/li&gt;
+  &lt;li&gt;CNN for generating visibility confidence map $v_i$
+    &lt;ul&gt;
+      &lt;li&gt;shows likelihood pixel contains the detected person&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CNN for generating location map $p_i$
+    &lt;ul&gt;
+      &lt;li&gt;outputs offset from each location to bbox corners&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95a262e6-f6b1-4340-96b7-09adce69288b/Untitled.png&quot; alt=&quot;Explicit Motion Model overview&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Explicit Motion Model overview&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3734ee-1ebd-436b-89b1-ab8366aeea3b/Untitled.png&quot; alt=&quot;Formula for penalty map&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Formula for penalty map&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/152dad72-6d3b-433a-b20e-b11bd95cdf1a/Untitled.png&quot; alt=&quot;Formula for decoding output from EMM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Formula for decoding output from EMM&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a5765d26-ef92-415c-9aae-f1249de783cc/Untitled.png&quot; alt=&quot;Loss used for training EMM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Loss used for training EMM&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">[arxiv]</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/test/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+09:00</published><updated>2018-02-25T00:00:00+09:00</updated><id>http://localhost:4000/test/hidden-post</id><content type="html" xml:base="http://localhost:4000/test/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">MathJax Example</title><link href="http://localhost:4000/test/mathjax-example/" rel="alternate" type="text/html" title="MathJax Example" /><published>2015-08-10T21:08:50+09:00</published><updated>2015-08-10T21:08:50+09:00</updated><id>http://localhost:4000/test/mathjax-example</id><content type="html" xml:base="http://localhost:4000/test/mathjax-example/">&lt;p&gt;&lt;a href=&quot;http://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt; is a simple, yet powerful, way of
 including Tex/LaTex/MathML based mathematics in HTML webpages.&lt;/p&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
@@ -44,7 +146,7 @@ the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ams&lt;/c
 \[\begin{align}
 (x + y) (x - y) &amp;amp;= x^2 + xy - xy + y^2   \notag \\
     &amp;amp;= x^2 - y^2
-\end{align}\]</content><author><name>Michael Rose</name></author><summary type="html">MathJax is a simple, yet powerful, way of including Tex/LaTex/MathML based mathematics in HTML webpages.</summary></entry><entry><title type="html">Markup: Syntax Highlighting</title><link href="http://localhost:4000/test/markup-syntax-highlighting/" rel="alternate" type="text/html" title="Markup: Syntax Highlighting" /><published>2013-08-16T00:00:00+09:00</published><updated>2017-03-10T00:27:01+09:00</updated><id>http://localhost:4000/test/markup-syntax-highlighting</id><content type="html" xml:base="http://localhost:4000/test/markup-syntax-highlighting/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+\end{align}\]</content><author><name>Jinwoo Hwang</name></author><summary type="html">MathJax is a simple, yet powerful, way of including Tex/LaTex/MathML based mathematics in HTML webpages.</summary></entry><entry><title type="html">Markup: Syntax Highlighting</title><link href="http://localhost:4000/test/markup-syntax-highlighting/" rel="alternate" type="text/html" title="Markup: Syntax Highlighting" /><published>2013-08-16T00:00:00+09:00</published><updated>2017-03-10T00:27:01+09:00</updated><id>http://localhost:4000/test/markup-syntax-highlighting</id><content type="html" xml:base="http://localhost:4000/test/markup-syntax-highlighting/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;gfm-code-blocks&quot;&gt;GFM Code Blocks&lt;/h2&gt;
 
@@ -165,4 +267,4 @@ the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ams&lt;/c
       &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="code" /><category term="syntax highlighting" /><summary type="html">Post displaying the various ways one can highlight code blocks with Jekyll. Some options include standard Markdown, GitHub Flavored Markdown, and Jekyll&apos;s `{% highlight %}` tag.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Jinwoo Hwang</name></author><category term="code" /><category term="syntax highlighting" /><summary type="html">Post displaying the various ways one can highlight code blocks with Jekyll. Some options include standard Markdown, GitHub Flavored Markdown, and Jekyll&apos;s `{% highlight %}` tag.</summary></entry></feed>
