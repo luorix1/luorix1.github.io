@@ -1,4 +1,301 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-08-08T14:51:00+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Jinwoo Hwang</name></author><entry><title type="html">Siammot: Siamese multi-object tracking</title><link href="http://localhost:4000/test/siammot/" rel="alternate" type="text/html" title="Siammot: Siamese multi-object tracking" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/siammot</id><content type="html" xml:base="http://localhost:4000/test/siammot/">&lt;p&gt;[&lt;a href=&quot;http://arxiv.org/abs/2105.11595&quot;&gt;arxiv&lt;/a&gt;]&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-08-10T14:05:59+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Jinwoo Hwang</name></author><entry><title type="html">SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization</title><link href="http://localhost:4000/test/selfreg/" rel="alternate" type="text/html" title="SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/selfreg</id><content type="html" xml:base="http://localhost:4000/test/selfreg/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2104.09841&quot;&gt;SelfReg: Self-supervised Contrastive Regularization for Domain Generalization&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;domain adaptation VS domain generalization&lt;/p&gt;
+
+&lt;p&gt;proposed method&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use positive pairs (of the same class) in domain generalization&lt;/li&gt;
+  &lt;li&gt;a contrastive learning-style approach&lt;/li&gt;
+  &lt;li&gt;a loss based on the intermediate features + a loss based on the logits
+    &lt;ul&gt;
+      &lt;li&gt;regardless of domain, order the input in the batch based on class&lt;/li&gt;
+      &lt;li&gt;after running through feature extractor &amp;amp; classifier, calculate losses&lt;/li&gt;
+      &lt;li&gt;$L_{feature}$ and $L_{logit}$ calculated through a regularization block
+        &lt;ul&gt;
+          &lt;li&gt;CDPL into shuffling&lt;/li&gt;
+          &lt;li&gt;loss with shuffled version &amp;amp; with a version that applies mixup to the shuffled ones&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;gradient stabilization
+    &lt;ul&gt;
+      &lt;li&gt;loss clipping
+        &lt;ul&gt;
+          &lt;li&gt;self-regularization loss was too dominant after initial training phase&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;inter-domain curriculum learning
+        &lt;ul&gt;
+          &lt;li&gt;incrementally add in classes&lt;/li&gt;
+          &lt;li&gt;use SWA afterward (at the epoch level)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">SelfReg: Self-supervised Contrastive Regularization for Domain Generalization</summary></entry><entry><title type="html">End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation</title><link href="http://localhost:4000/test/end-to-end-trident-person-search/" rel="alternate" type="text/html" title="End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/end-to-end-trident-person-search</id><content type="html" xml:base="http://localhost:4000/test/end-to-end-trident-person-search/">&lt;p&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/papers/Han_End-to-End_Trainable_Trident_Person_Search_Network_Using_Adaptive_Gradient_Propagation_ICCV_2021_paper.pdf&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;person search&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;person detection + re-ID&lt;/li&gt;
+  &lt;li&gt;detection + re-ID sequential two-step approach VS end-to-end approach&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;problems in end-to-end&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;task conflict
+    &lt;ul&gt;
+      &lt;li&gt;person detection needs to embed some common features that apply to all humans&lt;/li&gt;
+      &lt;li&gt;person re-ID requires the embedding of uniqueness for each person to discern identity&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;task dependency
+    &lt;ul&gt;
+      &lt;li&gt;poor quality of detection will directly affect re-ID performance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;proposed method&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;adaptive gradient backprop
+    &lt;ul&gt;
+      &lt;li&gt;cross-entropy loss w/ softmax prob&lt;/li&gt;
+      &lt;li&gt;adaptive gradient weighting function
+        &lt;ul&gt;
+          &lt;li&gt;similarity score and detection confidence score are used as weighting factors!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;additional task (part classification)
+    &lt;ul&gt;
+      &lt;li&gt;predicting classes of parts of the human body&lt;/li&gt;
+      &lt;li&gt;prevent overfitting to either re-ID or detection task!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html"></summary></entry><entry><title type="html">Robust Deep Networks through Invariance and Adaptation</title><link href="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/" rel="alternate" type="text/html" title="Robust Deep Networks through Invariance and Adaptation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation</id><content type="html" xml:base="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/">&lt;p&gt;Speaker: Chelsea Finn (Stanford)&lt;/p&gt;
+
+&lt;p&gt;how can we go beyond training data distribution&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;requires new benchmarks not i.i.d&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;in real-world applications, significant drops in performance are quite prevalent&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this is due to distribution shift!&lt;/li&gt;
+  &lt;li&gt;WILDS dataset has 10 datasets with distribution shift&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;distribution shift can also occur over time&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;WILD-TIME dataset has 6 datasets with temporal distribution shift&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;takeaways from creating the above benchmarks on distribution shift&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;not all distribution shifts cause performance drops!&lt;/li&gt;
+  &lt;li&gt;not all drops in performance are caused by distribution shift&lt;/li&gt;
+  &lt;li&gt;make sure there are natural sources of leverage&lt;/li&gt;
+  &lt;li&gt;some methods help in certain cases but there are none that work across the board&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this talk is focused on covariate shift&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;leveraging domain/group labels&lt;/li&gt;
+  &lt;li&gt;leveraging unlabeled data from target distribution&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;leveraging-domaingroup-labels&quot;&gt;leveraging domain/group labels&lt;/h3&gt;
+
+&lt;p&gt;prior approach&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;train domain-invariant models!
+    &lt;ul&gt;
+      &lt;li&gt;learn representations invariant to domain&lt;/li&gt;
+      &lt;li&gt;introduce regularizer encouraging the model to discard information dependent on domain&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;encourage domain invariance without constraining the internal representation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;regularizers may be too constraining, causing situational performance degradation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;LISA (learning invariant predictors with selective augmentation)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;selectively apply mixup to data points based on their domain of origin&lt;/li&gt;
+  &lt;li&gt;intra-label LISA: interpolate samples with the same label but different domain&lt;/li&gt;
+  &lt;li&gt;intra-domain LISA: interpolate samples with the same domain but different labels&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;data rebalancing is another prior method that exists&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;upsample or upweight underrepresented samples&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;leveraging-unlabeled-data-from-target-distribution&quot;&gt;leveraging unlabeled data from target distribution&lt;/h3&gt;
+
+&lt;p&gt;most of the above methods&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;require domain annotation&lt;/li&gt;
+  &lt;li&gt;don’t address more severe underspecified data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;diversify and disambiguate (DivDis)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;train multiple functions to minimize training error!&lt;/li&gt;
+  &lt;li&gt;this is not
+    &lt;ul&gt;
+      &lt;li&gt;an ensemble of networks? → even if we re-train with different seeds, the decision boundary turns out similar
+        &lt;ul&gt;
+          &lt;li&gt;show little disagreement&lt;/li&gt;
+          &lt;li&gt;could lead to worse outcomes in larger-scale settings due to bias&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;encourage models to make diverse predictions for unlabeled data in the test distribution
+    &lt;ul&gt;
+      &lt;li&gt;we don’t need labels to do this!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;maximize disagreement on unlabeled test data by minimizing statistical dependence
+    &lt;ul&gt;
+      &lt;li&gt;KL divergence should be minimized for output from different functions!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;some options for head selection
+    &lt;ul&gt;
+      &lt;li&gt;randomly label some validation points, select most accurate head from the functions&lt;/li&gt;
+      &lt;li&gt;query label for most disagreed points, select most accurate head&lt;/li&gt;
+      &lt;li&gt;inspect learned functions using interpretability methods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;experiment: completely correlated data&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;design training sets where there are complete correlations between labels and spurious attributes&lt;/li&gt;
+  &lt;li&gt;imperfect or no correlation for the test set&lt;/li&gt;
+  &lt;li&gt;measure average and worst-group accuracy&lt;/li&gt;
+  &lt;li&gt;DivDis with 2 heads, 16 active queries&lt;/li&gt;
+  &lt;li&gt;compare with ERM, JTT, Group DRO (none of these are designed to handle perfect correlation)&lt;/li&gt;
+  &lt;li&gt;DIvDis shows significant improvement in worst-group accuracy!&lt;/li&gt;
+  &lt;li&gt;also compare with previous methods that are applied to settings more fitting to their purpose
+    &lt;ul&gt;
+      &lt;li&gt;ERM + minority: train with training data + minority examples&lt;/li&gt;
+      &lt;li&gt;DFR: ERM + fine-tuning on target examples&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DivDis is more label efficient and performs better!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;existing methods assume you know group labels during hyperparameter tuning&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DivDis can be tuned well based on just average accuracy → you don’t need group labels&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;miscellaneous experiments&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;other ways to ensemble? → ensembles struggle to learn diverse solutions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;diverse ensembles for RL policies?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;learn &amp;amp; remember multiple solutions to training setting&lt;/li&gt;
+  &lt;li&gt;adapt solution set to test setting and select based on performance&lt;/li&gt;
+  &lt;li&gt;assumptions
+    &lt;ul&gt;
+      &lt;li&gt;adapt with modest amount of data&lt;/li&gt;
+      &lt;li&gt;change in setting must be local (cannot be completely different)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;learn controllable space of diverse policies via latent variables&lt;/li&gt;
+  &lt;li&gt;achieve return within $\epsilon$ of best policy (constrained optimization)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;other open challenges&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;label shift
+    &lt;ul&gt;
+      &lt;li&gt;i.e. long-tail distributions show low performance on the tail
+        &lt;ul&gt;
+          &lt;li&gt;hypothesis: fails to transfer class-agnostic invariances from the. ead classes to the tail classes&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;concept shift
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;much more difficult because $p(y&lt;/td&gt;
+              &lt;td&gt;x)$ itself has changed&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;can we “edit” ML models?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;a better understanding and categorization of distribution shifts is needed!&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Chelsea Finn (Stanford)</summary></entry><entry><title type="html">Representative Color Transform for Image Enhancement</title><link href="http://localhost:4000/test/representative-color-transform-for-image-enhancement/" rel="alternate" type="text/html" title="Representative Color Transform for Image Enhancement" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/representative-color-transform-for-image-enhancement</id><content type="html" xml:base="http://localhost:4000/test/representative-color-transform-for-image-enhancement/">&lt;p&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/papers/Kim_Representative_Color_Transform_for_Image_Enhancement_ICCV_2021_paper.pdf&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;problem&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;low contrast image!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;previous works&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;normally perform channel-wise intensity transform or some encoder-decoder architecture&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;proposed method&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;representative color transform
+    &lt;ul&gt;
+      &lt;li&gt;run image through encoder&lt;/li&gt;
+      &lt;li&gt;embedding vector $R$ is in $\mathbb{R}^{N \times C}$ where $C$ is the number of “representative color”s&lt;/li&gt;
+      &lt;li&gt;compare with $\mathbb{R}^{N\times3}$ vector $T$ showing R, G, B values post-transform&lt;/li&gt;
+      &lt;li&gt;get features $F$ from image via CNN&lt;/li&gt;
+      &lt;li&gt;$A = softmax(FR^T/\tau)$, enhanced image $Y = AT^T$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;local RCT (the above would be the “global” version)
+    &lt;ul&gt;
+      &lt;li&gt;use fine-scale features covering a subset of the original image&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html"></summary></entry><entry><title type="html">Siammot: Siamese multi-object tracking</title><link href="http://localhost:4000/test/siammot/" rel="alternate" type="text/html" title="Siammot: Siamese multi-object tracking" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/siammot</id><content type="html" xml:base="http://localhost:4000/test/siammot/">&lt;p&gt;[&lt;a href=&quot;http://arxiv.org/abs/2105.11595&quot;&gt;arxiv&lt;/a&gt;]&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{shuai2021siammot,
   title={Siammot: Siamese multi-object tracking},
@@ -100,171 +397,329 @@
 
 &lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a5765d26-ef92-415c-9aae-f1249de783cc/Untitled.png&quot; alt=&quot;Loss used for training EMM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Loss used for training EMM&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">[arxiv]</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/test/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+09:00</published><updated>2018-02-25T00:00:00+09:00</updated><id>http://localhost:4000/test/hidden-post</id><content type="html" xml:base="http://localhost:4000/test/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">MathJax Example</title><link href="http://localhost:4000/test/mathjax-example/" rel="alternate" type="text/html" title="MathJax Example" /><published>2015-08-10T21:08:50+09:00</published><updated>2015-08-10T21:08:50+09:00</updated><id>http://localhost:4000/test/mathjax-example</id><content type="html" xml:base="http://localhost:4000/test/mathjax-example/">&lt;p&gt;&lt;a href=&quot;http://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt; is a simple, yet powerful, way of
-including Tex/LaTex/MathML based mathematics in HTML webpages.&lt;/p&gt;
+&lt;p&gt;Loss used for training EMM&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">[arxiv]</summary></entry><entry><title type="html">FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation</title><link href="http://localhost:4000/test/fifo/" rel="alternate" type="text/html" title="FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/fifo</id><content type="html" xml:base="http://localhost:4000/test/fifo/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2204.01587&quot;&gt;FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;previous work&lt;/p&gt;
 
-&lt;p&gt;To enable MathJax support configure your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.xml&lt;/code&gt; to:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kramdown&lt;/code&gt; as the Markdown parser.&lt;/li&gt;
-  &lt;li&gt;Enable MathJax.&lt;/li&gt;
+  &lt;li&gt;combat lack of “foggy” training data with synthetic “fog”&lt;/li&gt;
+  &lt;li&gt;curriculum adaptation
+    &lt;ul&gt;
+      &lt;li&gt;increase density of “fog” as training progresses&lt;/li&gt;
+      &lt;li&gt;finally adapt to real light fog + dense synthetic fog data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;previous work showed performance degradation on clear images! (-11.3%)&lt;/li&gt;
+  &lt;li&gt;were also very dependent on hyperparameter tuning and external fog density estimator&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The version of MathJax enabled is v3.&lt;/p&gt;
+&lt;p&gt;proposed method&lt;/p&gt;
 
-&lt;p&gt;An example setting for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.xml&lt;/code&gt; is shown below:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;mathjax&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;combo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tex-svg&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ams&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt; as delimiters to enable TeX math mode, both for inline and display (i.e. block) rendering.&lt;/p&gt;
-
-&lt;p&gt;Here is an example equation that is inline: \(a^2 + b^2 = c^2\), where
-\(a\), \(b\), and \(c\) are variables.&lt;/p&gt;
-
-&lt;p&gt;Here is a block rendering with no default equation numbering:&lt;/p&gt;
-
-\[\frac{1}{n^{2}}\]
-
-&lt;p&gt;And, below is a block using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\begin{equation}&lt;/code&gt; and
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\end{equation}&lt;/code&gt; LaTeX delimiters.  This equation will be numbered in
-the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ams&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all&lt;/code&gt; setting for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathjax.tags&lt;/code&gt;.&lt;/p&gt;
-
-\[\begin{equation}
-\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p}    \label{test}
-\end{equation}\]
-
-&lt;p&gt;If equation numbering is turned on, we should see an equation number here: \(\eqref{test}\).&lt;/p&gt;
-
-&lt;p&gt;An example using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{align}&lt;/code&gt; LaTeX environment is below.  The first equation has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\notag&lt;/code&gt; directive.&lt;/p&gt;
-
-\[\begin{align}
-(x + y) (x - y) &amp;amp;= x^2 + xy - xy + y^2   \notag \\
-    &amp;amp;= x^2 - y^2
-\end{align}\]</content><author><name>Jinwoo Hwang</name></author><summary type="html">MathJax is a simple, yet powerful, way of including Tex/LaTex/MathML based mathematics in HTML webpages.</summary></entry><entry><title type="html">Markup: Syntax Highlighting</title><link href="http://localhost:4000/test/markup-syntax-highlighting/" rel="alternate" type="text/html" title="Markup: Syntax Highlighting" /><published>2013-08-16T00:00:00+09:00</published><updated>2017-03-10T00:27:01+09:00</updated><id>http://localhost:4000/test/markup-syntax-highlighting</id><content type="html" xml:base="http://localhost:4000/test/markup-syntax-highlighting/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;gfm-code-blocks&quot;&gt;GFM Code Blocks&lt;/h2&gt;
-
-&lt;p&gt;GitHub Flavored Markdown &lt;a href=&quot;https://help.github.com/articles/creating-and-highlighting-code-blocks/&quot;&gt;fenced code blocks&lt;/a&gt; are supported by default with Jekyll. You may need to update your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file to enable them if you’re using an older version.&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;kramdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;GFM&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here’s an example of a CSS code snippet written in GFM:&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Yet another code snippet for demonstration purposes:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TagIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Page&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;index.html&apos;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read_yaml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;_layouts&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;tag_index.html&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag_title_prefix&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Tagged: &apos;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_suffix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag_title_suffix&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&amp;amp;#8211;&apos;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;title&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;description&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;An archive of posts tagged &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;jekyll-highlight-liquid-tag&quot;&gt;Jekyll Highlight Liquid Tag&lt;/h2&gt;
-
-&lt;p&gt;Jekyll also has built-in support for syntax highlighting of code snippets using either Rouge or Pygments, using a dedicated Liquid tag as follows:&lt;/p&gt;
-
-&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;scss&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
-.highlight {
-  margin: 0;
-  padding: 1em;
-  font-family: $monospace;
-  font-size: $type-size-7;
-  line-height: 1.8;
-}
-&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endhighlight&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And the output will look like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$monospace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type-size-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s an example of a code snippet using the Liquid tag and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linenos&lt;/code&gt; enabled.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  {% if page.previous %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.previous.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.previous.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Previous article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-  {% if page.next %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.next.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.next.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.pagination --&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;code-blocks-in-lists&quot;&gt;Code Blocks in Lists&lt;/h2&gt;
-
-&lt;p&gt;Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt;). Usually this will mean indenting 3 spaces instead of 4.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Do step 1.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now do this:&lt;/p&gt;
-
-    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;learn features invariant to fog conditions
+    &lt;ul&gt;
+      &lt;li&gt;no hyper-parameters that control fog density in training&lt;/li&gt;
+      &lt;li&gt;no extra modules needed to estimate fog density in real setting&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Now you can do this.&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;clear weather, synthetic fog, real fog all given as input to segmentation network&lt;/li&gt;
+  &lt;li&gt;create embedding “fog factor”
+    &lt;ul&gt;
+      &lt;li&gt;constrain so that “fog factor”s are unaffected by fog conditions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;fog affects image style → use Gram matrix
+    &lt;ul&gt;
+      &lt;li&gt;account for other background and object effects with a “fog-pass filtering module”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;update alternately between segmentation network &amp;amp; fog-pass filter
+    &lt;ul&gt;
+      &lt;li&gt;at test time, only run forward pass on segmentation network&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;loss
+    &lt;ul&gt;
+      &lt;li&gt;fog-pass filter
+        &lt;ul&gt;
+          &lt;li&gt;attracting L2 distance in embedding space for similar fog conditions, repelling L2 distance for different fog conditions&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;segmentation
+        &lt;ul&gt;
+          &lt;li&gt;segmentation loss + fog style matching loss + prediction loss&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;effect of fog-pass filter
+    &lt;ul&gt;
+      &lt;li&gt;using only Gram matrix fails to differentiate between clear and synthetic fog conditions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;image reconstructing using FIFO also works!&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;github-gist-embed&quot;&gt;GitHub Gist Embed&lt;/h2&gt;
+&lt;p&gt;ablations and analysis&lt;/p&gt;
 
-&lt;p&gt;GitHub Gist embeds can also be used:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;outperforms previous methods in both foggy and clear conditions&lt;/li&gt;
+  &lt;li&gt;all components shown to have meaningful impact on results&lt;/li&gt;
+  &lt;li&gt;results on unseen weather conditions like rain prove “fog factor”s can help with those conditions as well (to an extent)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation</summary></entry><entry><title type="html">Towards Real-Time Human-Object Interaction Detection</title><link href="http://localhost:4000/test/hotr/" rel="alternate" type="text/html" title="Towards Real-Time Human-Object Interaction Detection" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/hotr</id><content type="html" xml:base="http://localhost:4000/test/hotr/">&lt;p&gt;&lt;a href=&quot;https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123600494.pdf&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://gist.github.com/mmistakes/77c68fbb07731a456805a7b473f47841.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2104.13682&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Which outputs as:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2203.14709&quot;&gt;MSTR: Multi-Scale Transformer for End-to-End Human-Object Interaction Detection&lt;/a&gt;&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/mmistakes/77c68fbb07731a456805a7b473f47841.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;human-object interaction detection&lt;/p&gt;
 
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Jinwoo Hwang</name></author><category term="code" /><category term="syntax highlighting" /><summary type="html">Post displaying the various ways one can highlight code blocks with Jekyll. Some options include standard Markdown, GitHub Flavored Markdown, and Jekyll&apos;s `{% highlight %}` tag.</summary></entry></feed>
+&lt;ul&gt;
+  &lt;li&gt;understand interactions between humans and other objects detected in the image&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;motivation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;quadratic complexity and sequential nature of previous detector approaches&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UnionDet&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;problems
+    &lt;ul&gt;
+      &lt;li&gt;IoU is insufficient for interactions&lt;/li&gt;
+      &lt;li&gt;action is biased towards humans&lt;/li&gt;
+      &lt;li&gt;union regions overlap with one another&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;compared to previous works, speed was greatly improved&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HOTR&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;inference still dependent on pairs
+    &lt;ul&gt;
+      &lt;li&gt;previous works still did detection into NMS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;take inspiration from DETR&lt;/li&gt;
+  &lt;li&gt;image → CNN: get image features&lt;/li&gt;
+  &lt;li&gt;feed features into Transformer Encoder&lt;/li&gt;
+  &lt;li&gt;Run Encoder output through Instance Decoder &amp;amp; Interaction Decoder
+    &lt;ul&gt;
+      &lt;li&gt;Instance Decoder: object detection&lt;/li&gt;
+      &lt;li&gt;Interaction Decoder: interaction detection&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use HO pointers to merge the output from both decoders to calculate similarity scores&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MSTR&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;moving into multiscale features causes significant overhead!&lt;/li&gt;
+  &lt;li&gt;self attention within encoder architecture&lt;/li&gt;
+  &lt;li&gt;instead of pairing human &amp;amp; object to reference point, propose “dual-entity attention”&lt;/li&gt;
+  &lt;li&gt;entity-conditioned context → removing the surrounding context prevents us from utilizing the transformer’s ability to attend to global features as well&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html"></summary></entry><entry><title type="html">Learning to See by Looking at Noise</title><link href="http://localhost:4000/test/learning-to-see-by-looking-at-noise/" rel="alternate" type="text/html" title="Learning to See by Looking at Noise" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/learning-to-see-by-looking-at-noise</id><content type="html" xml:base="http://localhost:4000/test/learning-to-see-by-looking-at-noise/">&lt;p&gt;Speaker: Antonio Torrelba (MIT)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openreview.net/pdf?id=RQUl8gZnN7O&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;challenges in CV&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;training
+    &lt;ul&gt;
+      &lt;li&gt;fairness&lt;/li&gt;
+      &lt;li&gt;privacy&lt;/li&gt;
+      &lt;li&gt;cost&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;deployment
+    &lt;ul&gt;
+      &lt;li&gt;explainability&lt;/li&gt;
+      &lt;li&gt;robustness&lt;/li&gt;
+      &lt;li&gt;social impact&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;exponential growth in model size &amp;amp; dataset size!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;growing need for large, curated (labelled) datasets → bottleneck&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;do we need labels?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;something people have been trying to address through self-supervised learning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;current trend is heavily dependent on resources!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;more GPUs = better computation = better everything!&lt;/li&gt;
+  &lt;li&gt;should be the opposite (sensing » computation)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;with the correct sensing, we can reduce the required amount of computations to feasible levels&lt;/p&gt;
+
+&lt;p&gt;“Greatest Hits” dataset&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;45,000 short videos of drumstick hitting objects&lt;/li&gt;
+  &lt;li&gt;prediction of audio from silent videos!&lt;/li&gt;
+  &lt;li&gt;showed promising results!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;tactile sensors are snubbed, even though they are the most important for humans&lt;/p&gt;
+
+&lt;p&gt;learning to see through tactile information&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;using tactile sensor input maps, prediction of walking gait has been attempted!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;learning to see by drawing images&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;basically what GANs and other generative models do&lt;/li&gt;
+  &lt;li&gt;but what do these well-performing generative models learn?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;network dissection (GAN)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pass random vectors through network, generate lots of images&lt;/li&gt;
+  &lt;li&gt;check activation maps of the layers + run a pre-trained segmentation model on the generated images
+    &lt;ul&gt;
+      &lt;li&gt;check agreement between activation and segmentation maps&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;turns out units are assigning themselves labels (affinity for certain classes when drawing new images)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;disabling certain neurons&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;when researchers deactivated all “window” neurons, or activated new “door” neurons, the networks understood what to do
+    &lt;ul&gt;
+      &lt;li&gt;didn’t draw doors in the sky&lt;/li&gt;
+      &lt;li&gt;replaced the window with a wall and painting (something that makes sense semantically)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DatasetGAN&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;take images generated with GAN&lt;/li&gt;
+  &lt;li&gt;manually annotate a few images&lt;/li&gt;
+  &lt;li&gt;sample from DatasetGAN to create infinite, annotated data!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;BigDatasetGAN&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;same thing, but with ImageNet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;unsupervised contrastive learning&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;perturb images and claim those images should belong to same class&lt;/li&gt;
+  &lt;li&gt;motivation: using simulators to create synthetic data is hard!
+    &lt;ul&gt;
+      &lt;li&gt;lots of detail&lt;/li&gt;
+      &lt;li&gt;lots of background knowledge required&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;test ImageNet100 performance using AlexNet-based encoder
+    &lt;ul&gt;
+      &lt;li&gt;Minecraft, CLeVr data are examples of synthetic data used in training&lt;/li&gt;
+      &lt;li&gt;Minecraft works ok, but it is a pretty hardcore simulator!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Learning to See by Looking at Noise&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;capture features of natural images via a stochastic process that generates images&lt;/li&gt;
+  &lt;li&gt;“Dead leaves model”: introduced in the 60’s
+    &lt;ul&gt;
+      &lt;li&gt;used as a representation of natural images&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use images generated via the “Dead leaves model” and use those to train an encoder and inference on ImageNet100!
+    &lt;ul&gt;
+      &lt;li&gt;similar results to Minecraft-trained encoder&lt;/li&gt;
+      &lt;li&gt;much less overhead for simulator preparation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sample from an untrained GAN → provides a representation of natural images!&lt;/li&gt;
+  &lt;li&gt;Shaders-21K dataset: short generative programs in OpenGL!
+    &lt;ul&gt;
+      &lt;li&gt;results that are almost as good as models trained on real data!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Antonio Torrelba (MIT)</summary></entry><entry><title type="html">Few-shot Font Style Transfer with Localized Representations</title><link href="http://localhost:4000/test/few-shot-font-style-transfer/" rel="alternate" type="text/html" title="Few-shot Font Style Transfer with Localized Representations" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/few-shot-font-style-transfer</id><content type="html" xml:base="http://localhost:4000/test/few-shot-font-style-transfer/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2009.11042&quot;&gt;Few-shot Font Generation with Localized Style Representations and Factorization&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;few-shot font generation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;generate a new font library (&amp;gt; 20,000 characters) with few references&lt;/li&gt;
+  &lt;li&gt;without additional training procedures&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;goal&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;capture “font style” from very few glyph images&lt;/li&gt;
+  &lt;li&gt;font styles are both global, but very local&lt;/li&gt;
+  &lt;li&gt;character content is also very complex and sensitive to local change!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;previous works&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reference images → style, source image → features, merge to generate new image’
+    &lt;ul&gt;
+      &lt;li&gt;for font, single representation is insufficient to represent “style”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;proposed method&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compositionality
+    &lt;ul&gt;
+      &lt;li&gt;decompose characters into a number of components&lt;/li&gt;
+      &lt;li&gt;24 of top 30 used languages has compositionality&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;define “multiple localized” style representation using compositionality
+    &lt;ul&gt;
+      &lt;li&gt;capture multiple local features from each image&lt;/li&gt;
+      &lt;li&gt;requires guidance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;assign most likely components to each expert
+    &lt;ul&gt;
+      &lt;li&gt;predict probability by passing multiple local features to component classifier&lt;/li&gt;
+      &lt;li&gt;match components to express to maximize summation over prediction probability&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;style features are trained to
+    &lt;ul&gt;
+      &lt;li&gt;correctly classify style labels predicted by style classifier&lt;/li&gt;
+      &lt;li&gt;fooling component labels predicted by component classifier&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;maximize independence using HSIC as loss&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Few-shot Font Generation with Localized Style Representations and Factorization</summary></entry></feed>

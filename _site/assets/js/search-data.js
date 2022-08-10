@@ -1,23 +1,48 @@
 var store = [{
-        "title": "Markup: Syntax Highlighting",
-        "excerpt":"Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect...","categories": [],
-        "tags": ["code","syntax highlighting"],
-        "url": "http://localhost:4000/test/markup-syntax-highlighting/"
+        "title": "Few-shot Font Style Transfer with Localized Representations",
+        "excerpt":"Few-shot Font Generation with Localized Style Representations and Factorization few-shot font generation generate a new font library (&gt; 20,000 characters) with few references without additional training proceduresgoal capture “font style” from very few glyph images font styles are both global, but very local character content is also very complex and...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/few-shot-font-style-transfer/"
       },{
-        "title": "MathJax Example",
-        "excerpt":"MathJax is a simple, yet powerful, way ofincluding Tex/LaTex/MathML based mathematics in HTML webpages. Usage To enable MathJax support configure your _config.xml to: Set kramdown as the Markdown parser. Enable MathJax.The version of MathJax enabled is v3. An example setting for _config.xml is shown below: markdown: kramdownmathjax: enable: true combo:...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/test/mathjax-example/"
+        "title": "FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation",
+        "excerpt":"FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation previous work combat lack of “foggy” training data with synthetic “fog” curriculum adaptation increase density of “fog” as training progresses finally adapt to real light fog + dense synthetic fog data previous work showed performance degradation on clear images! (-11.3%) were also...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/fifo/"
       },{
-        "title": "Hidden Post",
-        "excerpt":"This post has YAML Front Matter of hidden: true and should not appear in paginator.posts. ","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/test/hidden-post/"
+        "title": "Towards Real-Time Human-Object Interaction Detection",
+        "excerpt":"MSTR: Multi-Scale Transformer for End-to-End Human-Object Interaction Detection human-object interaction detection understand interactions between humans and other objects detected in the imagemotivation quadratic complexity and sequential nature of previous detector approachesUnionDet problems IoU is insufficient for interactions action is biased towards humans union regions overlap with one another compared to...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/hotr/"
+      },{
+        "title": "Learning to See by Looking at Noise",
+        "excerpt":"Speaker: Antonio Torrelba (MIT) challenges in CV training fairness privacy cost deployment explainability robustness social impact exponential growth in model size &amp; dataset size! growing need for large, curated (labelled) datasets → bottleneckdo we need labels? something people have been trying to address through self-supervised learningcurrent trend is heavily dependent...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/learning-to-see-by-looking-at-noise/"
+      },{
+        "title": "Representative Color Transform for Image Enhancement",
+        "excerpt":"problem low contrast image!previous works normally perform channel-wise intensity transform or some encoder-decoder architectureproposed method representative color transform run image through encoder embedding vector $R$ is in $\\mathbb{R}^{N \\times C}$ where $C$ is the number of “representative color”s compare with $\\mathbb{R}^{N\\times3}$ vector $T$ showing R, G, B values post-transform get...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/representative-color-transform-for-image-enhancement/"
       },{
         "title": "Siammot: Siamese multi-object tracking",
         "excerpt":"[arxiv] @inproceedings{shuai2021siammot, title={Siammot: Siamese multi-object tracking}, author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph}, booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages={12372--12382}, year={2021}}Faster-RCNN object detection Region Proposal Network (RPN) region-based detection networkSiamMOT Faster-RCNN + region-based Siamese tracker Siamese tracker can...","categories": [],
         "tags": ["computer vision"],
         "url": "http://localhost:4000/test/siammot/"
+      },{
+        "title": "End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation",
+        "excerpt":"person search person detection + re-ID detection + re-ID sequential two-step approach VS end-to-end approachproblems in end-to-end task conflict person detection needs to embed some common features that apply to all humans person re-ID requires the embedding of uniqueness for each person to discern identity task dependency poor quality of...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/end-to-end-trident-person-search/"
+      },{
+        "title": "Robust Deep Networks through Invariance and Adaptation",
+        "excerpt":"Speaker: Chelsea Finn (Stanford) how can we go beyond training data distribution requires new benchmarks not i.i.din real-world applications, significant drops in performance are quite prevalent this is due to distribution shift! WILDS dataset has 10 datasets with distribution shiftdistribution shift can also occur over time WILD-TIME dataset has 6...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/"
+      },{
+        "title": "SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization",
+        "excerpt":"SelfReg: Self-supervised Contrastive Regularization for Domain Generalization domain adaptation VS domain generalization proposed method use positive pairs (of the same class) in domain generalization a contrastive learning-style approach a loss based on the intermediate features + a loss based on the logits regardless of domain, order the input in the...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/selfreg/"
       },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
