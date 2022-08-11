@@ -1,5 +1,7 @@
 ---
 title: "Few-shot Font Style Transfer with Localized Representations"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

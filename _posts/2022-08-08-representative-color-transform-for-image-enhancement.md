@@ -1,5 +1,7 @@
 ---
 title: "Representative Color Transform for Image Enhancement"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

@@ -1,5 +1,7 @@
 ---
 title: "Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Few-shot Font Style Transfer with Localized Representations | So Simple</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Few-shot Font Style Transfer with Localized Representations" />
+<meta name="author" content="Jinwoo Hwang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Few-shot Font Generation with Localized Style Representations and Factorization" />
+<meta property="og:description" content="Few-shot Font Generation with Localized Style Representations and Factorization" />
+<link rel="canonical" href="http://localhost:4000/test/machine%20learning/few-shot-font-style-transfer/" />
+<meta property="og:url" content="http://localhost:4000/test/machine%20learning/few-shot-font-style-transfer/" />
+<meta property="og:site_name" content="So Simple" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-08T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Few-shot Font Style Transfer with Localized Representations" />
+<meta name="twitter:site" content="@mmistakes" />
+<meta name="twitter:creator" content="@Jinwoo Hwang" />
+<meta name="google-site-verification" content="UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jinwoo Hwang"},"dateModified":"2022-08-08T00:00:00+09:00","datePublished":"2022-08-08T00:00:00+09:00","description":"Few-shot Font Generation with Localized Style Representations and Factorization","headline":"Few-shot Font Style Transfer with Localized Representations","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/test/machine%20learning/few-shot-font-style-transfer/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/test/images/so-simple-site-logo.png"},"name":"Jinwoo Hwang"},"url":"http://localhost:4000/test/machine%20learning/few-shot-font-style-transfer/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/test/assets/css/main.css">
+  <link rel="stylesheet" href="/test/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="So Simple" href="/test/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  few-shot-font-style-transfer-with-localized-representations">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/test/posts/">Posts</a></li><li><a href="/test/categories/">Categories</a></li><li><a href="/test/tags/">Tags</a></li><li><a href="/test/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/test/" class="site-logo" rel="home" title="So Simple">
+        <img src="/test/images/so-simple-site-logo.png" class="site-logo-img animated fadeInDown" alt="So Simple">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/test/">So Simple</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">A simple Jekyll theme for words and pictures.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Few-shot Font Style Transfer with Localized Representations
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/test/images/jinwoo-photo.jpg" class="author-avatar u-photo" alt="Jinwoo Hwang"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Jinwoo Hwang</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/gnuzema"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/luorix1"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">~1 min read</span>
+
+    <time class="page-date dt-published" datetime="2022-08-08T00:00:00+09:00"><a class="u-url" href="">August 8, 2022</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/test/categories/#machine-learning" title="Pages filed under machine learning">machine learning</a></li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a href="/test/tags/#computer-vision" title="Pages tagged computer vision" rel="tag">computer vision</a></li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://arxiv.org/abs/2009.11042">Few-shot Font Generation with Localized Style Representations and Factorization</a></p>
+
+<p>few-shot font generation</p>
+
+<ul>
+  <li>generate a new font library (&gt; 20,000 characters) with few references</li>
+  <li>without additional training procedures</li>
+</ul>
+
+<p>goal</p>
+
+<ul>
+  <li>capture “font style” from very few glyph images</li>
+  <li>font styles are both global, but very local</li>
+  <li>character content is also very complex and sensitive to local change!</li>
+</ul>
+
+<p>previous works</p>
+
+<ul>
+  <li>reference images → style, source image → features, merge to generate new image’
+    <ul>
+      <li>for font, single representation is insufficient to represent “style”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>proposed method</p>
+
+<ul>
+  <li>compositionality
+    <ul>
+      <li>decompose characters into a number of components</li>
+      <li>24 of top 30 used languages has compositionality</li>
+    </ul>
+  </li>
+  <li>define “multiple localized” style representation using compositionality
+    <ul>
+      <li>capture multiple local features from each image</li>
+      <li>requires guidance</li>
+    </ul>
+  </li>
+  <li>assign most likely components to each expert
+    <ul>
+      <li>predict probability by passing multiple local features to component classifier</li>
+      <li>match components to express to maximize summation over prediction probability</li>
+    </ul>
+  </li>
+  <li>style features are trained to
+    <ul>
+      <li>correctly classify style labels predicted by style classifier</li>
+      <li>fooling component labels predicted by component classifier</li>
+    </ul>
+  </li>
+  <li>maximize independence using HSIC as loss</li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftest%2Fmachine%2520learning%2Ffew-shot-font-style-transfer%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Few-shot+Font+Style+Transfer+with+Localized+Representations%20http%3A%2F%2Flocalhost%3A4000%2Ftest%2Fmachine%2520learning%2Ffew-shot-font-style-transfer%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2Fmachine%2520learning%2Ffew-shot-font-style-transfer%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Few-shot+Font+Style+Transfer+with+Localized+Representations&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2Fmachine%2520learning%2Ffew-shot-font-style-transfer%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+
+  
+    <a class="page-next" href="/test/machine%20learning/fifo/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <div align="center" style="margin: 1em 0;">
+  <ins class="adsbygoogle"
+        style="display:block; border-bottom: initial;"
+        data-ad-client="ca-pub-7328585512091257"
+        data-ad-slot="3049671934"
+        data-ad-format="auto"></ins>
+  </div>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="social-icons"><a class="social-icon" href="https://instagram.com/luorix"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/luorix1"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2022 So Simple. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/test/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+
+<script>
+// http://docs.mathjax.org/en/latest/upgrading/v2.html
+MathJax = {
+  tex: {
+      tags: "ams"    // eq numbering options: none, ams, all
+  },
+  options: {
+    renderActions: {
+      // for mathjax 3, handle <script "math/tex"> blocks inserted by kramdown
+      find: [10, function (doc) {
+        for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+          const display = !!node.type.match(/; *mode=display/);
+          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+          const text = document.createTextNode('');
+          node.parentNode.replaceChild(text, node);
+          math.start = {node: text, delim: '', n: 0};
+          math.end = {node: text, delim: '', n: 0};
+          doc.math.push(math);
+        }
+      }, '']
+    }
+  }
+}
+</script>
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  </body>
+
+</html>

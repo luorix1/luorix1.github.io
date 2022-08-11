@@ -1,5 +1,7 @@
 ---
 title: "End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

@@ -1,5 +1,7 @@
 ---
 title: "Pooling Revisited: Your Receptive Field is Suboptimal"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

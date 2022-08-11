@@ -1,5 +1,7 @@
 ---
 title: "Learning to See by Looking at Noise"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---

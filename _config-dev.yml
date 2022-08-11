@@ -82,12 +82,6 @@ plugins:
   - jekyll-paginate
   - jekyll-redirect-from
 
-# Collections
-collections:
-  recipes:
-    output: true
-    permalink: /:collection/:path/
-
 # Front Matter Defaults
 defaults:
   # Post defaults
@@ -98,40 +92,25 @@ defaults:
       layout: post
       comments: true
       share: true
-  # Recipe defaults
-  - scope:
-      path: "_recipes"
-      type: recipes
-    values:
-      layout: post
-      comments: true
-      share: true
 
 # Site Author
 author:
   name: Jinwoo Hwang
-  picture: /images/michael-rose-photo.jpg
+  picture: /images/jinwoo-photo.jpg
   email:
-  twitter: mmistakes
   links:
     - title: Instagram
-      url: https://instagram.com/mmistakes
+      url: https://instagram.com/gnuzema
       icon: fab fa-instagram
     - title: GitHub
-      url: https://github.com/mmistakes
+      url: https://github.com/luorix1
       icon: fab fa-github-square
 
 # Footer Links
 footer_links:
-  - title: Twitter
-    url: https://twitter.com/mmistakes
-    icon: fab fa-twitter-square
   - title: Instagram
-    url: https://instagram.com/mmistakes
+    url: https://instagram.com/luorix
     icon: fab fa-instagram
   - title: GitHub
-    url: https://github.com/mmistakes
+    url: https://github.com/luorix1
     icon: fab fa-github-square
-  - title: Feed
-    url: atom.xml
-    icon: fas fa-rss-square

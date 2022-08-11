@@ -1,5 +1,7 @@
 ---
 title: "Robust Deep Networks through Invariance and Adaptation"
+categories:
+  - machine learning
 tags: 
   - computer vision
 ---
