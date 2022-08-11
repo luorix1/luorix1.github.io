@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/test/ragan/</loc>
+<lastmod>2021-08-10T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/test/few-shot-font-style-transfer/</loc>
 <lastmod>2022-08-08T00:00:00+09:00</lastmod>
 </url>
@@ -25,6 +29,14 @@
 <lastmod>2022-08-08T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/test/dynaopool/</loc>
+<lastmod>2022-08-10T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/test/eigenlanes/</loc>
+<lastmod>2022-08-10T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/test/end-to-end-trident-person-search/</loc>
 <lastmod>2022-08-10T00:00:00+09:00</lastmod>
 </url>
@@ -38,15 +50,15 @@
 </url>
 <url>
 <loc>http://localhost:4000/test/recipes/chocolate-chip-cookies/</loc>
-<lastmod>2022-08-10T14:05:59+09:00</lastmod>
+<lastmod>2022-08-11T15:23:53+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/test/recipes/oatmeal-cookies/</loc>
-<lastmod>2022-08-10T14:05:59+09:00</lastmod>
+<lastmod>2022-08-11T15:23:53+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/test/recipes/peanut-butter-cookies/</loc>
-<lastmod>2022-08-10T14:05:59+09:00</lastmod>
+<lastmod>2022-08-11T15:23:53+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/test/categories/</loc>
@@ -71,5 +83,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/test/README_old/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/test/page2/</loc>
 </url>
 </urlset>

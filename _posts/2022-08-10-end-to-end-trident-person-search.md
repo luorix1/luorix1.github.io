@@ -4,7 +4,7 @@ tags:
   - computer vision
 ---
 
-[](https://openaccess.thecvf.com/content/ICCV2021/papers/Han_End-to-End_Trainable_Trident_Person_Search_Network_Using_Adaptive_Gradient_Propagation_ICCV_2021_paper.pdf)
+[End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation](https://openaccess.thecvf.com/content/ICCV2021/papers/Han_End-to-End_Trainable_Trident_Person_Search_Network_Using_Adaptive_Gradient_Propagation_ICCV_2021_paper.pdf)
 
 person search
 

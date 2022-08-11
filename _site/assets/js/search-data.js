@@ -1,4 +1,9 @@
 var store = [{
+        "title": "Re-Aging GAN: Toward Personalized Face Age Transformation",
+        "excerpt":"Re-Aging GAN: Toward Personalized Face Age Transformation motivation face age transformation should maintain the identity of the input image have wide-range target age characteristics generate natural-looking faces proposed method output from encoder is given as input along with the target age to a simple CNN the output from this “modulator”...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/ragan/"
+      },{
         "title": "Few-shot Font Style Transfer with Localized Representations",
         "excerpt":"Few-shot Font Generation with Localized Style Representations and Factorization few-shot font generation generate a new font library (&gt; 20,000 characters) with few references without additional training proceduresgoal capture “font style” from very few glyph images font styles are both global, but very local character content is also very complex and...","categories": [],
         "tags": ["computer vision"],
@@ -25,12 +30,22 @@ var store = [{
         "url": "http://localhost:4000/test/representative-color-transform-for-image-enhancement/"
       },{
         "title": "Siammot: Siamese multi-object tracking",
-        "excerpt":"[arxiv] @inproceedings{shuai2021siammot, title={Siammot: Siamese multi-object tracking}, author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph}, booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages={12372--12382}, year={2021}}Faster-RCNN object detection Region Proposal Network (RPN) region-based detection networkSiamMOT Faster-RCNN + region-based Siamese tracker Siamese tracker can...","categories": [],
+        "excerpt":"Siammot: Siamese multi-object tracking] @inproceedings{shuai2021siammot, title={Siammot: Siamese multi-object tracking}, author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph}, booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages={12372--12382}, year={2021}}Faster-RCNN object detection Region Proposal Network (RPN) region-based detection networkSiamMOT Faster-RCNN + region-based Siamese tracker...","categories": [],
         "tags": ["computer vision"],
         "url": "http://localhost:4000/test/siammot/"
       },{
+        "title": "Pooling Revisited: Your Receptive Field is Suboptimal",
+        "excerpt":"Pooling Revisited: Your Receptive Field is Suboptimal receptive fields are how CNNs see objects DynOPool applicable to most operations that control size of receptive field related works NAS: generic, not designed for feature map size optimization dynamic kernel shape: changing filter size Shape Adaptor: directly learn feature map size only...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/dynaopool/"
+      },{
+        "title": "Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes",
+        "excerpt":"Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes existing work semantic segmentation performance issues anchor-based detection considering straight lines as anchors hard to deal with complicated lanes! proposed method eigenlane space: lane matrix $A$ from image apply SVD to $A$ ($A = U\\Sigma V^T$) ignore most of the singular values...","categories": [],
+        "tags": ["computer vision"],
+        "url": "http://localhost:4000/test/eigenlanes/"
+      },{
         "title": "End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation",
-        "excerpt":"person search person detection + re-ID detection + re-ID sequential two-step approach VS end-to-end approachproblems in end-to-end task conflict person detection needs to embed some common features that apply to all humans person re-ID requires the embedding of uniqueness for each person to discern identity task dependency poor quality of...","categories": [],
+        "excerpt":"End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation person search person detection + re-ID detection + re-ID sequential two-step approach VS end-to-end approachproblems in end-to-end task conflict person detection needs to embed some common features that apply to all humans person re-ID requires the embedding of uniqueness for...","categories": [],
         "tags": ["computer vision"],
         "url": "http://localhost:4000/test/end-to-end-trident-person-search/"
       },{

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-08-10T14:05:59+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Jinwoo Hwang</name></author><entry><title type="html">SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization</title><link href="http://localhost:4000/test/selfreg/" rel="alternate" type="text/html" title="SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/selfreg</id><content type="html" xml:base="http://localhost:4000/test/selfreg/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2104.09841&quot;&gt;SelfReg: Self-supervised Contrastive Regularization for Domain Generalization&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/test/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/test/" rel="alternate" type="text/html" /><updated>2022-08-11T15:23:53+09:00</updated><id>http://localhost:4000/test/atom.xml</id><title type="html">So Simple</title><subtitle>A simple Jekyll theme for words and pictures.</subtitle><author><name>Jinwoo Hwang</name></author><entry><title type="html">SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization</title><link href="http://localhost:4000/test/selfreg/" rel="alternate" type="text/html" title="SelfReg: Self-Supervised Contrastive Regularization for Domain Generalization" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/selfreg</id><content type="html" xml:base="http://localhost:4000/test/selfreg/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2104.09841&quot;&gt;SelfReg: Self-supervised Contrastive Regularization for Domain Generalization&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;domain adaptation VS domain generalization&lt;/p&gt;
 
@@ -34,51 +34,7 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">SelfReg: Self-supervised Contrastive Regularization for Domain Generalization</summary></entry><entry><title type="html">End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation</title><link href="http://localhost:4000/test/end-to-end-trident-person-search/" rel="alternate" type="text/html" title="End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/end-to-end-trident-person-search</id><content type="html" xml:base="http://localhost:4000/test/end-to-end-trident-person-search/">&lt;p&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/papers/Han_End-to-End_Trainable_Trident_Person_Search_Network_Using_Adaptive_Gradient_Propagation_ICCV_2021_paper.pdf&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;person search&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;person detection + re-ID&lt;/li&gt;
-  &lt;li&gt;detection + re-ID sequential two-step approach VS end-to-end approach&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;problems in end-to-end&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;task conflict
-    &lt;ul&gt;
-      &lt;li&gt;person detection needs to embed some common features that apply to all humans&lt;/li&gt;
-      &lt;li&gt;person re-ID requires the embedding of uniqueness for each person to discern identity&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;task dependency
-    &lt;ul&gt;
-      &lt;li&gt;poor quality of detection will directly affect re-ID performance&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;proposed method&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;adaptive gradient backprop
-    &lt;ul&gt;
-      &lt;li&gt;cross-entropy loss w/ softmax prob&lt;/li&gt;
-      &lt;li&gt;adaptive gradient weighting function
-        &lt;ul&gt;
-          &lt;li&gt;similarity score and detection confidence score are used as weighting factors!&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;additional task (part classification)
-    &lt;ul&gt;
-      &lt;li&gt;predicting classes of parts of the human body&lt;/li&gt;
-      &lt;li&gt;prevent overfitting to either re-ID or detection task!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html"></summary></entry><entry><title type="html">Robust Deep Networks through Invariance and Adaptation</title><link href="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/" rel="alternate" type="text/html" title="Robust Deep Networks through Invariance and Adaptation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation</id><content type="html" xml:base="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/">&lt;p&gt;Speaker: Chelsea Finn (Stanford)&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">SelfReg: Self-supervised Contrastive Regularization for Domain Generalization</summary></entry><entry><title type="html">Robust Deep Networks through Invariance and Adaptation</title><link href="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/" rel="alternate" type="text/html" title="Robust Deep Networks through Invariance and Adaptation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation</id><content type="html" xml:base="http://localhost:4000/test/robust-deep-networks-through-invariance-and-adaptation/">&lt;p&gt;Speaker: Chelsea Finn (Stanford)&lt;/p&gt;
 
 &lt;p&gt;how can we go beyond training data distribution&lt;/p&gt;
 
@@ -264,140 +220,186 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;a better understanding and categorization of distribution shifts is needed!&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Chelsea Finn (Stanford)</summary></entry><entry><title type="html">Representative Color Transform for Image Enhancement</title><link href="http://localhost:4000/test/representative-color-transform-for-image-enhancement/" rel="alternate" type="text/html" title="Representative Color Transform for Image Enhancement" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/representative-color-transform-for-image-enhancement</id><content type="html" xml:base="http://localhost:4000/test/representative-color-transform-for-image-enhancement/">&lt;p&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/papers/Kim_Representative_Color_Transform_for_Image_Enhancement_ICCV_2021_paper.pdf&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;a better understanding and categorization of distribution shifts is needed!&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Chelsea Finn (Stanford)</summary></entry><entry><title type="html">Pooling Revisited: Your Receptive Field is Suboptimal</title><link href="http://localhost:4000/test/dynaopool/" rel="alternate" type="text/html" title="Pooling Revisited: Your Receptive Field is Suboptimal" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/dynaopool</id><content type="html" xml:base="http://localhost:4000/test/dynaopool/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2205.15254&quot;&gt;Pooling Revisited: Your Receptive Field is Suboptimal&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;problem&lt;/p&gt;
+&lt;p&gt;receptive fields are how CNNs see objects&lt;/p&gt;
+
+&lt;p&gt;DynOPool applicable to most operations that control size of receptive field&lt;/p&gt;
+
+&lt;p&gt;related works&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;low contrast image!&lt;/li&gt;
+  &lt;li&gt;NAS: generic, not designed for feature map size optimization&lt;/li&gt;
+  &lt;li&gt;dynamic kernel shape: changing filter size&lt;/li&gt;
+  &lt;li&gt;Shape Adaptor: directly learn feature map size
+    &lt;ul&gt;
+      &lt;li&gt;only handles symmetric feature maps and selects a predefined resizing ration range&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DiffStride: spectral pooling to determine optimal scale factor of pooling layer
+    &lt;ul&gt;
+      &lt;li&gt;implement downsampling with cropping in the frequency domain&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;previous works&lt;/p&gt;
+&lt;p&gt;DynOPool&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;normally perform channel-wise intensity transform or some encoder-decoder architecture&lt;/li&gt;
+  &lt;li&gt;differentiable pooling layer
+    &lt;ul&gt;
+      &lt;li&gt;scaling factor for horizontal and vertical directions to be optimized&lt;/li&gt;
+      &lt;li&gt;find four query points in each grid&lt;/li&gt;
+      &lt;li&gt;derive output feature via max pooling of these query points&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;optimization requires additional work because of rounding function
+    &lt;ul&gt;
+      &lt;li&gt;output size width and height must be integers&lt;/li&gt;
+      &lt;li&gt;optimization by relaxation&lt;/li&gt;
+      &lt;li&gt;regularization for computational complexity in addition to task loss&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;shown to also be compatible with NAS, semantic segmentation, etc.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Pooling Revisited: Your Receptive Field is Suboptimal</summary></entry><entry><title type="html">Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes</title><link href="http://localhost:4000/test/eigenlanes/" rel="alternate" type="text/html" title="Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/eigenlanes</id><content type="html" xml:base="http://localhost:4000/test/eigenlanes/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2203.15302&quot;&gt;Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;existing work&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;semantic segmentation
+    &lt;ul&gt;
+      &lt;li&gt;performance issues&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;anchor-based detection considering straight lines as anchors
+    &lt;ul&gt;
+      &lt;li&gt;hard to deal with complicated lanes!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;proposed method&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;representative color transform
+  &lt;li&gt;eigenlane space: lane matrix $A$ from image&lt;/li&gt;
+  &lt;li&gt;apply SVD to $A$
+ ($A = U\Sigma V^T$)&lt;/li&gt;
+  &lt;li&gt;ignore most of the singular values near or equal to 0!
     &lt;ul&gt;
-      &lt;li&gt;run image through encoder&lt;/li&gt;
-      &lt;li&gt;embedding vector $R$ is in $\mathbb{R}^{N \times C}$ where $C$ is the number of “representative color”s&lt;/li&gt;
-      &lt;li&gt;compare with $\mathbb{R}^{N\times3}$ vector $T$ showing R, G, B values post-transform&lt;/li&gt;
-      &lt;li&gt;get features $F$ from image via CNN&lt;/li&gt;
-      &lt;li&gt;$A = softmax(FR^T/\tau)$, enhanced image $Y = AT^T$&lt;/li&gt;
+      &lt;li&gt;we can compress the information into smaller matrices (less computation)&lt;/li&gt;
+      &lt;li&gt;the remaining columns of $U$ are “eigenlane”s, representing the lane itself&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;local RCT (the above would be the “global” version)
+  &lt;li&gt;generating lane candidates
     &lt;ul&gt;
-      &lt;li&gt;use fine-scale features covering a subset of the original image&lt;/li&gt;
+      &lt;li&gt;clustering in eigenlane space (relatively low-dimensional)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html"></summary></entry><entry><title type="html">Siammot: Siamese multi-object tracking</title><link href="http://localhost:4000/test/siammot/" rel="alternate" type="text/html" title="Siammot: Siamese multi-object tracking" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/siammot</id><content type="html" xml:base="http://localhost:4000/test/siammot/">&lt;p&gt;[&lt;a href=&quot;http://arxiv.org/abs/2105.11595&quot;&gt;arxiv&lt;/a&gt;]&lt;/p&gt;
+  &lt;li&gt;involves work that checks the harmony between proposed lines
+    &lt;ul&gt;
+      &lt;li&gt;based on prior works from the same authors regarding semantic line detection&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Eigenlanes: Data-Driven Lane Descriptors for Structurally Diverse Lanes</summary></entry><entry><title type="html">End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation</title><link href="http://localhost:4000/test/end-to-end-trident-person-search/" rel="alternate" type="text/html" title="End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation" /><published>2022-08-10T00:00:00+09:00</published><updated>2022-08-10T00:00:00+09:00</updated><id>http://localhost:4000/test/end-to-end-trident-person-search</id><content type="html" xml:base="http://localhost:4000/test/end-to-end-trident-person-search/">&lt;p&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/papers/Han_End-to-End_Trainable_Trident_Person_Search_Network_Using_Adaptive_Gradient_Propagation_ICCV_2021_paper.pdf&quot;&gt;End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{shuai2021siammot,
-  title={Siammot: Siamese multi-object tracking},
-  author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph},
-  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
-  pages={12372--12382},
-  year={2021}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;faster-rcnn-object-detection&quot;&gt;Faster-RCNN object detection&lt;/h3&gt;
+&lt;p&gt;person search&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Region Proposal Network (RPN)&lt;/li&gt;
-  &lt;li&gt;region-based detection network&lt;/li&gt;
+  &lt;li&gt;person detection + re-ID&lt;/li&gt;
+  &lt;li&gt;detection + re-ID sequential two-step approach VS end-to-end approach&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;siammot&quot;&gt;SiamMOT&lt;/h3&gt;
+&lt;p&gt;problems in end-to-end&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Faster-RCNN + region-based Siamese tracker&lt;/li&gt;
-  &lt;li&gt;Siamese tracker can model “instance-level motion”
+  &lt;li&gt;task conflict
     &lt;ul&gt;
-      &lt;li&gt;comparing frames at $t’=t$ and $t’=t+\delta$&lt;/li&gt;
+      &lt;li&gt;person detection needs to embed some common features that apply to all humans&lt;/li&gt;
+      &lt;li&gt;person re-ID requires the embedding of uniqueness for each person to discern identity&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;task dependency
+    &lt;ul&gt;
+      &lt;li&gt;poor quality of detection will directly affect re-ID performance&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7cc4599-8d90-4445-a1b1-2c43729f0c3d/Untitled.png&quot; alt=&quot;Overview of SiamMOT architecture&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Overview of SiamMOT architecture&lt;/p&gt;
-
-&lt;h3 id=&quot;motion-modelling-with-siamese-tracker&quot;&gt;Motion modelling with Siamese tracker&lt;/h3&gt;
+&lt;p&gt;proposed method&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$i$ is detected at $t’=t$ in frame $\mathbf{I}^t$&lt;/li&gt;
-  &lt;li&gt;$R_i^t$ is “contextual window” around position of $i$ in frame $\mathbf{I}^t$&lt;/li&gt;
-  &lt;li&gt;$\tau$ is Siamese tracker&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;adjacent frame is $I^{t+\delta}$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;define search region $S_i^{t+\delta}$ by expanding $R_i^t$ by fixed factor $r (&amp;gt; 1)$&lt;/li&gt;
-  &lt;li&gt;define $v_i^{t+\delta}$ as confidence of visibility for $i$ in frame $I^{t+\delta}$&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ are outputs from ROIAlign layer of Mask-RCNN (feature extraction)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$(v_i^{t+\delta}, \tilde{R_i}^{t+\delta}) = \tau(f_{R_i}^t, f_{S_i}^{t+\delta}; \Theta)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Two possible ways to model motion!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;implicit-motion-model-imm&quot;&gt;Implicit Motion Model (IMM)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;concatenate $f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ and feed into MLP&lt;/li&gt;
-  &lt;li&gt;predict
+  &lt;li&gt;adaptive gradient backprop
     &lt;ul&gt;
-      &lt;li&gt;confidence of visibility $v_i$&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;relative location &amp;amp; scale change&lt;/p&gt;
-
-        &lt;p&gt;$\Delta x / w^t$, $\Delta y/h^t$, $log(\frac{w^{t+\delta}}{w^t})$, $log(\frac{h^{t+\delta}}{h^t})$&lt;/p&gt;
-
-        &lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/34ef081a-f002-4f10-8232-61e157963f24/Untitled.png&quot; alt=&quot;Loss used for training IMM (* indicates GT values)&quot; /&gt;&lt;/p&gt;
-
-        &lt;p&gt;Loss used for training IMM (* indicates GT values)&lt;/p&gt;
+      &lt;li&gt;cross-entropy loss w/ softmax prob&lt;/li&gt;
+      &lt;li&gt;adaptive gradient weighting function
+        &lt;ul&gt;
+          &lt;li&gt;similarity score and detection confidence score are used as weighting factors!&lt;/li&gt;
+        &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;additional task (part classification)
+    &lt;ul&gt;
+      &lt;li&gt;predicting classes of parts of the human body&lt;/li&gt;
+      &lt;li&gt;prevent overfitting to either re-ID or detection task!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">End-to-End Trainable Trident Person Search Network Using Adaptive Gradient Propagation</summary></entry><entry><title type="html">Few-shot Font Style Transfer with Localized Representations</title><link href="http://localhost:4000/test/few-shot-font-style-transfer/" rel="alternate" type="text/html" title="Few-shot Font Style Transfer with Localized Representations" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/few-shot-font-style-transfer</id><content type="html" xml:base="http://localhost:4000/test/few-shot-font-style-transfer/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2009.11042&quot;&gt;Few-shot Font Generation with Localized Style Representations and Factorization&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;explicit-motion-model-emm&quot;&gt;Explicit Motion Model (EMM)&lt;/h3&gt;
+&lt;p&gt;few-shot font generation&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;channel-wise cross-correlation operator&lt;/li&gt;
-  &lt;li&gt;CNN for generating visibility confidence map $v_i$
+  &lt;li&gt;generate a new font library (&amp;gt; 20,000 characters) with few references&lt;/li&gt;
+  &lt;li&gt;without additional training procedures&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;goal&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;capture “font style” from very few glyph images&lt;/li&gt;
+  &lt;li&gt;font styles are both global, but very local&lt;/li&gt;
+  &lt;li&gt;character content is also very complex and sensitive to local change!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;previous works&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reference images → style, source image → features, merge to generate new image’
     &lt;ul&gt;
-      &lt;li&gt;shows likelihood pixel contains the detected person&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CNN for generating location map $p_i$
-    &lt;ul&gt;
-      &lt;li&gt;outputs offset from each location to bbox corners&lt;/li&gt;
+      &lt;li&gt;for font, single representation is insufficient to represent “style”&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95a262e6-f6b1-4340-96b7-09adce69288b/Untitled.png&quot; alt=&quot;Explicit Motion Model overview&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;proposed method&lt;/p&gt;
 
-&lt;p&gt;Explicit Motion Model overview&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3734ee-1ebd-436b-89b1-ab8366aeea3b/Untitled.png&quot; alt=&quot;Formula for penalty map&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Formula for penalty map&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/152dad72-6d3b-433a-b20e-b11bd95cdf1a/Untitled.png&quot; alt=&quot;Formula for decoding output from EMM&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Formula for decoding output from EMM&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a5765d26-ef92-415c-9aae-f1249de783cc/Untitled.png&quot; alt=&quot;Loss used for training EMM&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Loss used for training EMM&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">[arxiv]</summary></entry><entry><title type="html">FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation</title><link href="http://localhost:4000/test/fifo/" rel="alternate" type="text/html" title="FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/fifo</id><content type="html" xml:base="http://localhost:4000/test/fifo/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2204.01587&quot;&gt;FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;compositionality
+    &lt;ul&gt;
+      &lt;li&gt;decompose characters into a number of components&lt;/li&gt;
+      &lt;li&gt;24 of top 30 used languages has compositionality&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;define “multiple localized” style representation using compositionality
+    &lt;ul&gt;
+      &lt;li&gt;capture multiple local features from each image&lt;/li&gt;
+      &lt;li&gt;requires guidance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;assign most likely components to each expert
+    &lt;ul&gt;
+      &lt;li&gt;predict probability by passing multiple local features to component classifier&lt;/li&gt;
+      &lt;li&gt;match components to express to maximize summation over prediction probability&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;style features are trained to
+    &lt;ul&gt;
+      &lt;li&gt;correctly classify style labels predicted by style classifier&lt;/li&gt;
+      &lt;li&gt;fooling component labels predicted by component classifier&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;maximize independence using HSIC as loss&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Few-shot Font Generation with Localized Style Representations and Factorization</summary></entry><entry><title type="html">FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation</title><link href="http://localhost:4000/test/fifo/" rel="alternate" type="text/html" title="FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/fifo</id><content type="html" xml:base="http://localhost:4000/test/fifo/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2204.01587&quot;&gt;FIFO: Learning Fog-invariant Features for Foggy Scene Segmentation&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;previous work&lt;/p&gt;
 
@@ -667,59 +669,106 @@
       &lt;li&gt;results that are almost as good as models trained on real data!&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Antonio Torrelba (MIT)</summary></entry><entry><title type="html">Few-shot Font Style Transfer with Localized Representations</title><link href="http://localhost:4000/test/few-shot-font-style-transfer/" rel="alternate" type="text/html" title="Few-shot Font Style Transfer with Localized Representations" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/few-shot-font-style-transfer</id><content type="html" xml:base="http://localhost:4000/test/few-shot-font-style-transfer/">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2009.11042&quot;&gt;Few-shot Font Generation with Localized Style Representations and Factorization&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Speaker: Antonio Torrelba (MIT)</summary></entry><entry><title type="html">Siammot: Siamese multi-object tracking</title><link href="http://localhost:4000/test/siammot/" rel="alternate" type="text/html" title="Siammot: Siamese multi-object tracking" /><published>2022-08-08T00:00:00+09:00</published><updated>2022-08-08T00:00:00+09:00</updated><id>http://localhost:4000/test/siammot</id><content type="html" xml:base="http://localhost:4000/test/siammot/">&lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/2105.11595&quot;&gt;Siammot: Siamese multi-object tracking&lt;/a&gt;]&lt;/p&gt;
 
-&lt;p&gt;few-shot font generation&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{shuai2021siammot,
+  title={Siammot: Siamese multi-object tracking},
+  author={Shuai, Bing and Berneshawi, Andrew and Li, Xinyu and Modolo, Davide and Tighe, Joseph},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  pages={12372--12382},
+  year={2021}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;faster-rcnn-object-detection&quot;&gt;Faster-RCNN object detection&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;generate a new font library (&amp;gt; 20,000 characters) with few references&lt;/li&gt;
-  &lt;li&gt;without additional training procedures&lt;/li&gt;
+  &lt;li&gt;Region Proposal Network (RPN)&lt;/li&gt;
+  &lt;li&gt;region-based detection network&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;goal&lt;/p&gt;
+&lt;h3 id=&quot;siammot&quot;&gt;SiamMOT&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;capture “font style” from very few glyph images&lt;/li&gt;
-  &lt;li&gt;font styles are both global, but very local&lt;/li&gt;
-  &lt;li&gt;character content is also very complex and sensitive to local change!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;previous works&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;reference images → style, source image → features, merge to generate new image’
+  &lt;li&gt;Faster-RCNN + region-based Siamese tracker&lt;/li&gt;
+  &lt;li&gt;Siamese tracker can model “instance-level motion”
     &lt;ul&gt;
-      &lt;li&gt;for font, single representation is insufficient to represent “style”&lt;/li&gt;
+      &lt;li&gt;comparing frames at $t’=t$ and $t’=t+\delta$&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;proposed method&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7cc4599-8d90-4445-a1b1-2c43729f0c3d/Untitled.png&quot; alt=&quot;Overview of SiamMOT architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Overview of SiamMOT architecture&lt;/p&gt;
+
+&lt;h3 id=&quot;motion-modelling-with-siamese-tracker&quot;&gt;Motion modelling with Siamese tracker&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;compositionality
+  &lt;li&gt;$i$ is detected at $t’=t$ in frame $\mathbf{I}^t$&lt;/li&gt;
+  &lt;li&gt;$R_i^t$ is “contextual window” around position of $i$ in frame $\mathbf{I}^t$&lt;/li&gt;
+  &lt;li&gt;$\tau$ is Siamese tracker&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;adjacent frame is $I^{t+\delta}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;define search region $S_i^{t+\delta}$ by expanding $R_i^t$ by fixed factor $r (&amp;gt; 1)$&lt;/li&gt;
+  &lt;li&gt;define $v_i^{t+\delta}$ as confidence of visibility for $i$ in frame $I^{t+\delta}$&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ are outputs from ROIAlign layer of Mask-RCNN (feature extraction)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$(v_i^{t+\delta}, \tilde{R_i}^{t+\delta}) = \tau(f_{R_i}^t, f_{S_i}^{t+\delta}; \Theta)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Two possible ways to model motion!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;implicit-motion-model-imm&quot;&gt;Implicit Motion Model (IMM)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;concatenate $f_{R_i}^t$ and $f_{S_i}^{t+\delta}$ and feed into MLP&lt;/li&gt;
+  &lt;li&gt;predict
     &lt;ul&gt;
-      &lt;li&gt;decompose characters into a number of components&lt;/li&gt;
-      &lt;li&gt;24 of top 30 used languages has compositionality&lt;/li&gt;
+      &lt;li&gt;confidence of visibility $v_i$&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;relative location &amp;amp; scale change&lt;/p&gt;
+
+        &lt;p&gt;$\Delta x / w^t$, $\Delta y/h^t$, $log(\frac{w^{t+\delta}}{w^t})$, $log(\frac{h^{t+\delta}}{h^t})$&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/34ef081a-f002-4f10-8232-61e157963f24/Untitled.png&quot; alt=&quot;Loss used for training IMM (* indicates GT values)&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;Loss used for training IMM (* indicates GT values)&lt;/p&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;define “multiple localized” style representation using compositionality
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;explicit-motion-model-emm&quot;&gt;Explicit Motion Model (EMM)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;channel-wise cross-correlation operator&lt;/li&gt;
+  &lt;li&gt;CNN for generating visibility confidence map $v_i$
     &lt;ul&gt;
-      &lt;li&gt;capture multiple local features from each image&lt;/li&gt;
-      &lt;li&gt;requires guidance&lt;/li&gt;
+      &lt;li&gt;shows likelihood pixel contains the detected person&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;assign most likely components to each expert
+  &lt;li&gt;CNN for generating location map $p_i$
     &lt;ul&gt;
-      &lt;li&gt;predict probability by passing multiple local features to component classifier&lt;/li&gt;
-      &lt;li&gt;match components to express to maximize summation over prediction probability&lt;/li&gt;
+      &lt;li&gt;outputs offset from each location to bbox corners&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;style features are trained to
-    &lt;ul&gt;
-      &lt;li&gt;correctly classify style labels predicted by style classifier&lt;/li&gt;
-      &lt;li&gt;fooling component labels predicted by component classifier&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;maximize independence using HSIC as loss&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Few-shot Font Generation with Localized Style Representations and Factorization</summary></entry></feed>
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95a262e6-f6b1-4340-96b7-09adce69288b/Untitled.png&quot; alt=&quot;Explicit Motion Model overview&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Explicit Motion Model overview&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3734ee-1ebd-436b-89b1-ab8366aeea3b/Untitled.png&quot; alt=&quot;Formula for penalty map&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Formula for penalty map&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/152dad72-6d3b-433a-b20e-b11bd95cdf1a/Untitled.png&quot; alt=&quot;Formula for decoding output from EMM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Formula for decoding output from EMM&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a5765d26-ef92-415c-9aae-f1249de783cc/Untitled.png&quot; alt=&quot;Loss used for training EMM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Loss used for training EMM&lt;/p&gt;</content><author><name>Jinwoo Hwang</name></author><category term="computer vision" /><summary type="html">Siammot: Siamese multi-object tracking]</summary></entry></feed>
