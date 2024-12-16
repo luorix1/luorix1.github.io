@@ -14,22 +14,22 @@ Education
 * B.S in Electrical and Computer Engineering, Seoul National University, 2019 - 2025 (expected)
 * Seoul Science High School, 2016 - 2018
 
-Work experience
+Work experiences
 ======
-* AI Engineer @ <a href="https://dalpha.so/" rel="permalink">DALPHA</a>, 2024.02 - 2024.08
+* AI Engineer @ <a href="https://dalpha.so/" rel="permalink">DALPHA</a>, 2023.02 - 2023.08
   * An AI B2B Startup developing and providing customized AI solutions for enterprises
   * Joined before securing Seed Round funding (curr. total 10M USD in investments, pre-A) and shipped various B2B AI SaaS products to clients, including Computer Vision, Audio Processing, LLM, RecSys products
   * Set up ML team work culture and best practices based on prior work experience
   * Performed 14+ successful PoCs translated into landing of 11 contracts
 
-* Computer Vision Research Engineer @ <a href="https://www.deepingsource.io/" rel="permalink">Deeping Source</a>, 2022.11 - 2024.02
+* Computer Vision Research Engineer @ <a href="https://www.deepingsource.io/" rel="permalink">Deeping Source</a>, 2021.11 - 2023.02
   * A tailored AI solutions company specializing in anonymization, spatial AI, and store care AI technologies
   * Implemented new features for pedestrian tracking & analytics
   * Performed multiple PoCs in front of CEO, VP, and lead engineers, as well as for foreign clients such as Docomo (Japan)
   * Authored (and co-authored) papers accepted to international conferences
   * Registered a patent in Korea, US, and Europe (see Patents section)
 
-* Software Engineer @ <a href="https://zuzu.network/" rel="permalink">Kodebox (ZUZU)</a>, 2022.02 - 2022.10
+* Software Engineer @ <a href="https://zuzu.network/" rel="permalink">Kodebox (ZUZU)</a>, 2021.02 - 2021.10
   * Worked on a SaaS helping founders manage their business through various dashboards to keep track of the shareholder list, stock options, required filing, organizing shareholder meetings, etc.
   * Implemented new stock option feature (still actively used today)
   
@@ -50,14 +50,14 @@ Internships
   * Encoded a 3D scene into a set of 2D RGB or RGB-D images for "compression"
   * Attempted RL-based solution to view selection for optimal reconstruction on the receiver end
   
-Skills
+<!-- Skills
 ======
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* Skill 3 -->
 
 Publications
 ======
@@ -68,15 +68,20 @@ Publications
 Talks
 ======
   <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
+    {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Regular volunteer work teaching math and science to underprivileged students
+* Mentorship for high school students interested in engineering and junior students looking for jobs/internships in IT
+
+Portfolio
+======
+<a href="/portfolio/">Refer to portfolio page HERE</a>
