@@ -1,0 +1,21 @@
+{% assign a = site.author %}
+<ul class="social" role="list">
+  {% if a.email %}
+  <li><a href="mailto:{{ a.email }}">Email</a></li>
+  {% endif %}
+  {% if a.github %}
+  <li><a href="https://github.com/{{ a.github }}">GitHub</a></li>
+  {% endif %}
+  {% if a.linkedin %}
+  <li><a href="{{ a.linkedin }}">LinkedIn</a></li>
+  {% endif %}
+  {% if a.googlescholar %}
+  <li><a href="{{ a.googlescholar }}">Scholar</a></li>
+  {% endif %}
+  {% if a.orcid %}
+  <li><a href="{{ a.orcid }}">ORCID</a></li>
+  {% endif %}
+  {% if a.instagram %}
+  <li><a href="{{ a.instagram }}">Instagram</a></li>
+  {% endif %}
+</ul>

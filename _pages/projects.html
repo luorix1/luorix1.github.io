@@ -1,0 +1,30 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+wide: true
+plain: true
+subtitle: "Edit _data/projects.yml to add or reorder entries."
+---
+
+<ul class="card-grid">
+  {% assign ordered = site.data.projects | sort: 'year' | reverse %}
+  {% for project in ordered %}
+  <li>
+    <article class="card">
+      <h2 class="card__title card__title--sm">
+        {% if project.url %}
+        <a href="{{ project.url }}">{{ project.title }}</a>
+        {% else %}
+        {{ project.title }}
+        {% endif %}
+      </h2>
+      {% if project.year %}<p class="card__meta">{{ project.year }}</p>{% endif %}
+      {% if project.description %}<p class="card__body">{{ project.description }}</p>{% endif %}
+      {% if project.tags %}
+      <p class="card__meta">{{ project.tags | join: ' · ' }}</p>
+      {% endif %}
+    </article>
+  </li>
+  {% endfor %}
+</ul>

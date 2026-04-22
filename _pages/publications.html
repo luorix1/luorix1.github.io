@@ -1,36 +1,24 @@
 ---
-layout: archive
-title: "Publications"
+layout: page
+title: Publications
 permalink: /publications/
-author_profile: true
+wide: true
+plain: true
+subtitle: "List is driven by _data/publications.yml (set featured to surface items on the home page)."
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<p class="lead">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
 {% endif %}
 
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+{% assign pub_sorted = site.data.publications | sort: 'year' | reverse %}
+<ol class="pub-list">
+  {% for pub in pub_sorted %}
+  <li class="pub-item">
+    <span class="pub-item__title">{{ pub.title }}</span>
+    {% if pub.authors %}<span class="pub-item__authors">{{ pub.authors }}</span>{% endif %}
+    {% if pub.venue %}<span class="pub-item__venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</span>{% endif %}
+    {% include pub-links.html pub=pub %}
+  </li>
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+</ol>

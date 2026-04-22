@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<div class="container container--wide home">
+  <header class="hero">
+    {% if site.author.name %}
+    <h1 class="hero__name">{{ site.author.name }}</h1>
+    {% endif %}
+    {% if site.author.bio %}
+    <p class="hero__bio">{{ site.author.bio }}</p>
+    {% endif %}
+    {% if site.author.location %}
+    <p class="hero__meta">{{ site.author.location }}{% if site.author.employer %} · {{ site.author.employer }}{% endif %}</p>
+    {% endif %}
+    {% include site-social.html %}
+  </header>
+
+  {% assign featured_projects = site.data.projects | where: 'featured', true %}
+  {% if featured_projects.size > 0 %}
+  <section class="section" aria-labelledby="featured-projects-heading">
+    <div class="section__head">
+      <h2 id="featured-projects-heading">Projects</h2>
+      <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects</a>
+    </div>
+    <ul class="card-grid">
+      {% for project in featured_projects %}
+      <li>
+        <article class="card">
+          <h3 class="card__title">
+            {% if project.url %}
+            <a href="{{ project.url }}">{{ project.title }}</a>
+            {% else %}
+            {{ project.title }}
+            {% endif %}
+          </h3>
+          {% if project.year %}<p class="card__meta">{{ project.year }}</p>{% endif %}
+          {% if project.description %}<p class="card__body">{{ project.description }}</p>{% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% assign pub_sorted = site.data.publications | sort: 'year' | reverse %}
+  {% assign featured_pubs = pub_sorted | where: 'featured', true %}
+  {% if featured_pubs.size == 0 %}
+    {% assign featured_pubs = pub_sorted | limit: 4 %}
+  {% endif %}
+  {% if featured_pubs.size > 0 %}
+  <section class="section" aria-labelledby="featured-pubs-heading">
+    <div class="section__head">
+      <h2 id="featured-pubs-heading">Publications</h2>
+      <a class="section__link" href="{{ '/publications/' | relative_url }}">All publications</a>
+    </div>
+    <ol class="pub-list pub-list--compact">
+      {% for pub in featured_pubs %}
+      <li class="pub-item">
+        <span class="pub-item__title">{{ pub.title }}</span>
+        {% if pub.authors %}<span class="pub-item__authors">{{ pub.authors }}</span>{% endif %}
+        {% if pub.venue %}<span class="pub-item__venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</span>{% endif %}
+        {% include pub-links.html pub=pub %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  {% if content != blank %}
+  <section class="section prose" aria-label="About">
+    {{ content }}
+  </section>
+  {% endif %}
+</div>

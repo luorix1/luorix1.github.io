@@ -1,0 +1,11 @@
+# Add a project by copying a block below. Set featured: true to show on the home page.
+- title: "Ethereal"
+  year: 2024
+  description: "CEO & co-founder. 3D modeling and XR—bridging deformable objects and realistic interaction."
+  featured: true
+
+- title: "Research portfolio"
+  year: 2022
+  description: "Computer vision, multi-view detection, and representation learning (see Publications)."
+  url: "https://github.com/luorix1"
+  featured: true

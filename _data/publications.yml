@@ -1,0 +1,17 @@
+# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool).
+# List is sorted by year on the site; use featured: true for the home page.
+
+- title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
+  authors: "J. Hwang, P. Benz, P. Kim"
+  venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+  year: 2024
+  paper_url: "https://openaccess.thecvf.com/content/WACV2024/papers/Hwang_Booster-SHOT_Boosting_Stacked_Homography_Transformations_for_Multiview_Pedestrian_Detection_With_WACV_2024_paper.pdf"
+  slides_url: "/files/Booster-SHOT_ Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention.pptx"
+  featured: true
+
+- title: "Privacy safe representation learning via frequency filtering encoder"
+  authors: "J. Jeong, M. Cho, P. Benz, J. Hwang, J. Kim, S. Lee, T. H. Kim"
+  venue: "IJCAI-ECAI Workshop on Artificial Intelligence Safety (AISafety)"
+  year: 2022
+  paper_url: "https://arxiv.org/pdf/2208.02482"
+  featured: true

@@ -1,31 +1,31 @@
----
-layout: compress
----
-
-{% include base_path %}
-
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
+<!DOCTYPE html>
+<html lang="{{ site.locale | default: 'en-US' | slice: 0, 2 }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if page.title and page.url != '/' %}{{ page.title | strip_html }} · {% endif %}{{ site.title | default: site.name }}
+  </title>
+  {% if site.description %}
+ <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  {% assign _dev_url = site.url | downcase %}
+  {% if jekyll.environment == "development" %}
+  {% if _dev_url contains "localhost" or _dev_url contains "127.0.0.1" or _dev_url contains "0.0.0.0" %}
+  <script src="http://127.0.0.1:{{ site.livereload_port | default: 35729 }}/livereload.js?snipver=1&amp;port={{ site.livereload_port | default: 35729 }}"></script>
+  {% endif %}
+  {% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  {% include site-nav.html %}
+  <main id="site-main" class="site-main">
     {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
+  </main>
+  {% include site-footer.html %}
+</body>
 </html>

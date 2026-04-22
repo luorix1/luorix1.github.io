@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="container{% if page.wide %} container--wide{% endif %}">
+  <header class="page-header">
+    {% if page.title %}<h1 class="page-header__title">{{ page.title }}</h1>{% endif %}
+    {% if page.subtitle %}<p class="page-header__subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+  {% if page.plain %}
+  {{ content }}
+  {% else %}
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% endif %}
+</div>

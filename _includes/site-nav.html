@@ -1,0 +1,19 @@
+{% include base_path %}
+<header class="site-header">
+  <div class="site-header__inner container container--wide">
+    <a class="site-logo" href="{{ '/' | relative_url }}">{{ site.title | default: site.name }}</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        {% for link in site.data.navigation.main %}
+ <li>
+          {% if link.url contains 'http' %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% else %}
+          <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

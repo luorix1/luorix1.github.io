@@ -7,8 +7,11 @@
 # server process.
 
 # Basic Site Settings
+# Port for local LiveReload (must match `jekyll serve --livereload-port`, default 35729).
+livereload_port          : 35729
+
 locale                   : "en-US"
-title                    : "Jin Woo Hwang Bio"
+title                    : "Jinwoo Hwang"
 title_separator          : "-"
 name                     : &name "Jinwoo Hwang"
 description              : &description "Maker, Entrepreneur, Gymrat"

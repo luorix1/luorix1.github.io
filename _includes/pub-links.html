@@ -1,0 +1,16 @@
+<span class="pub-item__links">
+  {% if include.pub.paper_url %}
+  <a href="{% if include.pub.paper_url contains 'http' %}{{ include.pub.paper_url }}{% else %}{{ include.pub.paper_url | relative_url }}{% endif %}">Paper</a>
+  {% endif %}
+  {% if include.pub.code_url %}
+  <a href="{% if include.pub.code_url contains 'http' %}{{ include.pub.code_url }}{% else %}{{ include.pub.code_url | relative_url }}{% endif %}">Code</a>
+  {% endif %}
+  {% if include.pub.slides_url %}
+  {% if include.pub.slides_url contains 'http' %}
+  <a href="{{ include.pub.slides_url }}">Slides</a>
+  {% else %}
+  {% assign su = include.pub.slides_url | replace: ' ', '%20' %}
+  <a href="{{ su | relative_url }}">Slides</a>
+  {% endif %}
+  {% endif %}
+</span>
