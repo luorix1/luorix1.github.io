@@ -44,7 +44,3 @@ Older talk entries may still live under [Talks](/talks/) from the previous site 
 
 - Volunteer teaching (math and science) for underprivileged students
 - Mentorship for students exploring engineering careers and internships
-
-## Projects
-
-See [Projects](/projects/) for a curated list.
