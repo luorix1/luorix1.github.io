@@ -26,20 +26,19 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Jin Woo Hwang"
-  bio              : "Maker, Entrepreneur, Gymrat"
-  location         : "Seoul, South Korea"
-  employer         : "Seoul National University"
-  email            : "luorix@snu.ac.kr" 
+  bio              : "biomechanics and wearable technology enthusiast"
+  location         : "Pittsburgh, Pennsylvania (USA)"
+  employer         : "Carnegie Mellon University"
+  email            : "jinwoohw@andrew.cmu.edu" 
 
   # Academic websites
-  googlescholar    : "https://scholar.google.com/citations?user=2dKkOGAAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=JQSj-loAAAAJ&hl=en"
   orcid            : "https://orcid.org/0000-0002-6498-2504"
 
   # Repositories and software development
   github           : "luorix1"
   # Social media
-  instagram        : "https://www.instagram.com/gnuzema"
-  linkedin         : "https://www.linkedin.com/in/jinwoo-hwang-329242229/"
+  linkedin         : "https://www.linkedin.com/in/jinwoo-hwang-exo/"
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
@@ -56,7 +55,6 @@ breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -188,9 +186,6 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -240,16 +235,6 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
-
-
 # Sass/SCSS
 sass:
   sass_dir: _sass

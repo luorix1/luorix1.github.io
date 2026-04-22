@@ -8,9 +8,4 @@ redirect_from:
 ---
 
 ## About
-
-Maker, entrepreneur, and builder. I care about user-centric design, bioengineering, and improving UX through technology—as a generalist I focus on making things work and collaborating with specialists to ship better products.
-
-I’m the CEO & co-founder of **Ethereal**, where we work on 3D modeling toward lifelike interaction with deformable objects in XR. I also enjoy research at the intersection of machine learning, computer vision, and wearables.
-
-If you’d like to connect, use the links above or reach out by email.
+I am a 1st year MSME-R student working with Professor Inseung Kang at the MetaMobility Lab in Carnegie Mellon University. My work focuses on developing readily deployable deep learning-based controllers for exosuits, as well as works with similar goals in kinematics and kinetics estimation. In the past, I have worked extensively with IMU-based sensing for gait analysis and exosuit personalization through human-in-the-loop optimization for patients suffering from Parkinson's Disease. My interests lie in gait analysis and wearable device control that goes beyond the lab, as well as the implications of simulation-based studies for pathological gait in clinical populations.
