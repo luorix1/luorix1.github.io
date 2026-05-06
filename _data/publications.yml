@@ -1,5 +1,11 @@
-# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool).
+# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool), paper_url.
 # List is sorted by year on the site; use featured: true for the home page.
+
+- title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson's Disease"
+  authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, J. Kim"
+  venue: "International Conference on Neurorehabilitation (ICNR)"
+  year: 2026
+  featured: true
 
 - title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
   authors: "J. Hwang, P. Benz, P. Kim"

@@ -2,5 +2,8 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Projects"
+    url: /projects/
+
   - title: "Resume"
     url: /resume/

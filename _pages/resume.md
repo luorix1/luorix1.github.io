@@ -35,3 +35,7 @@ redirect_from:
 ## Publications
 
 See the [Publications](/publications/) page for a full list with links.
+
+## Projects
+
+See the [Projects](/projects/) page.

@@ -1,0 +1,28 @@
+{% assign _hl = include.heading_level | default: 3 | plus: 0 %}
+<article class="card project-card">
+  <div class="card__inner">
+    {% if _hl == 2 %}
+    <h2 class="card__title card__title--sm">
+      {% if include.project.url %}
+      <a href="{% if include.project.url contains 'http' %}{{ include.project.url }}{% else %}{{ include.project.url | relative_url }}{% endif %}">{{ include.project.title }}</a>
+      {% else %}
+      {{ include.project.title }}
+      {% endif %}
+    </h2>
+    {% else %}
+    <h3 class="card__title">
+      {% if include.project.url %}
+      <a href="{% if include.project.url contains 'http' %}{{ include.project.url }}{% else %}{{ include.project.url | relative_url }}{% endif %}">{{ include.project.title }}</a>
+      {% else %}
+      {{ include.project.title }}
+      {% endif %}
+    </h3>
+    {% endif %}
+    {% if include.project.year %}<p class="card__meta">{{ include.project.year }}</p>{% endif %}
+    {% if include.project.description %}<p class="card__body">{{ include.project.description }}</p>{% endif %}
+    {% include project-links.html project=include.project embed_youtube_id=yt_id %}
+    {% if include.project.tags %}
+    <p class="card__meta">{{ include.project.tags | join: ' · ' }}</p>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,19 @@
+{% assign _pl_r = include.project.report_url | default: '' | strip %}
+{% assign _pl_p = include.project.poster_url | default: '' | strip %}
+{% assign _pl_v = include.project.video_url | default: '' | strip %}
+{% if _pl_r != '' or _pl_p != '' or _pl_v != '' %}
+<span class="pub-item__links">
+  {% if _pl_r != '' %}
+  <a href="{% if _pl_r contains 'http' %}{{ _pl_r }}{% else %}{{ _pl_r | replace: ' ', '%20' | relative_url }}{% endif %}">Report</a>
+  {% endif %}
+  {% if _pl_p != '' %}
+  <a href="{% if _pl_p contains 'http' %}{{ _pl_p }}{% else %}{{ _pl_p | replace: ' ', '%20' | relative_url }}{% endif %}">Poster</a>
+  {% endif %}
+  {% if _pl_v != '' %}
+  {% assign _embed = include.embed_youtube_id | default: '' | strip %}
+  {% if _embed == '' %}
+  <a href="{% if _pl_v contains 'http' %}{{ _pl_v }}{% else %}{{ _pl_v | replace: ' ', '%20' | relative_url }}{% endif %}">Video</a>
+  {% endif %}
+  {% endif %}
+</span>
+{% endif %}

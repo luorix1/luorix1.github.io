@@ -89,7 +89,7 @@ LIVERELOAD_PORT=35730 ./bin/serve
 | Navigation | `_data/navigation.yml` |
 | Home page | `_pages/about.md` |
 | Publications list | `_data/publications.yml` |
-| Optional projects | `_data/projects.yml` (and add a `projects` page if you use them) |
+| Projects | `_data/projects.yml` (`url`, `report_url`, `poster_url`, `video_url`, …) |
 | Resume | `_pages/resume.md` |
 | Blog posts | `_posts/` |
 

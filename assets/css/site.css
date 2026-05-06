@@ -69,6 +69,7 @@ a:hover {
   max-width: var(--max-prose);
   margin: 0 auto;
   padding: 0 1.25rem;
+  min-width: 0;
 }
 
 .container--wide {
@@ -168,9 +169,18 @@ a:hover {
   font-size: 0.95rem;
 }
 
+/* Home */
+.home {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
 /* Sections */
 .section {
   margin-bottom: 3rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .section__head {
@@ -239,11 +249,28 @@ a:hover {
   margin: 0 0 0.5rem;
 }
 
-.card__body {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.5;
+.card .pub-item__links {
+  margin-top: 0.65rem;
+}
+
+/* Project cards */
+.project-card.card {
+  height: auto;
+}
+
+.project-card .card__inner {
+  padding: 1.15rem 1.25rem 1.25rem;
+}
+
+/* One column layout for project grid */
+.card-grid.card-grid--projects {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-card .card__title,
+.project-card .card__title a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Publications */

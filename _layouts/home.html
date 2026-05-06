@@ -22,20 +22,10 @@ layout: default
       <h2 id="featured-projects-heading">Projects</h2>
       <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects</a>
     </div>
-    <ul class="card-grid">
+    <ul class="card-grid card-grid--projects">
       {% for project in featured_projects %}
       <li>
-        <article class="card">
-          <h3 class="card__title">
-            {% if project.url %}
-            <a href="{{ project.url }}">{{ project.title }}</a>
-            {% else %}
-            {{ project.title }}
-            {% endif %}
-          </h3>
-          {% if project.year %}<p class="card__meta">{{ project.year }}</p>{% endif %}
-          {% if project.description %}<p class="card__body">{{ project.description }}</p>{% endif %}
-        </article>
+        {% include project-card.html project=project %}
       </li>
       {% endfor %}
     </ul>

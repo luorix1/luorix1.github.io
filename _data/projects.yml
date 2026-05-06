@@ -1,2 +1,11 @@
-# Optional: add project entries to show a section on the home page (use featured: true) and a /projects/ page.
-[]
+# Optional: title, year, description, url, report_url, poster_url, video_url (YouTube URLs show an embedded looping preview on cards), tags, featured
+# Put long-form text on the page pointed to by url (under _pages/).
+
+- title: "Evaluating Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
+  year: 2025
+  description: "Spine–tail aerial righting with MuJoCo, learning-based control, and hardware tests."
+  url: "/projects/aerial-righting/"
+  report_url: "https://drive.google.com/file/d/17U8vsB2_QIyJAHGgTMYTSeoXzvY_FC2b/view?usp=sharing"
+  poster_url: "https://drive.google.com/file/d/1VESNB0DVD6kp11nX7SPKapXAHo_yUA91/view?usp=sharing"
+  video_url: "https://youtu.be/zh_afIG5tD8?si=M9-uuBIkWfsQ_fZE"
+  featured: true
