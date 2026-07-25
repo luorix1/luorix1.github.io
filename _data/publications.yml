@@ -1,5 +1,13 @@
-# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool), paper_url.
+# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool), paper_url, project_url.
 # List is sorted by year on the site; use featured: true for the home page.
+
+- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
+  authors: "J. Hwang, I. Park, C. Song, V. Phan, E. Halilaj, I. Kang"
+  venue: "Manuscript in preparation"
+  year: 2026
+  project_url: "/publications/kinematics-joint-moments/"
+  paper_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
+  featured: true
 
 - title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson's Disease"
   authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, J. Kim"

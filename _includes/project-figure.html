@@ -1,0 +1,30 @@
+{% comment %}
+  Figure section with optional narrow width.
+  {% include project-figure.html
+      title="Framework at a glance"
+      src="/images/projects/slug/framework.png"
+      caption="Caption text."
+      narrow=true
+  %}
+{% endcomment %}
+<section class="pp-section">
+  <div class="pp-wrap">
+    {% if include.title %}
+    <div class="pp-section-heading">
+      <h2 class="pp-section-title">{{ include.title }}</h2>
+    </div>
+    {% endif %}
+    <figure class="pp-figure{% if include.narrow %} pp-figure--narrow{% endif %}">
+      {% if include.src %}
+      <img
+        src="{% if include.src contains 'http' %}{{ include.src }}{% else %}{{ include.src | relative_url }}{% endif %}"
+        alt="{{ include.alt | default: include.title | default: 'Figure' }}"
+        loading="lazy"
+      >
+      {% else %}
+      <div class="pp-placeholder-box">Add figure <code>src</code></div>
+      {% endif %}
+      {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+    </figure>
+  </div>
+</section>

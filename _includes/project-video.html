@@ -1,0 +1,43 @@
+{% comment %}
+  Hero-style video card (presentation / scenario video).
+  {% include project-video.html
+      title="Presentation video"
+      title_light="optional lighter subtitle half"
+      lead="Optional paragraph above the video."
+      src="/images/projects/slug/demo.mp4"
+      caption="Optional caption."
+      narrow=true
+      lift=true
+      autoplay=true
+  %}
+{% endcomment %}
+<section class="pp-section{% if include.lift %} pp-section--lift{% endif %}">
+  <div class="pp-wrap">
+    {% if include.title or include.title_light %}
+    <div class="pp-section-heading">
+      <h2 class="pp-section-title">
+        {{ include.title }}{% if include.title_light %} <span class="pp-title-light">{{ include.title_light }}</span>{% endif %}
+      </h2>
+    </div>
+    {% endif %}
+    {% if include.lead %}<p class="pp-lead">{{ include.lead }}</p>{% endif %}
+    <div class="pp-card{% if include.narrow %} pp-card--narrow{% endif %}">
+      {% if include.src %}
+      <video
+        controls
+        loop
+        playsinline
+        preload="metadata"
+        {% if include.autoplay != false %}autoplay muted{% endif %}
+        {% if include.poster %}poster="{% if include.poster contains 'http' %}{{ include.poster }}{% else %}{{ include.poster | relative_url }}{% endif %}"{% endif %}
+        title="{{ include.title | default: 'Video' }}"
+      >
+        <source src="{% if include.src contains 'http' %}{{ include.src }}{% else %}{{ include.src | relative_url }}{% endif %}" type="video/mp4">
+      </video>
+      {% else %}
+      <div class="pp-placeholder-box">Add video <code>src</code></div>
+      {% endif %}
+    </div>
+    {% if include.caption %}<p class="pp-caption">{{ include.caption }}</p>{% endif %}
+  </div>
+</section>

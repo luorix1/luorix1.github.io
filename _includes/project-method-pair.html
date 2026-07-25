@@ -1,0 +1,53 @@
+{% comment %}
+  Two-column method figures (HW & SW | setup).
+  {% include project-method-pair.html
+      title="Method"
+      left_title="Exoskeleton HW & SW"
+      left_src="/images/projects/slug/hw.png"
+      left_caption="..."
+      right_title="Hemiplegic gait emulation"
+      right_src="/images/projects/slug/gait.png"
+      right_caption="..."
+  %}
+{% endcomment %}
+<section class="pp-section">
+  <div class="pp-wrap">
+    {% if include.title %}
+    <div class="pp-section-heading">
+      <h2 class="pp-section-title">{{ include.title }}</h2>
+    </div>
+    {% endif %}
+    <div class="pp-method-grid">
+      <div class="pp-method-col">
+        {% if include.left_title %}<h3>{{ include.left_title }}</h3>{% endif %}
+        <figure class="pp-figure">
+          {% if include.left_src %}
+          <img
+            src="{% if include.left_src contains 'http' %}{{ include.left_src }}{% else %}{{ include.left_src | relative_url }}{% endif %}"
+            alt="{{ include.left_alt | default: include.left_title | default: 'Figure' }}"
+            loading="lazy"
+          >
+          {% else %}
+          <div class="pp-placeholder-box">Left figure</div>
+          {% endif %}
+          {% if include.left_caption %}<figcaption>{{ include.left_caption }}</figcaption>{% endif %}
+        </figure>
+      </div>
+      <div class="pp-method-col">
+        {% if include.right_title %}<h3>{{ include.right_title }}</h3>{% endif %}
+        <figure class="pp-figure">
+          {% if include.right_src %}
+          <img
+            src="{% if include.right_src contains 'http' %}{{ include.right_src }}{% else %}{{ include.right_src | relative_url }}{% endif %}"
+            alt="{{ include.right_alt | default: include.right_title | default: 'Figure' }}"
+            loading="lazy"
+          >
+          {% else %}
+          <div class="pp-placeholder-box">Right figure</div>
+          {% endif %}
+          {% if include.right_caption %}<figcaption>{{ include.right_caption }}</figcaption>{% endif %}
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

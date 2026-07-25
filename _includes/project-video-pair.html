@@ -1,0 +1,39 @@
+{% comment %}
+  Side-by-side videos in cards.
+  {% include project-video-pair.html
+      title="Comparison"
+      left="/images/projects/slug/a.mp4"
+      right="/images/projects/slug/b.mp4"
+      caption="..."
+  %}
+{% endcomment %}
+<section class="pp-section">
+  <div class="pp-wrap">
+    {% if include.title %}
+    <div class="pp-section-heading">
+      <h2 class="pp-section-title">{{ include.title }}</h2>
+    </div>
+    {% endif %}
+    <div class="pp-method-grid">
+      <div class="pp-card">
+        {% if include.left %}
+        <video controls muted loop playsinline autoplay preload="metadata">
+          <source src="{% if include.left contains 'http' %}{{ include.left }}{% else %}{{ include.left | relative_url }}{% endif %}" type="video/mp4">
+        </video>
+        {% else %}
+        <div class="pp-placeholder-box">Left video</div>
+        {% endif %}
+      </div>
+      <div class="pp-card">
+        {% if include.right %}
+        <video controls muted loop playsinline autoplay preload="metadata">
+          <source src="{% if include.right contains 'http' %}{{ include.right }}{% else %}{{ include.right | relative_url }}{% endif %}" type="video/mp4">
+        </video>
+        {% else %}
+        <div class="pp-placeholder-box">Right video</div>
+        {% endif %}
+      </div>
+    </div>
+    {% if include.caption %}<p class="pp-caption">{{ include.caption }}</p>{% endif %}
+  </div>
+</section>

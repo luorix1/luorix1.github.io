@@ -2,6 +2,8 @@
 
 Jekyll source for [luorix1.github.io](https://luorix1.github.io). Content and layout live in `_pages/`, `_data/`, `_layouts/`, and `assets/css/`.
 
+For academic project pages (dark-hero style like [Continual Online Personalization](https://changseob-song.github.io/continual-online-personalization/)), see **[PROJECT_PAGE.md](PROJECT_PAGE.md)**. Live fill-in example: [`/projects/placeholder/`](https://luorix1.github.io/projects/placeholder/).
+
 ## Running locally (recommended)
 
 From the repository root, install dependencies once:

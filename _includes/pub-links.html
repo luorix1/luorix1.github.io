@@ -1,4 +1,7 @@
 <span class="pub-item__links">
+  {% if include.pub.project_url %}
+  <a href="{% if include.pub.project_url contains 'http' %}{{ include.pub.project_url }}{% else %}{{ include.pub.project_url | relative_url }}{% endif %}">Project</a>
+  {% endif %}
   {% if include.pub.paper_url %}
   <a href="{% if include.pub.paper_url contains 'http' %}{{ include.pub.paper_url }}{% else %}{{ include.pub.paper_url | relative_url }}{% endif %}">Paper</a>
   {% endif %}

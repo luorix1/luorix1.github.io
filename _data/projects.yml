@@ -1,5 +1,6 @@
 # Optional: title, year, description, url, report_url, poster_url, video_url (YouTube URLs show an embedded looping preview on cards), tags, featured
 # Put long-form text on the page pointed to by url (under _pages/).
+# Academic project pages (CSP-style dark hero): see PROJECT_PAGE.md and layout: project-page.
 
 - title: "Evaluating Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
   year: 2025
@@ -9,3 +10,18 @@
   poster_url: "https://drive.google.com/file/d/1VESNB0DVD6kp11nX7SPKapXAHo_yUA91/view?usp=sharing"
   video_url: "https://youtu.be/zh_afIG5tD8?si=M9-uuBIkWfsQ_fZE"
   featured: true
+
+- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
+  year: 2026
+  description: "Open-source-trained moment estimators deployed across hip exo, knee exo, and IMU kinematics without target-device fine-tuning."
+  url: "/publications/kinematics-joint-moments/"
+  report_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
+  tags: ["exoskeleton", "biomechanics"]
+  featured: true
+
+- title: "Your Paper or Project Title Goes Here"
+  year: 2026
+  description: "Template placeholder — edit _pages/projects/placeholder.md (see PROJECT_PAGE.md)."
+  url: "/projects/placeholder/"
+  tags: ["template"]
+  featured: false
