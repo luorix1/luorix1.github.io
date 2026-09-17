@@ -14,7 +14,7 @@ locale                   : "en-US"
 title                    : "Jinwoo Hwang"
 title_separator          : "-"
 name                     : &name "Jinwoo Hwang"
-description              : &description "biomechanics and wearable technology enthusiast"
+description              : &description "Enhancing human mobility with wearable robots and learning-based control"
 url                      : https://luorix1.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "luorix1/luorix1.github.io"
@@ -26,7 +26,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Jin Woo Hwang"
-  bio              : "biomechanics and wearable technology enthusiast"
+  bio              : "Enhancing human mobility with wearable robots and learning-based control"
   location         : "Pittsburgh, Pennsylvania (USA)"
   employer         : "Carnegie Mellon University"
   email            : "jinwoohw@andrew.cmu.edu" 
@@ -39,15 +39,16 @@ author:
   github           : "luorix1"
   # Social media
   linkedin         : "https://www.linkedin.com/in/jinwoo-hwang-exo/"
+  resume           : "/files/Hwang_Jinwoo_Resume.docx"
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
+  journal:
+    title: 'Journal Articles'
+  conference:
+    title: 'Refereed Conference Proceedings'
+  workshop:
+    title: 'Workshop Papers'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -254,6 +255,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jemoji
 
 # Mimic GitHub Pages with --safe
@@ -262,6 +264,7 @@ whitelist:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jemoji
 
 

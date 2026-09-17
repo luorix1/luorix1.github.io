@@ -1,15 +1,30 @@
 {% include base_path %}
+{% assign current_path = page.url | default: '/' %}
 <header class="site-header">
   <div class="site-header__inner container container--wide">
     <a class="site-logo" href="{{ '/' | relative_url }}">{{ site.title | default: site.name }}</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
         {% for link in site.data.navigation.main %}
- <li>
+        {% assign is_active = false %}
+        {% if link.url == '/' %}
+          {% if current_path == '/' %}{% assign is_active = true %}{% endif %}
+        {% elsif link.url == '/research/' %}
+          {% if current_path == '/research/' or current_path contains '/publication' or current_path contains '/projects/' %}
+            {% assign is_active = true %}
+          {% endif %}
+        {% else %}
+          {% if current_path == link.url %}
+            {% assign is_active = true %}
+          {% elsif current_path contains link.url %}
+            {% assign is_active = true %}
+          {% endif %}
+        {% endif %}
+        <li>
           {% if link.url contains 'http' %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          <a href="{{ link.url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
           {% else %}
-          <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          <a href="{{ link.url | relative_url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
           {% endif %}
         </li>
         {% endfor %}

@@ -1,0 +1,66 @@
+---
+layout: page
+title: Research
+permalink: /research/
+wide: false
+plain: true
+redirect_from:
+  - /publications/
+  - /publications.html
+  - /projects/
+  - /projects.html
+---
+
+{% if site.author.googlescholar %}
+<p class="lead">
+  For a complete, up-to-date list of publications, please see my
+  <a href="{{ site.author.googlescholar }}">Google Scholar</a> profile.
+  Selected works are listed below.
+</p>
+{% else %}
+<p class="lead">Selected works are listed below.</p>
+{% endif %}
+
+{% assign pubs = site.data.publications | sort: 'year' | reverse %}
+{% assign journals = pubs | where: 'type', 'journal' %}
+{% assign conferences = pubs | where: 'type', 'conference' %}
+{% assign workshops = pubs | where: 'type', 'workshop' %}
+
+{% if pubs.size == 0 %}
+<p class="lead">Nothing here yet. Add entries to <code>_data/publications.yml</code>.</p>
+{% else %}
+
+{% if journals.size > 0 %}
+<section class="pub-section" aria-labelledby="journal-heading">
+  <h2 id="journal-heading" class="pub-section__title">Journal Articles</h2>
+  <ol class="pub-cite-list">
+    {% for pub in journals %}
+    <li>{% include pub-cite.html pub=pub %}</li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+{% if conferences.size > 0 %}
+<section class="pub-section" aria-labelledby="conference-heading">
+  <h2 id="conference-heading" class="pub-section__title">Refereed Conference Proceedings</h2>
+  <ol class="pub-cite-list">
+    {% for pub in conferences %}
+    <li>{% include pub-cite.html pub=pub %}</li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+{% if workshops.size > 0 %}
+<section class="pub-section" aria-labelledby="workshop-heading">
+  <h2 id="workshop-heading" class="pub-section__title">Workshop Papers</h2>
+  <ol class="pub-cite-list">
+    {% for pub in workshops %}
+    <li>{% include pub-cite.html pub=pub %}</li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+{% endif %}

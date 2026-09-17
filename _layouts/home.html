@@ -1,64 +1,68 @@
 ---
 layout: default
 ---
-<div class="container container--wide home">
+<div class="container container--narrow home">
   <header class="hero">
     {% if site.author.name %}
     <h1 class="hero__name">{{ site.author.name }}</h1>
     {% endif %}
-    {% if site.author.bio %}
-    <p class="hero__bio">{{ site.author.bio }}</p>
-    {% endif %}
-    {% if site.author.location %}
-    <p class="hero__meta">{{ site.author.location }}{% if site.author.employer %} · {{ site.author.employer }}{% endif %}</p>
-    {% endif %}
-    {% include site-social.html %}
+    <p class="hero__tagline">Enhancing human mobility with wearable robots and learning-based control</p>
   </header>
 
-  {% assign featured_projects = site.data.projects | where: 'featured', true %}
-  {% if featured_projects.size > 0 %}
-  <section class="section" aria-labelledby="featured-projects-heading">
-    <div class="section__head">
-      <h2 id="featured-projects-heading">Projects</h2>
-      <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects</a>
+  {% if content != blank %}
+  <section class="section" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="section__title">About Me</h2>
+    <div class="prose">
+      {{ content }}
     </div>
-    <ul class="card-grid card-grid--projects">
-      {% for project in featured_projects %}
+  </section>
+  {% endif %}
+
+  <section class="section" aria-labelledby="positions-heading">
+    <h2 id="positions-heading" class="section__title">Academic Positions</h2>
+    <ul class="cv-list">
       <li>
-        {% include project-card.html project=project %}
+        <span class="cv-list__when">Aug 2025 – Present</span>
+        <span class="cv-list__what">Graduate Researcher · MS in Mechanical Engineering (Research Track) · <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a> · Carnegie Mellon University</span>
       </li>
-      {% endfor %}
+      <li>
+        <span class="cv-list__when">2024 – 2025</span>
+        <span class="cv-list__what">Research Intern · <a href="https://sites.google.com/snu.ac.kr/jkim/">Wearable Robotics Lab</a> · Seoul National University</span>
+      </li>
+      <li>
+        <span class="cv-list__when">2019 – 2025</span>
+        <span class="cv-list__what">Undergraduate Student · Electrical and Computer Engineering · Seoul National University</span>
+      </li>
     </ul>
   </section>
-  {% endif %}
 
-  {% assign pub_sorted = site.data.publications | sort: 'year' | reverse %}
-  {% assign featured_pubs = pub_sorted | where: 'featured', true %}
-  {% if featured_pubs.size == 0 %}
-    {% assign featured_pubs = pub_sorted | limit: 4 %}
-  {% endif %}
-  {% if featured_pubs.size > 0 %}
-  <section class="section" aria-labelledby="featured-pubs-heading">
-    <div class="section__head">
-      <h2 id="featured-pubs-heading">Publications</h2>
-      <a class="section__link" href="{{ '/publications/' | relative_url }}">All publications</a>
-    </div>
-    <ol class="pub-list pub-list--compact">
-      {% for pub in featured_pubs %}
-      <li class="pub-item">
-        <span class="pub-item__title">{{ pub.title }}</span>
-        {% if pub.authors %}<span class="pub-item__authors">{{ pub.authors }}</span>{% endif %}
-        {% if pub.venue %}<span class="pub-item__venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</span>{% endif %}
-        {% include pub-links.html pub=pub %}
+  <section class="section" aria-labelledby="education-heading">
+    <h2 id="education-heading" class="section__title">Education</h2>
+    <ul class="cv-list">
+      <li>
+        <span class="cv-list__when">2025 – Present</span>
+        <span class="cv-list__what">MS in Mechanical Engineering (Research Track) · Carnegie Mellon University</span>
       </li>
-      {% endfor %}
-    </ol>
+      <li>
+        <span class="cv-list__when">2019 – 2025</span>
+        <span class="cv-list__what">BS in Electrical and Computer Engineering · Seoul National University</span>
+      </li>
+    </ul>
   </section>
-  {% endif %}
 
-  {% if content != blank %}
-  <section class="section prose" aria-label="About">
-    {{ content }}
+  <section class="section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="section__title">Contact</h2>
+    <div class="contact">
+      {% if site.author.name %}<p class="contact__name">{{ site.author.name }}</p>{% endif %}
+      {% if site.author.employer %}<p>{{ site.author.employer }}</p>{% endif %}
+      {% if site.author.location %}<p>{{ site.author.location }}</p>{% endif %}
+      {% if site.author.email %}
+      <p>Email: <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+      {% endif %}
+      {% include site-social.html %}
+      <p class="contact__resume">
+        <a href="{{ site.author.resume | default: '/files/Hwang_Jinwoo_Resume.docx' | relative_url }}" download="Hwang_Jinwoo_Resume.docx">Full resume</a>
+      </p>
+    </div>
   </section>
-  {% endif %}
 </div>

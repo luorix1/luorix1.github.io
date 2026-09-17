@@ -1,31 +1,78 @@
-# One entry per publication. Optional keys: code_url, slides_url, tags (list), featured (bool), paper_url, project_url.
-# List is sorted by year on the site; use featured: true for the home page.
+# One entry per publication.
+# Required: title, authors, venue, year, type (journal | conference | workshop)
+# Optional: month, status, paper_url, project_url, code_url, slides_url, doi,
+#           abstract (markdown preview under the citation on /research/),
+#           equal_contribution_note, featured (bool)
+# List is grouped by type on /research/; use featured: true for highlights elsewhere.
+# For a complete publication list, point visitors to Google Scholar in _config.yml → author.googlescholar.
+#
+# Abstract previews: edit the `abstract` field (markdown allowed, e.g. **bold**).
+# Leave blank to hide the preview until you write one.
 
-- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
-  authors: "J. Hwang, I. Park, C. Song, V. Phan, E. Halilaj, I. Kang"
-  venue: "Manuscript in preparation"
+- title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
+  authors: "J. Hwang, I. Park, C. Song, V. Phan, I. Kang, and E. Halilaj"
+  venue: "IEEE Transactions on Biomedical Engineering"
   year: 2026
+  type: journal
+  status: "Manuscript submitted"
   project_url: "/publications/kinematics-joint-moments/"
   paper_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
   featured: true
+  abstract: |
+    Write a short abstract preview here. You can use **bold** for emphasis.
 
-- title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson's Disease"
-  authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, J. Kim"
+- title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
+  authors: "S. Kim, S. Noh, S. J. Yun, J. Hwang, Y. Kwon, B. Lim, Y. Lee, H. G. Seo, K. Kim, and J. Kim"
+  venue: "Journal of NeuroEngineering and Rehabilitation"
+  year: 2026
+  type: journal
+  status: "Manuscript submitted"
+  project_url: "/publications/personalized-hip-assistance/"
+  paper_url: "/files/personalized-hip-assistance-pd.pdf"
+  doi: "https://doi.org/10.21203/rs.3.rs-10612204/v1"
+  featured: true
+  abstract: |
+    Personalized bilateral hip assistance on the WIM wearable robot was tuned with **human-in-the-loop CMA-ES** to raise stride length toward healthy norms in individuals with Parkinson’s disease. Optimized assistance increased stride length by **23%**, improved cadence, hip ROM, and foot–floor angle, reduced freezing in one participant, and largely preserved benefits under **dual-task** walking.
+
+- title: "Paper title (ICRA placeholder — update later)"
+  authors: "J. Hwang et al."
+  venue: "IEEE International Conference on Robotics and Automation (ICRA)"
+  year: 2026
+  type: conference
+  status: "Manuscript in preparation"
+  project_url: "/publications/icra-placeholder/"
+  featured: false
+  abstract: |
+    Write a short abstract preview here. You can use **bold** for emphasis.
+
+- title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
+  authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, and J. Kim"
   venue: "International Conference on Neurorehabilitation (ICNR)"
   year: 2026
+  type: conference
+  status: "Extended abstract accepted"
   featured: true
+  abstract: |
+    Write a short abstract preview here. You can use **bold** for emphasis.
 
 - title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
-  authors: "J. Hwang, P. Benz, P. Kim"
+  authors: "J. Hwang, P. Benz, and P. Kim"
   venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
   year: 2024
+  type: conference
   paper_url: "https://openaccess.thecvf.com/content/WACV2024/papers/Hwang_Booster-SHOT_Boosting_Stacked_Homography_Transformations_for_Multiview_Pedestrian_Detection_With_WACV_2024_paper.pdf"
+  doi: "https://doi.org/10.1109/WACV57701.2024.00043"
   slides_url: "/files/Booster-SHOT_ Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention.pptx"
   featured: true
+  abstract: |
+    Write a short abstract preview here. You can use **bold** for emphasis.
 
-- title: "Privacy safe representation learning via frequency filtering encoder"
-  authors: "J. Jeong, M. Cho, P. Benz, J. Hwang, J. Kim, S. Lee, T. H. Kim"
+- title: "Privacy Safe Representation Learning via Frequency Filtering Encoder"
+  authors: "J. Jeong, M. Cho, P. Benz, J. Hwang, J. Kim, S. Lee, and T. H. Kim"
   venue: "IJCAI-ECAI Workshop on Artificial Intelligence Safety (AISafety)"
   year: 2022
+  type: workshop
   paper_url: "https://arxiv.org/pdf/2208.02482"
   featured: true
+  abstract: |
+    Write a short abstract preview here. You can use **bold** for emphasis.

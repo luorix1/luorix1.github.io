@@ -1,6 +1,5 @@
-# Optional: title, year, description, url, report_url, poster_url, video_url (YouTube URLs show an embedded looping preview on cards), tags, featured
-# Put long-form text on the page pointed to by url (under _pages/).
-# Academic project pages (CSP-style dark hero): see PROJECT_PAGE.md and layout: project-page.
+# Optional catalog for project pages (not shown in the top nav).
+# Long-form pages live under _pages/ or _publications/.
 
 - title: "Evaluating Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
   year: 2025
@@ -9,19 +8,23 @@
   report_url: "https://drive.google.com/file/d/17U8vsB2_QIyJAHGgTMYTSeoXzvY_FC2b/view?usp=sharing"
   poster_url: "https://drive.google.com/file/d/1VESNB0DVD6kp11nX7SPKapXAHo_yUA91/view?usp=sharing"
   video_url: "https://youtu.be/zh_afIG5tD8?si=M9-uuBIkWfsQ_fZE"
-  featured: true
 
-- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
+- title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
   year: 2026
   description: "Open-source-trained moment estimators deployed across hip exo, knee exo, and IMU kinematics without target-device fine-tuning."
   url: "/publications/kinematics-joint-moments/"
   report_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
   tags: ["exoskeleton", "biomechanics"]
-  featured: true
 
-- title: "Your Paper or Project Title Goes Here"
+- title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
   year: 2026
-  description: "Template placeholder — edit _pages/projects/placeholder.md (see PROJECT_PAGE.md)."
-  url: "/projects/placeholder/"
-  tags: ["template"]
-  featured: false
+  description: "Human-in-the-loop personalized WIM hip assistance for gait improvement in Parkinson’s disease."
+  url: "/publications/personalized-hip-assistance/"
+  report_url: "/files/personalized-hip-assistance-pd.pdf"
+  tags: ["parkinsons", "hip-assistance", "hilo"]
+
+- title: "Paper title (ICRA placeholder — update later)"
+  year: 2026
+  description: "Placeholder project page for an upcoming ICRA submission."
+  url: "/publications/icra-placeholder/"
+  tags: ["icra", "placeholder"]

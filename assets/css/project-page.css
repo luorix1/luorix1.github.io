@@ -247,6 +247,23 @@ body.project-page {
   text-align: left;
 }
 
+.pp-prose {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--navy-800, #1e293b);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.pp-prose p {
+  margin: 0 0 1rem;
+}
+
+.pp-prose strong {
+  font-weight: 700;
+  color: var(--navy-900, #0f172a);
+}
+
 .pp-section-title .pp-title-light {
   font-weight: 400;
 }

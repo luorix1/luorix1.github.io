@@ -52,7 +52,7 @@
       <div class="pp-wrap pp-hero__inner">
         <nav class="pp-topnav" aria-label="Site">
           <a href="{{ '/' | relative_url }}">← {{ site.title | default: site.name }}</a>
-          <a href="{{ '/projects/' | relative_url }}">All projects</a>
+          <a href="{{ '/research/' | relative_url }}">Research</a>
         </nav>
 
         {% if page.eyebrow %}<p class="pp-eyebrow">{{ page.eyebrow }}</p>{% endif %}
@@ -224,7 +224,7 @@
           / the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>.
         {% endif %}
         {% if page.back_to_projects != false %}
-        <br><a href="{{ '/projects/' | relative_url }}">← Back to projects</a>
+        <br><a href="{{ '/research/' | relative_url }}">← Back to research</a>
         {% endif %}
       </p>
     </div>

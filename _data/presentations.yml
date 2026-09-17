@@ -1,0 +1,20 @@
+# Talks, posters, and conference presentations (newest first).
+- title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
+  venue: "7th International Conference on NeuroRehabilitation (ICNR)"
+  location: "Seoul, Republic of Korea"
+  year: 2026
+  type: "Extended abstract"
+  note: "Accepted"
+
+- title: "Evaluating Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
+  venue: "Course project presentation / poster"
+  year: 2025
+  type: "Poster"
+  url: "/projects/aerial-righting/"
+  poster_url: "https://drive.google.com/file/d/1VESNB0DVD6kp11nX7SPKapXAHo_yUA91/view?usp=sharing"
+
+- title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
+  venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+  year: 2024
+  type: "Conference paper"
+  url: "https://doi.org/10.1109/WACV57701.2024.00043"

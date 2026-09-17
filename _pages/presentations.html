@@ -1,0 +1,44 @@
+---
+layout: page
+title: Presentations
+permalink: /presentations/
+wide: true
+plain: true
+---
+
+{% assign items = site.data.presentations %}
+{% if items == nil or items.size == 0 %}
+<p class="lead">Presentations will be listed here.</p>
+{% else %}
+<ul class="item-list">
+  {% for talk in items %}
+  <li class="item-list__entry">
+    <h2 class="item-list__title">
+          {% if talk.url %}
+          {% if talk.url contains 'http' %}
+          <a href="{{ talk.url }}">{{ talk.title }}</a>
+          {% else %}
+          <a href="{{ talk.url | relative_url }}">{{ talk.title }}</a>
+          {% endif %}
+          {% else %}
+          {{ talk.title }}
+          {% endif %}
+    </h2>
+    <p class="item-list__meta">
+      {% if talk.type %}{{ talk.type }}{% endif %}
+      {% if talk.venue %}{% if talk.type %} · {% endif %}<em>{{ talk.venue }}</em>{% endif %}
+      {% if talk.location %} · {{ talk.location }}{% endif %}
+      {% if talk.year %}{% if talk.type or talk.venue or talk.location %} · {% endif %}{{ talk.year }}{% endif %}
+      {% if talk.note %} ({{ talk.note }}){% endif %}
+    </p>
+    {% if talk.poster_url or talk.slides_url or talk.video_url %}
+    <p class="item-list__links">
+      {% if talk.poster_url %}<a href="{{ talk.poster_url }}">Poster</a>{% endif %}
+      {% if talk.slides_url %}{% if talk.poster_url %} · {% endif %}<a href="{{ talk.slides_url }}">Slides</a>{% endif %}
+      {% if talk.video_url %}{% if talk.poster_url or talk.slides_url %} · {% endif %}<a href="{{ talk.video_url }}">Video</a>{% endif %}
+    </p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

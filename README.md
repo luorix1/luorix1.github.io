@@ -2,8 +2,6 @@
 
 Jekyll source for [luorix1.github.io](https://luorix1.github.io). Content and layout live in `_pages/`, `_data/`, `_layouts/`, and `assets/css/`.
 
-For academic project pages (dark-hero style like [Continual Online Personalization](https://changseob-song.github.io/continual-online-personalization/)), see **[PROJECT_PAGE.md](PROJECT_PAGE.md)**. Live fill-in example: [`/projects/placeholder/`](https://luorix1.github.io/projects/placeholder/).
-
 ## Running locally (recommended)
 
 From the repository root, install dependencies once:
@@ -12,7 +10,7 @@ From the repository root, install dependencies once:
 bundle install
 ```
 
-**Start the preview server** (serves on port **4000**, watches files, and enables LiveReload on port **35729**):
+**Start the preview server** (serves on port **4000**, uses polling so it works on Linux systems with low inotify limits, and enables LiveReload on port **35729**):
 
 ```bash
 chmod +x bin/serve   # once, if needed
@@ -22,7 +20,7 @@ chmod +x bin/serve   # once, if needed
 That runs:
 
 ```text
-bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload --livereload-port 35729
+bundle exec jekyll serve --host 0.0.0.0 --port 4000 --force_polling --livereload --livereload-port 35729
 ```
 
 Open **http://127.0.0.1:4000** or **http://localhost:4000**. After you save a file, the site rebuilds; refresh may happen automatically if LiveReload works in your browser.
@@ -32,7 +30,7 @@ Open **http://127.0.0.1:4000** or **http://localhost:4000**. After you save a fi
 - `bundle install` may require **Ruby 3+**. On older macOS system Ruby (2.6), the `Gemfile` pins `ffi` to help; using [Homebrew](https://brew.sh/)’s `ruby` or a version manager is still preferable.
 - Optional: set a different LiveReload port with `LIVERELOAD_PORT=12345 ./bin/serve` (must match `livereload_port` in `_config.yml` if you change it).
 - Plain equivalent without the script:  
-  `bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload`
+   `bundle exec jekyll serve --host 0.0.0.0 --port 4000 --force_polling --livereload`
 - A small plugin under `_plugins/` only affects local `jekyll serve` (GitHub Pages does not run custom plugins in safe mode). Production HTML does not include the LiveReload script.
 
 ### `Address already in use` on **4000** (or another HTTP port)
@@ -88,12 +86,11 @@ LIVERELOAD_PORT=35730 ./bin/serve
 | What | Where |
 |------|--------|
 | Name, bio, social links, site title | `_config.yml` → `author`, `title`, `description` |
-| Navigation | `_data/navigation.yml` |
-| Home page | `_pages/about.md` |
-| Publications list | `_data/publications.yml` |
-| Projects | `_data/projects.yml` (`url`, `report_url`, `poster_url`, `video_url`, …) |
-| Resume | `_pages/resume.md` |
-| Blog posts | `_posts/` |
+| Top nav (Home / Research / Presentations) | `_data/navigation.yml` |
+| Home page about text | `_pages/about.md` |
+| Research (selected pubs; Scholar for full list) | `_data/publications.yml` (`type`, `abstract` markdown preview, optional `project_url`) |
+| Presentations | `_data/presentations.yml` |
+| Resume (download) | `files/Hwang_Jinwoo_Resume.docx` (`author.resume` in `_config.yml`) |
 
 ## Using Docker (optional)
 
