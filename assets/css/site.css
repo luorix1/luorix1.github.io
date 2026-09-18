@@ -302,6 +302,16 @@ a:hover {
   font-size: 1.05rem;
 }
 
+.resume-bullets {
+  margin: 0.45rem 0 0 1.15rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.resume-bullets li + li {
+  margin-top: 0.25rem;
+}
+
 /* Clean item lists (Research / Presentations / Publications) */
 .item-list {
   list-style: none;

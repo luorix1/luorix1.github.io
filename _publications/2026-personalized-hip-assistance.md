@@ -39,12 +39,12 @@ authors:
 affiliations: "Seoul National University · Seoul National University Hospital · Carnegie Mellon University · UNC Chapel Hill & NC State · Korea University of Technology and Education · WIRobotics Inc."
 
 links:
-  - label: Preprint PDF
+  - label: Project
+    url: /publications/personalized-hip-assistance/
+    icon: website
+  - label: PDF
     url: /files/personalized-hip-assistance-pd.pdf
     icon: paper
-  - label: Research Square
-    url: https://doi.org/10.21203/rs.3.rs-10612204/v1
-    icon: website
 
 highlights_title: "Why this matters"
 highlights:
@@ -139,14 +139,14 @@ footer_blurb: "This page summarizes the preprint <strong>Personalized Hip Assist
     </div>
     <div class="pp-prose">
       <p>
-        Using the commercial WIM hip exoskeleton, we optimized bilateral flexion/extension assistance
-        with <strong>human-in-the-loop CMA-ES</strong> so each participant’s stride length moved toward
-        an age-, sex-, and height-matched healthy target. Across ten individuals with PD
-        (mH&amp;Y 2.5–4), personalized assistance produced a <strong>23% mean increase in stride length</strong>,
-        normalized cadence, and improved hip and foot kinematics; benefits generalized to
-        non-assisted joints and largely held under dual-task walking. One participant’s FoG was
-        abolished while assisted. Usability ratings were favorable (mean 5.4/7). Future work should
-        address day-to-day PD variability with <strong>adaptive</strong> rather than one-shot optimization.
+        Parkinson’s disease commonly causes gait impairments such as reduced stride length,
+        shuffling, festination, stooped posture, and freezing of gait. To address the limited
+        effectiveness of conventional interventions, this study tested whether personalized hip
+        assistance from a wearable robot could improve gait in individuals with PD. Using
+        <strong>human-in-the-loop optimization</strong> for 10 participants, personalized assistance increased
+        stride length by <strong>23%</strong>, improved cadence, stride-time variability, hip ROM, and
+        foot-to-floor angle, reduced freezing in one participant, and largely preserved benefits under
+        <strong>dual-task</strong> walking.
       </p>
     </div>
   </div>

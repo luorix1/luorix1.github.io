@@ -9,8 +9,8 @@
         {% assign is_active = false %}
         {% if link.url == '/' %}
           {% if current_path == '/' %}{% assign is_active = true %}{% endif %}
-        {% elsif link.url == '/research/' %}
-          {% if current_path == '/research/' or current_path contains '/publication' or current_path contains '/projects/' %}
+        {% elsif link.url == '/publications/' %}
+          {% if current_path == '/publications/' or current_path contains '/publication' or current_path contains '/projects/' %}
             {% assign is_active = true %}
           {% endif %}
         {% else %}

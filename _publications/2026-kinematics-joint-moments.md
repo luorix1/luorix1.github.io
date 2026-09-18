@@ -19,20 +19,26 @@ summary: "Joint angles and angular velocities serve as a shared intermediate rep
 
 authors:
   - name: Jinwoo Hwang
-    url: /
+    url: https://scholar.google.com/citations?user=JQSj-loAAAAJ&hl=en
   - name: Ilseung Park
+    url: https://scholar.google.com/citations?hl=en&user=Cn8JxjQAAAAJ
   - name: Changseob Song
-    url: https://changseob-song.github.io/
+    url: https://scholar.google.com/citations?hl=en&user=lj-qBkQAAAAJ
   - name: Vu Phan
+    url: https://scholar.google.com/citations?hl=en&user=X9vyIRMAAAAJ
   - name: Eni Halilaj
+    url: https://scholar.google.com/citations?user=Fr9Vhe4AAAAJ&hl=en
   - name: Inseung Kang
     url: https://scholar.google.com/citations?user=jcgAPTYAAAAJ&hl=en
 
 affiliations: "Carnegie Mellon University"
 
 links:
-  - label: Paper
-    url: /files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf
+  - label: PDF
+    url: /files/main.pdf
+    icon: paper
+  - label: Supplementary
+    url: /files/supp.pdf
     icon: paper
 
 highlights_title: "Why this matters"
@@ -62,7 +68,7 @@ bibtex: |
   @article{hwang2026kinematics,
     title={A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation},
     author={Hwang, Jinwoo and Park, Ilseung and Song, Changseob and Phan, Vu and Halilaj, Eni and Kang, Inseung},
-    journal={Manuscript submitted},
+    journal={},
     year={2026}
   }
 
@@ -115,5 +121,6 @@ footer_blurb: "This page presents the manuscript <strong>A Unified Kinematic Rep
   src="/images/publications/kinematics-joint-moments/multi_vs_single_joint.png"
   alt="Multi-joint versus single-joint performance comparison"
   caption="Multi-joint (3-DoF) inputs improve both RMSE and R² relative to single-joint (1-DoF) models across the hip, knee, and ankle, with the strongest gains in the IMU deployment setting."
+  narrow=true
 %}
 

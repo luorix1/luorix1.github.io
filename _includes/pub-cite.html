@@ -22,7 +22,7 @@
     <em class="pub-cite__title">{{ pub.title }}</em>,
     {% endif %}
     {{ pub.venue }}{% if pub.month %}, {{ pub.month }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}{% if pub.status %} ({{ pub.status }}){% endif %}.
-    {% if pub.project_url or pub.paper_url or pub.code_url or pub.slides_url or pub.doi %}
+    {% if pub.project_url or pub.paper_url or pub.code_url or pub.slides_url %}
     <span class="pub-cite__links">
       {% if pub.project_url %}
       <a href="{% if pub.project_url contains 'http' %}{{ pub.project_url }}{% else %}{{ pub.project_url | relative_url }}{% endif %}">Project</a>
@@ -31,16 +31,12 @@
       {% if pub.project_url %} · {% endif %}
       <a href="{% if pub.paper_url contains 'http' %}{{ pub.paper_url }}{% else %}{{ pub.paper_url | relative_url }}{% endif %}">PDF</a>
       {% endif %}
-      {% if pub.doi %}
-      {% if pub.project_url or pub.paper_url %} · {% endif %}
-      <a href="{{ pub.doi }}">DOI</a>
-      {% endif %}
       {% if pub.code_url %}
-      {% if pub.project_url or pub.paper_url or pub.doi %} · {% endif %}
+      {% if pub.project_url or pub.paper_url %} · {% endif %}
       <a href="{% if pub.code_url contains 'http' %}{{ pub.code_url }}{% else %}{{ pub.code_url | relative_url }}{% endif %}">Code</a>
       {% endif %}
       {% if pub.slides_url %}
-      {% if pub.project_url or pub.paper_url or pub.doi or pub.code_url %} · {% endif %}
+      {% if pub.project_url or pub.paper_url or pub.code_url %} · {% endif %}
       {% if pub.slides_url contains 'http' %}
       <a href="{{ pub.slides_url }}">Slides</a>
       {% else %}

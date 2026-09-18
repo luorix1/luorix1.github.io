@@ -19,7 +19,7 @@
   paper_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
   featured: true
   abstract: |
-    Write a short abstract preview here. You can use **bold** for emphasis.
+    Joint angles and angular velocities form a shared intermediate representation that lets open-source-trained estimators transfer across hip and knee exoskeletons and an IMU sensor suite without target-device fine-tuning.
 
 - title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
   authors: "S. Kim, S. Noh, S. J. Yun, J. Hwang, Y. Kwon, B. Lim, Y. Lee, H. G. Seo, K. Kim, and J. Kim"
@@ -32,7 +32,7 @@
   doi: "https://doi.org/10.21203/rs.3.rs-10612204/v1"
   featured: true
   abstract: |
-    Personalized bilateral hip assistance on the WIM wearable robot was tuned with **human-in-the-loop CMA-ES** to raise stride length toward healthy norms in individuals with Parkinson’s disease. Optimized assistance increased stride length by **23%**, improved cadence, hip ROM, and foot–floor angle, reduced freezing in one participant, and largely preserved benefits under **dual-task** walking.
+    Parkinson’s disease commonly causes gait impairments such as reduced stride length, shuffling, festination, stooped posture, and freezing of gait. To address the limited effectiveness of conventional interventions, this study tested whether personalized hip assistance from a wearable robot could improve gait in individuals with PD. Using **human-in-the-loop optimization** for 10 participants, personalized assistance increased stride length by **23%**, improved cadence, stride-time variability, hip ROM, and foot-to-floor angle, reduced freezing in one participant, and largely preserved benefits under **dual-task** walking.
 
 - title: "Paper title (ICRA placeholder — update later)"
   authors: "J. Hwang et al."
@@ -43,7 +43,7 @@
   project_url: "/publications/icra-placeholder/"
   featured: false
   abstract: |
-    Write a short abstract preview here. You can use **bold** for emphasis.
+    Manuscript in preparation. Abstract preview will be added once the submission is finalized.
 
 - title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
   authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, and J. Kim"
@@ -53,26 +53,28 @@
   status: "Extended abstract accepted"
   featured: true
   abstract: |
-    Write a short abstract preview here. You can use **bold** for emphasis.
+    Extended abstract reporting that personalized hip assistance improved stride length and whole-body gait biomechanics in individuals with Parkinson’s disease, with benefits largely preserved during dual-task walking.
 
 - title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
   authors: "J. Hwang, P. Benz, and P. Kim"
   venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
   year: 2024
   type: conference
+  project_url: "/publication/2024-01-07-boostershot"
   paper_url: "https://openaccess.thecvf.com/content/WACV2024/papers/Hwang_Booster-SHOT_Boosting_Stacked_Homography_Transformations_for_Multiview_Pedestrian_Detection_With_WACV_2024_paper.pdf"
   doi: "https://doi.org/10.1109/WACV57701.2024.00043"
   slides_url: "/files/Booster-SHOT_ Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention.pptx"
   featured: true
   abstract: |
-    Write a short abstract preview here. You can use **bold** for emphasis.
+    Improving multi-view aggregation is integral for multiview pedestrian detection, which aims to obtain a bird’s-eye-view pedestrian occupancy map from images captured through a set of calibrated cameras. Inspired by the success of attention modules for deep neural networks, we first propose a Homography Attention Module (HAM) which is shown to boost the performance of existing end-to-end multiview detection approaches by utilizing a novel channel gate and spatial gate. Additionally, we propose Booster-SHOT, an end-to-end convolutional approach to multiview pedestrian detection incorporating our proposed HAM as well as elements from previous approaches such as view-coherent augmentation or stacked homography transformations. Booster-SHOT achieves 92.9% and 94.2% for MODA on Wildtrack and MultiviewX respectively, outperforming the state-of-the-art by 1.4% on Wildtrack and 0.5% on MultiviewX, achieving state-of-the-art performance overall for standard evaluation metrics used in multi-view pedestrian detection.
 
 - title: "Privacy Safe Representation Learning via Frequency Filtering Encoder"
   authors: "J. Jeong, M. Cho, P. Benz, J. Hwang, J. Kim, S. Lee, and T. H. Kim"
   venue: "IJCAI-ECAI Workshop on Artificial Intelligence Safety (AISafety)"
   year: 2022
   type: workshop
+  project_url: "/publication/2022-07-17-privacy"
   paper_url: "https://arxiv.org/pdf/2208.02482"
   featured: true
   abstract: |
-    Write a short abstract preview here. You can use **bold** for emphasis.
+    Deep learning models are increasingly deployed in real-world applications. These models are often deployed on the server-side and receive user data in an information-rich representation to solve a specific task, such as image classification. Since images can contain sensitive information, which users might not be willing to share, privacy protection becomes increasingly important. Adversarial Representation Learning (ARL) is a common approach to train an encoder that runs on the client-side and obfuscates an image. It is assumed, that the obfuscated image can safely be transmitted and used for the task on the server without privacy concerns. However, in this work, we find that training a reconstruction attacker can successfully recover the original image of existing ARL methods. To this end, we introduce a novel ARL method enhanced through low-pass filtering, limiting the available information amount to be encoded in the frequency domain. Our experimental results reveal that our approach withstands reconstruction attacks while outperforming previous state-of-the-art methods regarding the privacy-utility trade-off. We further conduct a user study to qualitatively assess our defense of the reconstruction attack.
