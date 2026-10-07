@@ -31,11 +31,11 @@ authors:
   - name: Inseung Kang
     url: https://scholar.google.com/citations?user=jcgAPTYAAAAJ&hl=en
 
-affiliations: "Carnegie Mellon University"
+affiliations: "Carnegie Mellon University, Mechanical Engineering"
 
 links:
   - label: PDF
-    url: /files/main.pdf
+    url: /files/main_V6.pdf
     icon: paper
   - label: Supplementary
     url: /files/supp.pdf
@@ -64,15 +64,7 @@ stats:
   - value: "17%"
     label: "lower RMSE vs. single-joint IMU inputs"
 
-bibtex: |
-  @article{hwang2026kinematics,
-    title={A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation},
-    author={Hwang, Jinwoo and Park, Ilseung and Song, Changseob and Phan, Vu and Halilaj, Eni and Kang, Inseung},
-    journal={},
-    year={2026}
-  }
-
-footer_blurb: "This page presents the manuscript <strong>A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation</strong>. Layout adapted from the Academic Project Page Template."
+bibtex: "TBD pending arXiv acceptance."
 ---
 
 {% include project-pullquote.html
@@ -97,30 +89,33 @@ footer_blurb: "This page presents the manuscript <strong>A Unified Kinematic Rep
     narrow=true
 %}
 
-{% include project-method-pair.html
-    title="Exoskeleton deployment"
-    left_title="Hip exoskeleton"
-  left_src="/images/publications/kinematics-joint-moments/hip_per_gc.png"
-    left_alt="Hip exoskeleton kinematics and predicted hip moments"
-    left_caption="Encoder/IMU hip kinematics and predicted hip moments across level-ground speeds and ramp ascent. Predictions track OpenSim reference moments (shaded: ±1 SD)."
-    right_title="Knee exoskeleton"
-  right_src="/images/publications/kinematics-joint-moments/knee_per_gc.png"
-    right_alt="Knee exoskeleton kinematics and predicted knee moments"
-    right_caption="Encoder/IMU knee kinematics and predicted knee moments during ramp ascent and descent (shaded: ±1 SD). Performance was generally lower during ramp descent, where the greater variability in the ground-truth profiles also indicates more variable gait across participants."
+{% include project-figure.html
+    title="Exoskeleton deployment: hip exoskeleton"
+    src="/images/publications/kinematics-joint-moments/HIP.png"
+    alt="Hip exoskeleton predicted and reference hip joint moments"
+    caption="Predicted and OpenSim reference hip joint moments across level-ground speeds and ramp ascent (shaded: ±1 SD)."
+    narrow=true
 %}
 
 {% include project-figure.html
-    title="IMU sensor suite: kinematics and moments"
-  src="/images/publications/kinematics-joint-moments/imu_per_gc.png"
-    alt="Awinda IMU kinematics and predicted joint moments across gait conditions"
-    caption="Awinda-derived hip, knee, and ankle angles (left) versus Vicon IK, and predicted moments (right) versus OpenSim references across level-ground and ramp walking (shaded: ±1 SD). Non-actuated, body-mounted sensing yields cleaner kinematics than the exo trials, improving moment estimates. Same open-source-trained multi-joint model; no target-device fine-tuning."
+    title="Exoskeleton deployment: knee exoskeleton"
+    src="/images/publications/kinematics-joint-moments/KNEE.png"
+    alt="Knee exoskeleton predicted and reference knee joint moments"
+    caption="Predicted and OpenSim reference knee joint moments during ramp ascent and descent (shaded: ±1 SD). Performance was generally lower during ramp descent, where the greater variability in the ground-truth profiles also indicates more variable gait across participants."
+    narrow=true
 %}
 
 {% include project-figure.html
-    title="Benefit of multi-joint kinematic context"
+    title="IMU sensor suite: joint moments"
+  src="/images/publications/kinematics-joint-moments/IMU.png"
+    alt="IMU-predicted and reference hip, knee, and ankle joint moments across gait conditions"
+    caption="Predicted and OpenSim reference hip, knee, and ankle joint moments across level-ground and ramp walking (shaded: ±1 SD). Same open-source-trained multi-joint model; no target-device fine-tuning."
+%}
+
+{% include project-figure.html
+  title="Benefit of multi-joint kinematic context"
   src="/images/publications/kinematics-joint-moments/multi_vs_single_joint.png"
   alt="Multi-joint versus single-joint performance comparison"
   caption="Multi-joint (3-DoF) inputs improve both RMSE and R² relative to single-joint (1-DoF) models across the hip, knee, and ankle, with the strongest gains in the IMU deployment setting."
   narrow=true
 %}
-

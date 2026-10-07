@@ -51,8 +51,7 @@
     <header class="pp-hero">
       <div class="pp-wrap pp-hero__inner">
         <nav class="pp-topnav" aria-label="Site">
-          <a href="{{ '/' | relative_url }}">← {{ site.title | default: site.name }}</a>
-          <a href="{{ '/publications/' | relative_url }}">Publications</a>
+          <a href="{{ '/' | relative_url }}">← Home</a>
         </nav>
 
         {% if page.eyebrow %}<p class="pp-eyebrow">{{ page.eyebrow }}</p>{% endif %}
@@ -211,24 +210,6 @@
     </section>
     {% endif %}
   </main>
-
-  <footer class="pp-footer">
-    <div class="pp-wrap pp-wrap--narrow">
-      <p>
-        {% if page.footer_blurb %}
-          {{ page.footer_blurb }}
-        {% else %}
-          This page presents <strong>{{ page.title }}</strong>.
-          Layout adapted from
-          <a href="https://changseob-song.github.io/continual-online-personalization/" target="_blank" rel="noopener noreferrer">Continual Online Personalization</a>
-          / the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>.
-        {% endif %}
-        {% if page.back_to_projects != false %}
-        <br><a href="{{ '/research/' | relative_url }}">← Back to research</a>
-        {% endif %}
-      </p>
-    </div>
-  </footer>
 
   <script src="{{ '/assets/js/project-page.js' | relative_url }}" defer></script>
 </body>
