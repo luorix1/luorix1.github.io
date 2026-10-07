@@ -170,7 +170,6 @@ a:hover {
 .hero__tagline {
   font-size: 1.1rem;
   color: var(--muted);
-  max-width: 36rem;
   margin: 0;
   line-height: 1.45;
 }
@@ -205,8 +204,6 @@ a:hover {
 /* Home */
 .home {
   min-width: 0;
-  width: 100%;
-  max-width: 100%;
 }
 
 /* Sections */
@@ -254,7 +251,8 @@ a:hover {
   padding: 0;
 }
 
-.cv-list li {
+/* Child combinator: nested .resume-bullets items must not inherit the grid row styling */
+.cv-list > li {
   display: grid;
   grid-template-columns: 11.5rem minmax(0, 1fr);
   column-gap: 1.25rem;
@@ -264,7 +262,7 @@ a:hover {
   align-items: baseline;
 }
 
-.cv-list li:last-child {
+.cv-list > li:last-child {
   border-bottom: 0;
 }
 
@@ -303,9 +301,18 @@ a:hover {
 }
 
 .resume-bullets {
-  margin: 0.45rem 0 0 1.15rem;
+  list-style: disc;
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
   color: var(--muted);
   font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.resume-bullets li {
+  display: list-item;
+  padding: 0;
+  border: 0;
 }
 
 .resume-bullets li + li {
@@ -472,8 +479,28 @@ a:hover {
   text-decoration: none;
 }
 
-a.pub-cite__title:hover {
+/* Linked titles (to project pages) get the accent color + a faint underline so they read as clickable */
+.pub-cite a.pub-cite__title {
   color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 115, 232, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.pub-cite a.pub-cite__title:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
+.pub-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--border);
+  max-width: 40rem;
 }
 
 .pub-cite__title em,
@@ -716,7 +743,7 @@ a.pub-cite__title:hover {
     margin-left: -0.7rem;
   }
 
-  .cv-list li {
+  .cv-list > li {
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 0.15rem;

@@ -1,18 +1,13 @@
 {%- comment -%}
   Citation line + optional abstract preview (markdown in pub.abstract).
+  The title links to the project page (pub.project_url) when one exists.
 {%- endcomment -%}
 {%- assign pub = include.pub -%}
 {%- assign highlight_short = 'J. Hwang' -%}
 <div class="pub-entry">
   <p class="pub-cite">
     <span class="pub-cite__authors">{{ pub.authors | replace: highlight_short, '<strong>J. Hwang</strong>' }}</span>,
-    {% if pub.paper_url %}
-      {% if pub.paper_url contains 'http' %}
-      <a class="pub-cite__title" href="{{ pub.paper_url }}"><em>{{ pub.title }}</em></a>,
-      {% else %}
-      <a class="pub-cite__title" href="{{ pub.paper_url | relative_url }}"><em>{{ pub.title }}</em></a>,
-      {% endif %}
-    {% elsif pub.project_url %}
+    {% if pub.project_url %}
       {% if pub.project_url contains 'http' %}
       <a class="pub-cite__title" href="{{ pub.project_url }}"><em>{{ pub.title }}</em></a>,
       {% else %}
@@ -22,28 +17,9 @@
     <em class="pub-cite__title">{{ pub.title }}</em>,
     {% endif %}
     {{ pub.venue }}{% if pub.month %}, {{ pub.month }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}{% if pub.status %} ({{ pub.status }}){% endif %}.
-    {% if pub.project_url or pub.paper_url or pub.code_url or pub.slides_url %}
+    {% if pub.code_url %}
     <span class="pub-cite__links">
-      {% if pub.project_url %}
-      <a href="{% if pub.project_url contains 'http' %}{{ pub.project_url }}{% else %}{{ pub.project_url | relative_url }}{% endif %}">Project</a>
-      {% endif %}
-      {% if pub.paper_url %}
-      {% if pub.project_url %} · {% endif %}
-      <a href="{% if pub.paper_url contains 'http' %}{{ pub.paper_url }}{% else %}{{ pub.paper_url | relative_url }}{% endif %}">PDF</a>
-      {% endif %}
-      {% if pub.code_url %}
-      {% if pub.project_url or pub.paper_url %} · {% endif %}
       <a href="{% if pub.code_url contains 'http' %}{{ pub.code_url }}{% else %}{{ pub.code_url | relative_url }}{% endif %}">Code</a>
-      {% endif %}
-      {% if pub.slides_url %}
-      {% if pub.project_url or pub.paper_url or pub.code_url %} · {% endif %}
-      {% if pub.slides_url contains 'http' %}
-      <a href="{{ pub.slides_url }}">Slides</a>
-      {% else %}
-      {% assign su = pub.slides_url | replace: ' ', '%20' %}
-      <a href="{{ su | relative_url }}">Slides</a>
-      {% endif %}
-      {% endif %}
     </span>
     {% endif %}
   </p>

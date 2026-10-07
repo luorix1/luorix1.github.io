@@ -34,7 +34,7 @@
 
   <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/project-page.css' | relative_url }}?v=2">
+  <link rel="stylesheet" href="{{ '/assets/css/project-page.css' | relative_url }}?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,7 +67,7 @@
           {% for a in page.authors %}
           <span class="pp-author">
             {% if a.url %}<a href="{{ a.url }}"{% if a.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>{% endif %}
-            {{ a.name }}{% if a.equal %}<sup>*</sup>{% endif %}
+            {{ a.name }}{% if a.affil or a.equal %}<sup>{{ a.affil | join: ',' }}{% if a.equal %}*{% endif %}</sup>{% endif %}
             {% if a.url %}</a>{% endif %}
           </span>
           {% unless forloop.last %}<span class="pp-author-sep" aria-hidden="true">·</span>{% endunless %}
@@ -80,7 +80,13 @@
         {% endif %}
 
         {% if page.affiliations %}
-        <p class="pp-affiliations">{{ page.affiliations }}</p>
+        <p class="pp-affiliations">
+          {% if page.affiliations.first %}
+          {% for af in page.affiliations %}<span class="pp-affiliation"><sup>{{ forloop.index }}</sup>{{ af }}</span>{% unless forloop.last %}<span class="pp-author-sep" aria-hidden="true"> · </span>{% endunless %}{% endfor %}
+          {% else %}
+          {{ page.affiliations }}
+          {% endif %}
+        </p>
         {% endif %}
 
         {% if page.links %}

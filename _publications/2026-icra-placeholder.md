@@ -1,5 +1,6 @@
 ---
 layout: project-page
+published: false  # hidden for now; set to true (or remove) to publish
 title: "Paper title (ICRA placeholder — update later)"
 collection: publications
 category: conferences

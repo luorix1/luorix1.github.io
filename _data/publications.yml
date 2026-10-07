@@ -2,31 +2,32 @@
 # Required: title, authors, venue, year, type (journal | conference | workshop)
 # Optional: month, status, paper_url, project_url, code_url, slides_url, doi,
 #           abstract (markdown preview under the citation on /research/),
-#           equal_contribution_note, featured (bool)
+#           equal_contribution_note, featured (bool),
+#           hidden (bool; omit the entry from /publications/ without deleting it)
 # List is grouped by type on /research/; use featured: true for highlights elsewhere.
 # For a complete publication list, point visitors to Google Scholar in _config.yml → author.googlescholar.
 #
 # Abstract previews: edit the `abstract` field (markdown allowed, e.g. **bold**).
 # Leave blank to hide the preview until you write one.
 
-- title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
+- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
   authors: "J. Hwang, I. Park, C. Song, V. Phan, I. Kang, and E. Halilaj"
   venue: "IEEE Transactions on Biomedical Engineering"
   year: 2026
   type: journal
   status: "Manuscript submitted"
   project_url: "/publications/kinematics-joint-moments/"
-  paper_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
+  paper_url: "/files/main_V6.pdf"
   featured: true
   abstract: |
-    Joint angles and angular velocities form a shared intermediate representation that lets open-source-trained estimators transfer across hip and knee exoskeletons and an IMU sensor suite without target-device fine-tuning.
+    **Objective:** Data-driven models that estimate physiological states, particularly biological joint moments, are widely used in exoskeleton control. However, these estimators are often coupled to device-specific sensor configurations, limiting controller transfer and the use of open-source biomechanics datasets. **Methods:** We proposed joint kinematics as an intermediate representation that decouples hardware-specific sensing from downstream biological joint moment estimation. A joint-moment estimator using joint angles and angular velocities was trained exclusively on open-source biomechanics data and evaluated using kinematics from a hip exoskeleton, knee exoskeleton, and inertial measurement unit (IMU) sensor suite during level-ground, ramp-ascent, and ramp-descent walking. **Results:** The estimator achieved a root mean square error (RMSE) of 0.17 Nm/kg and coefficient of determination (R²) of 0.79 using hip exoskeleton kinematics, 0.19 Nm/kg and 0.62 using knee exoskeleton kinematics, and 0.15 Nm/kg and 0.85 using kinematics derived from IMUs across bilateral hip, knee, and ankle joints. **Conclusion:** Joint kinematics enabled an estimator trained only on open-source data to operate across distinct wearable platforms. **Significance:** This framework may reduce target-device data collection and support transferable biological joint moment estimation for exoskeleton control and wearable biomechanics.
 
 - title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
   authors: "S. Kim, S. Noh, S. J. Yun, J. Hwang, Y. Kwon, B. Lim, Y. Lee, H. G. Seo, K. Kim, and J. Kim"
   venue: "Journal of NeuroEngineering and Rehabilitation"
   year: 2026
   type: journal
-  status: "Manuscript submitted"
+  status: "Manuscript under review"
   project_url: "/publications/personalized-hip-assistance/"
   paper_url: "/files/personalized-hip-assistance-pd.pdf"
   doi: "https://doi.org/10.21203/rs.3.rs-10612204/v1"
@@ -42,12 +43,13 @@
   status: "Manuscript in preparation"
   project_url: "/publications/icra-placeholder/"
   featured: false
+  hidden: true
   abstract: |
     Manuscript in preparation. Abstract preview will be added once the submission is finalized.
 
 - title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
   authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, and J. Kim"
-  venue: "International Conference on Neurorehabilitation (ICNR)"
+  venue: "7th International Conference on NeuroRehabilitation (ICNR), Seoul, Republic of Korea"
   year: 2026
   type: conference
   status: "Extended abstract accepted"
@@ -60,7 +62,7 @@
   venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
   year: 2024
   type: conference
-  project_url: "/publication/2024-01-07-boostershot"
+  project_url: "/publications/boostershot/"
   paper_url: "https://openaccess.thecvf.com/content/WACV2024/papers/Hwang_Booster-SHOT_Boosting_Stacked_Homography_Transformations_for_Multiview_Pedestrian_Detection_With_WACV_2024_paper.pdf"
   doi: "https://doi.org/10.1109/WACV57701.2024.00043"
   slides_url: "/files/Booster-SHOT_ Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention.pptx"
@@ -73,7 +75,7 @@
   venue: "IJCAI-ECAI Workshop on Artificial Intelligence Safety (AISafety)"
   year: 2022
   type: workshop
-  project_url: "/publication/2022-07-17-privacy"
+  project_url: "/publications/privacy-frequency-filtering/"
   paper_url: "https://arxiv.org/pdf/2208.02482"
   featured: true
   abstract: |

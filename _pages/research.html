@@ -21,7 +21,12 @@ redirect_from:
 <p class="lead">Selected works are listed below.</p>
 {% endif %}
 
-{% assign pubs = site.data.publications | sort: 'year' | reverse %}
+<p class="pub-note">
+  Note: some of the works below are currently under review or pending publication.
+  Their status is indicated next to each entry, and details may change before final publication.
+</p>
+
+{% assign pubs = site.data.publications | where_exp: 'p', 'p.hidden != true' | sort: 'year' | reverse %}
 {% assign journals = pubs | where: 'type', 'journal' %}
 {% assign conferences = pubs | where: 'type', 'conference' %}
 {% assign workshops = pubs | where: 'type', 'workshop' %}
@@ -63,4 +68,21 @@ redirect_from:
 </section>
 {% endif %}
 
+{% endif %}
+
+{% assign talks = site.data.presentations | where: 'on_publications', true %}
+{% if talks.size > 0 %}
+<section class="pub-section" aria-labelledby="presentation-heading">
+  <h2 id="presentation-heading" class="pub-section__title">Presentations</h2>
+  <ol class="pub-cite-list">
+    {% for talk in talks %}
+    <li>
+      <p class="pub-cite">
+        {% if talk.authors %}<span class="pub-cite__authors">{{ talk.authors | replace: 'J. Hwang', '<strong>J. Hwang</strong>' }}</span>, {% endif %}
+        {% if talk.title %}<em class="pub-cite__title">{{ talk.title }}</em>, {{ talk.venue }}{% else %}{{ talk.venue }}{% endif %}{% if talk.location %}, {{ talk.location }}{% endif %}{% unless talk.venue contains talk.year %}{% if talk.year %}, {{ talk.year }}{% endif %}{% endunless %}{% if talk.type %} ({{ talk.type }}){% endif %}.
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
 {% endif %}

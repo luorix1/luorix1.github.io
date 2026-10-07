@@ -35,6 +35,60 @@ redirect_from:
 </section>
 
 <section class="section">
+  <h2 class="section__title">Publications (including pending)</h2>
+  <ul class="cv-list">
+    <li>
+      <span class="cv-list__when">2026</span>
+      <span class="cv-list__what">
+        <strong>Kinematics Enable Device-Agnostic Biological Joint Moment Estimation</strong>
+        <ul class="resume-bullets">
+          <li>Manuscript submitted to IEEE Transactions on Biomedical Engineering.</li>
+          <li>Developed a kinematics-based framework for estimating biological joint moments across hip and knee exoskeletons and an IMU sensing system, reducing dependence on device-specific sensor configurations.</li>
+        </ul>
+      </span>
+    </li>
+    <li>
+      <span class="cv-list__when">2026</span>
+      <span class="cv-list__what">
+        <strong>Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease</strong>
+        <ul class="resume-bullets">
+          <li>Manuscript under review at the Journal of NeuroEngineering and Rehabilitation.</li>
+          <li>Demonstrated that personalized hip assistance increased stride length and improved multiple gait metrics in individuals with Parkinson’s disease, including eliminating freezing episodes in one participant.</li>
+        </ul>
+      </span>
+    </li>
+    <li>
+      <span class="cv-list__when">2026</span>
+      <span class="cv-list__what">
+        <strong>Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease</strong>
+        <ul class="resume-bullets">
+          <li>Extended abstract accepted to the 7th International Conference on NeuroRehabilitation (ICNR 2026), Seoul, Republic of Korea.</li>
+          <li>Showed that personalized hip assistance improved stride length and whole-body gait biomechanics, with benefits largely maintained during cognitively demanding dual-task walking.</li>
+        </ul>
+      </span>
+    </li>
+    <li>
+      <span class="cv-list__when">2024</span>
+      <span class="cv-list__what">
+        <strong>Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention</strong>
+        <ul class="resume-bullets">
+          <li>IEEE/CVF WACV 2024, pp. 362–371. Proposed the Homography Attention Module and Booster-SHOT, an end-to-end multiview pedestrian-detection architecture using novel channel and spatial gates.</li>
+        </ul>
+      </span>
+    </li>
+    <li>
+      <span class="cv-list__when">2022</span>
+      <span class="cv-list__what">
+        <strong>Privacy Safe Representation Learning via Frequency Filtering Encoder</strong>
+        <ul class="resume-bullets">
+          <li>IJCAI-ECAI Workshop on AI Safety; arXiv:2208.02482. Showed that reconstruction attackers can recover original images from existing adversarial representation-learning methods; proposed a low-pass-filtering encoder that limits frequency-domain information.</li>
+        </ul>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section class="section">
   <h2 class="section__title">Research Experience</h2>
   <ul class="cv-list">
     <li>
@@ -192,60 +246,6 @@ redirect_from:
         <strong>Medical Capsule Design</strong>
         <ul class="resume-bullets">
           <li>Registration: KR 10-1839541. Used gelatin and glycerin density differences to maintain vertical pill orientation and ease swallowing; awarded a Silver Prize.</li>
-        </ul>
-      </span>
-    </li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2 class="section__title">Publications</h2>
-  <ul class="cv-list">
-    <li>
-      <span class="cv-list__when">2026</span>
-      <span class="cv-list__what">
-        <strong>Kinematics Enable Device-Agnostic Biological Joint Moment Estimation</strong>
-        <ul class="resume-bullets">
-          <li>Manuscript in preparation for submission to IEEE Transactions on Biomedical Engineering.</li>
-          <li>Developed a kinematics-based framework for estimating biological joint moments across hip and knee exoskeletons and an IMU sensing system, reducing dependence on device-specific sensor configurations.</li>
-        </ul>
-      </span>
-    </li>
-    <li>
-      <span class="cv-list__when">2026</span>
-      <span class="cv-list__what">
-        <strong>Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease</strong>
-        <ul class="resume-bullets">
-          <li>Manuscript submitted to the Journal of NeuroEngineering and Rehabilitation.</li>
-          <li>Demonstrated that personalized hip assistance increased stride length and improved multiple gait metrics in individuals with Parkinson’s disease, including eliminating freezing episodes in one participant.</li>
-        </ul>
-      </span>
-    </li>
-    <li>
-      <span class="cv-list__when">2026</span>
-      <span class="cv-list__what">
-        <strong>Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease</strong>
-        <ul class="resume-bullets">
-          <li>Extended abstract accepted to the 7th International Conference on NeuroRehabilitation (ICNR 2026), Seoul, Republic of Korea.</li>
-          <li>Showed that personalized hip assistance improved stride length and whole-body gait biomechanics, with benefits largely maintained during cognitively demanding dual-task walking.</li>
-        </ul>
-      </span>
-    </li>
-    <li>
-      <span class="cv-list__when">2024</span>
-      <span class="cv-list__what">
-        <strong>Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention</strong>
-        <ul class="resume-bullets">
-          <li>IEEE/CVF WACV 2024, pp. 362–371. Proposed the Homography Attention Module and Booster-SHOT, an end-to-end multiview pedestrian-detection architecture using novel channel and spatial gates.</li>
-        </ul>
-      </span>
-    </li>
-    <li>
-      <span class="cv-list__when">2022</span>
-      <span class="cv-list__what">
-        <strong>Privacy Safe Representation Learning via Frequency Filtering Encoder</strong>
-        <ul class="resume-bullets">
-          <li>IJCAI-ECAI Workshop on AI Safety; arXiv:2208.02482. Showed that reconstruction attackers can recover original images from existing adversarial representation-learning methods; proposed a low-pass-filtering encoder that limits frequency-domain information.</li>
         </ul>
       </span>
     </li>

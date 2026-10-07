@@ -16,12 +16,12 @@ plain: true
     <h2 class="item-list__title">
           {% if talk.url %}
           {% if talk.url contains 'http' %}
-          <a href="{{ talk.url }}">{{ talk.title }}</a>
+          <a href="{{ talk.url }}">{{ talk.title | default: talk.venue }}</a>
           {% else %}
-          <a href="{{ talk.url | relative_url }}">{{ talk.title }}</a>
+          <a href="{{ talk.url | relative_url }}">{{ talk.title | default: talk.venue }}</a>
           {% endif %}
           {% else %}
-          {{ talk.title }}
+          {{ talk.title | default: talk.venue }}
           {% endif %}
     </h2>
     <p class="item-list__meta">

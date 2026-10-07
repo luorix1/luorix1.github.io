@@ -423,15 +423,20 @@ body.project-page {
 }
 
 /* Stats */
+/* Flex (not grid) so rows with fewer than --pp-stat-cols cards stay centered */
 .pp-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
+  --pp-stat-cols: 4;
+  --pp-stat-gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--pp-stat-gap);
   margin-bottom: 2rem;
   width: 100%;
 }
 
 .pp-stat-card {
+  flex: 0 0 calc((100% - (var(--pp-stat-cols) - 1) * var(--pp-stat-gap)) / var(--pp-stat-cols));
   min-width: 0;
   padding: 1.15rem 0.85rem;
   text-align: center;
@@ -577,13 +582,13 @@ a:focus {
   }
 
   .pp-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --pp-stat-cols: 2;
   }
 }
 
 @media (max-width: 640px) {
   .pp-stats {
-    grid-template-columns: 1fr;
+    --pp-stat-cols: 1;
   }
 }
 

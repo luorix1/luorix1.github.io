@@ -1,4 +1,14 @@
 # Talks, posters, and conference presentations (newest first).
+# Set on_publications: true to also list an entry under "Presentations" on /publications/.
+# title is optional; the venue is shown when it is missing.
+- venue: "Dynamic Walking 2026"
+  year: 2026
+  on_publications: true
+
+- venue: "1st Workshop on Neuromuscular Robotics, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)"
+  year: 2026
+  on_publications: true
+
 - title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
   venue: "7th International Conference on NeuroRehabilitation (ICNR)"
   location: "Seoul, Republic of Korea"

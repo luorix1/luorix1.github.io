@@ -5,6 +5,7 @@ collection: publications
 category: manuscripts
 permalink: /publications/kinematics-joint-moments/
 date: 2026-07-25
+eyebrow: "IEEE Transactions on Biomedical Engineering · Manuscript under review"
 description: "A kinematics-based framework trains biological joint moment estimators on open-source biomechanics data and deploys them, without target-device fine-tuning, across a hip exoskeleton, knee exoskeleton, and IMU sensor suite."
 keywords:
   - biological joint moment estimation
@@ -13,25 +14,32 @@ keywords:
   - wearable robotics
 year: 2026
 teaser: /images/publications/kinematics-joint-moments/overview.png
-pdf_url: /files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf
+pdf_url: /files/main_V6.pdf
 
 summary: "Joint angles and angular velocities serve as a shared intermediate representation, decoupling wearable sensing hardware from downstream biological joint moment estimation."
 
 authors:
   - name: Jinwoo Hwang
     url: https://scholar.google.com/citations?user=JQSj-loAAAAJ&hl=en
+    affil: [1]
   - name: Ilseung Park
     url: https://scholar.google.com/citations?hl=en&user=Cn8JxjQAAAAJ
+    affil: [1]
   - name: Changseob Song
     url: https://scholar.google.com/citations?hl=en&user=lj-qBkQAAAAJ
+    affil: [1]
   - name: Vu Phan
     url: https://scholar.google.com/citations?hl=en&user=X9vyIRMAAAAJ
+    affil: [1]
   - name: Eni Halilaj
     url: https://scholar.google.com/citations?user=Fr9Vhe4AAAAJ&hl=en
+    affil: [1]
   - name: Inseung Kang
     url: https://scholar.google.com/citations?user=jcgAPTYAAAAJ&hl=en
+    affil: [1]
 
-affiliations: "Carnegie Mellon University, Mechanical Engineering"
+affiliations:
+  - "Carnegie Mellon University, Mechanical Engineering"
 
 links:
   - label: PDF
@@ -55,12 +63,12 @@ highlights:
 
 stats_title: "Main results"
 stats:
-  - value: "0.80"
-    label: "hip exo mean R² (RMSE 0.169 ± 0.067 Nm/kg)"
+  - value: "0.79"
+    label: "hip exo mean R² (RMSE 0.17 Nm/kg)"
   - value: "0.62"
-    label: "knee exo mean R² (RMSE 0.192 ± 0.039 Nm/kg)"
-  - value: "0.86"
-    label: "IMU multi-joint mean R² (RMSE 0.144 ± 0.061 Nm/kg)"
+    label: "knee exo mean R² (RMSE 0.19 Nm/kg)"
+  - value: "0.85"
+    label: "IMU multi-joint mean R² (RMSE 0.15 Nm/kg)"
   - value: "17%"
     label: "lower RMSE vs. single-joint IMU inputs"
 
@@ -70,6 +78,23 @@ bibtex: "TBD pending arXiv acceptance."
 {% include project-pullquote.html
     text="Each wearable converts its sensors into joint kinematics; a shared estimator maps those kinematics to biological joint moments—trained once on open-source data, deployed across platforms."
 %}
+
+<section class="pp-section">
+  <div class="pp-wrap pp-wrap--narrow">
+    <div class="pp-section-heading">
+      <h2 class="pp-section-title">Abstract</h2>
+    </div>
+    <div class="pp-prose">
+      <p>
+        <strong>Objective:</strong> Data-driven models that estimate physiological states, particularly biological joint moments, are widely used in exoskeleton control. However, these estimators are often coupled to device-specific sensor configurations, limiting controller transfer and the use of open-source biomechanics datasets.
+        <strong>Methods:</strong> We proposed joint kinematics as an intermediate representation that decouples hardware-specific sensing from downstream biological joint moment estimation. A joint-moment estimator using joint angles and angular velocities was trained exclusively on open-source biomechanics data and evaluated using kinematics from a hip exoskeleton, knee exoskeleton, and inertial measurement unit (IMU) sensor suite during level-ground, ramp-ascent, and ramp-descent walking.
+        <strong>Results:</strong> The estimator achieved a root mean square error (RMSE) of 0.17 Nm/kg and coefficient of determination (R²) of 0.79 using hip exoskeleton kinematics, 0.19 Nm/kg and 0.62 using knee exoskeleton kinematics, and 0.15 Nm/kg and 0.85 using kinematics derived from IMUs across bilateral hip, knee, and ankle joints.
+        <strong>Conclusion:</strong> Joint kinematics enabled an estimator trained only on open-source data to operate across distinct wearable platforms.
+        <strong>Significance:</strong> This framework may reduce target-device data collection and support transferable biological joint moment estimation for exoskeleton control and wearable biomechanics.
+      </p>
+    </div>
+  </div>
+</section>
 
 {% include project-video.html
   title="Presentation video"
@@ -87,6 +112,13 @@ bibtex: "TBD pending arXiv acceptance."
     alt="Overview of the kinematics-based device-agnostic joint moment estimation framework"
     caption="Top: open-source biomechanics datasets are processed in OpenSim to yield reference kinematics and dynamics for training.<br>Bottom: for each deployment setting we train a downstream estimator on the joint channels available at that platform—hip only, knee only, or multi-joint hip/knee/ankle—and apply it directly with no device-specific fine-tuning. Exoskeleton inputs come from onboard encoders and IMUs; the IMU suite inputs come from body-mounted IMU sensor fusion."
     narrow=true
+%}
+
+{% include project-figure.html
+    title="Wearable platforms and embedded control"
+    src="/images/publications/kinematics-joint-moments/devices.png"
+    alt="Hip exoskeleton, knee exoskeleton, embedded co-processor architecture, and Xsens Awinda IMU placement"
+    caption="(a) Bilateral robotic hip exoskeleton: onboard computing unit, battery, pelvis IMU, bilateral hip actuators, and thigh IMUs. (b) Robotic knee exoskeleton (one side used in this study): onboard computing unit, battery, thigh IMU, knee actuator, and shank IMU. Both exoskeletons use brushless DC actuators with integrated motor encoders and an embedded Jetson Orin Nano. (c) Embedded co-processor architecture on the exoskeletons: an I/O process reads the IMUs over I2C and the actuators over CAN, passes the data to a separate inference process through an input queue, and sends the estimator's output back to the actuators as CAN commands through an output queue. (d) Xsens MTw Awinda IMU suite with seven sensors on the pelvis and both thighs, shanks, and feet."
 %}
 
 {% include project-figure.html

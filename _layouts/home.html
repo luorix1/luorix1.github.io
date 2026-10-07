@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<div class="container container--narrow home">
+<div class="container container--wide home">
   <header class="hero">
     {% if site.author.name %}
     <h1 class="hero__name">{{ site.author.name }}</h1>
     {% endif %}
-    <p class="hero__tagline">Enhancing human mobility with wearable robots and learning-based control</p>
+    {% if site.author.bio %}<p class="hero__tagline">{{ site.author.bio }}</p>{% endif %}
   </header>
 
   {% if content != blank %}
