@@ -40,9 +40,9 @@ redirect_from:
     <li>
       <span class="cv-list__when">2026</span>
       <span class="cv-list__what">
-        <strong>Kinematics Enable Device-Agnostic Biological Joint Moment Estimation</strong>
+        <strong>A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation</strong>
         <ul class="resume-bullets">
-          <li>Manuscript submitted to IEEE Transactions on Biomedical Engineering.</li>
+          <li>Manuscript under review at IEEE Transactions on Biomedical Engineering.</li>
           <li>Developed a kinematics-based framework for estimating biological joint moments across hip and knee exoskeletons and an IMU sensing system, reducing dependence on device-specific sensor configurations.</li>
         </ul>
       </span>

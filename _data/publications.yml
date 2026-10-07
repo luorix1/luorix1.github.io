@@ -10,12 +10,12 @@
 # Abstract previews: edit the `abstract` field (markdown allowed, e.g. **bold**).
 # Leave blank to hide the preview until you write one.
 
-- title: "Kinematics Enable Device-Agnostic Biological Joint Moment Estimation"
-  authors: "J. Hwang, I. Park, C. Song, V. Phan, I. Kang, and E. Halilaj"
+- title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
+  authors: "J. Hwang, I. Park, C. Song, V. Phan, E. Halilaj, and I. Kang"
   venue: "IEEE Transactions on Biomedical Engineering"
   year: 2026
   type: journal
-  status: "Manuscript submitted"
+  status: "Manuscript under review"
   project_url: "/publications/kinematics-joint-moments/"
   paper_url: "/files/main_V6.pdf"
   featured: true
