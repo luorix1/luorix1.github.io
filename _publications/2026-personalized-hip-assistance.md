@@ -18,7 +18,7 @@ keywords:
   - freezing of gait
 year: 2026
 teaser: /images/publications/personalized-hip-assistance/fig2-protocol.png
-pdf_url: /files/personalized-hip-assistance-pd.pdf
+pdf_url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
 
 summary: "Personalized WIM hip assistance, tuned with human-in-the-loop optimization to raise stride length toward healthy norms, improves spatiotemporal and kinematic gait outcomes in people with Parkinson’s disease—and those gains largely persist under dual-task walking."
 
@@ -56,7 +56,7 @@ affiliations:
 
 links:
   - label: PDF
-    url: /files/personalized-hip-assistance-pd.pdf
+    url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
     icon: paper
 
 highlights_title: "Why this matters"

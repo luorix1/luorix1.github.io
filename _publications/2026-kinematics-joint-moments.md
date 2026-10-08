@@ -14,7 +14,7 @@ keywords:
   - wearable robotics
 year: 2026
 teaser: /images/publications/kinematics-joint-moments/overview.png
-pdf_url: /files/main_V6.pdf
+pdf_url: https://arxiv.org/pdf/2610.09150
 
 summary: "Joint angles and angular velocities serve as a shared intermediate representation, decoupling wearable sensing hardware from downstream biological joint moment estimation."
 
@@ -42,12 +42,9 @@ affiliations:
   - "Carnegie Mellon University, Mechanical Engineering"
 
 links:
-  - label: PDF
-    url: /files/main_V6.pdf
-    icon: paper
-  - label: Supplementary
-    url: /files/supp.pdf
-    icon: paper
+  - label: Paper
+    url: https://arxiv.org/abs/2610.09150
+    icon: arxiv
 
 highlights_title: "Why this matters"
 highlights:
@@ -72,7 +69,13 @@ stats:
   - value: "17%"
     label: "lower RMSE vs. single-joint IMU inputs"
 
-bibtex: "TBD pending arXiv acceptance."
+bibtex: |
+  @article{hwang2026unified,
+    title={A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation},
+    author={Hwang, Jinwoo and Park, Ilseung and Song, Changseob and Phan, Vu and Halilaj, Eni and Kang, Inseung},
+    journal={arXiv preprint arXiv:2610.09150},
+    year={2026}
+  }
 ---
 
 {% include project-pullquote.html

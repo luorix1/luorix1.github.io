@@ -13,14 +13,14 @@
   year: 2026
   description: "Open-source-trained moment estimators deployed across hip exo, knee exo, and IMU kinematics without target-device fine-tuning."
   url: "/publications/kinematics-joint-moments/"
-  report_url: "/files/kinematics-enable-device-agnostic-joint-moment-estimation.pdf"
+  report_url: "https://arxiv.org/abs/2610.09150"
   tags: ["exoskeleton", "biomechanics"]
 
 - title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
   year: 2026
   description: "Human-in-the-loop personalized WIM hip assistance for gait improvement in Parkinson’s disease."
   url: "/publications/personalized-hip-assistance/"
-  report_url: "/files/personalized-hip-assistance-pd.pdf"
+  report_url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
   tags: ["parkinsons", "hip-assistance", "hilo"]
 
 - title: "Paper title (ICRA placeholder — update later)"

@@ -17,7 +17,7 @@
   type: journal
   status: "Manuscript under review"
   project_url: "/publications/kinematics-joint-moments/"
-  paper_url: "/files/main_V6.pdf"
+  paper_url: "https://arxiv.org/abs/2610.09150"
   featured: true
   abstract: |
     **Objective:** Data-driven models that estimate physiological states, particularly biological joint moments, are widely used in exoskeleton control. However, these estimators are often coupled to device-specific sensor configurations, limiting controller transfer and the use of open-source biomechanics datasets. **Methods:** We proposed joint kinematics as an intermediate representation that decouples hardware-specific sensing from downstream biological joint moment estimation. A joint-moment estimator using joint angles and angular velocities was trained exclusively on open-source biomechanics data and evaluated using kinematics from a hip exoskeleton, knee exoskeleton, and inertial measurement unit (IMU) sensor suite during level-ground, ramp-ascent, and ramp-descent walking. **Results:** The estimator achieved a root mean square error (RMSE) of 0.17 Nm/kg and coefficient of determination (R²) of 0.79 using hip exoskeleton kinematics, 0.19 Nm/kg and 0.62 using knee exoskeleton kinematics, and 0.15 Nm/kg and 0.85 using kinematics derived from IMUs across bilateral hip, knee, and ankle joints. **Conclusion:** Joint kinematics enabled an estimator trained only on open-source data to operate across distinct wearable platforms. **Significance:** This framework may reduce target-device data collection and support transferable biological joint moment estimation for exoskeleton control and wearable biomechanics.
@@ -29,7 +29,7 @@
   type: journal
   status: "Manuscript under review"
   project_url: "/publications/personalized-hip-assistance/"
-  paper_url: "/files/personalized-hip-assistance-pd.pdf"
+  paper_url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
   doi: "https://doi.org/10.21203/rs.3.rs-10612204/v1"
   featured: true
   abstract: |
