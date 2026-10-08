@@ -5,7 +5,6 @@ collection: publications
 category: manuscripts
 permalink: /publications/kinematics-joint-moments/
 date: 2026-07-25
-eyebrow: "IEEE Transactions on Biomedical Engineering · Manuscript under review"
 description: "A kinematics-based framework trains biological joint moment estimators on open-source biomechanics data and deploys them, without target-device fine-tuning, across a hip exoskeleton, knee exoskeleton, and IMU sensor suite."
 keywords:
   - biological joint moment estimation

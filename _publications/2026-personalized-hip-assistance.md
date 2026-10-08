@@ -5,7 +5,6 @@ collection: publications
 category: manuscripts
 permalink: /publications/personalized-hip-assistance/
 date: 2026-08-21
-eyebrow: "Journal of NeuroEngineering and Rehabilitation · Manuscript submitted · Preprint"
 description: "Human-in-the-loop optimization of bilateral hip assistance on the WIM wearable robot increases stride length and improves whole-body gait metrics in individuals with Parkinson’s disease, including under dual-task walking."
 keywords:
   - Parkinson’s disease
@@ -83,15 +82,17 @@ stats:
     label: "mean usability rating (7-point scale; n = 10)"
 
 bibtex: |
-  @article{kim2026personalized,
+  @misc{kim2026personalized,
     title={Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson's Disease},
     author={Kim, Seonjeong and Noh, Seungjoo and Yun, Seo Jung and Hwang, Jinwoo and Kwon, Yujin and Lim, Bokman and Lee, Younbaek and Seo, Han Gil and Kim, Keewon and Kim, Jinsoo},
-    journal={Journal of NeuroEngineering and Rehabilitation},
+    publisher={Research Square},
     year={2026},
-    note={Manuscript submitted. Preprint: https://doi.org/10.21203/rs.3.rs-10612204/v1}
+    month={aug},
+    doi={10.21203/rs.3.rs-10612204/v1},
+    url={https://doi.org/10.21203/rs.3.rs-10612204/v1},
+    note={Preprint}
   }
 
-footer_blurb: "This page summarizes the preprint <strong>Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease</strong> (Research Square / JNER submission). Figures are from the preprint."
 ---
 
 {% include project-pullquote.html
