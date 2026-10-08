@@ -70,11 +70,14 @@ stats:
     label: "lower RMSE vs. single-joint IMU inputs"
 
 bibtex: |
-  @article{hwang2026unified,
+  @misc{hwang2026unifiedkinematicrepresentationenables,
     title={A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation},
-    author={Hwang, Jinwoo and Park, Ilseung and Song, Changseob and Phan, Vu and Halilaj, Eni and Kang, Inseung},
-    journal={arXiv preprint arXiv:2610.09150},
-    year={2026}
+    author={Jinwoo Hwang and Ilseung Park and Changseob Song and Vu Phan and Eni Halilaj and Inseung Kang},
+    year={2026},
+    eprint={2610.09150},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO},
+    url={https://arxiv.org/abs/2610.09150}
   }
 ---
 
