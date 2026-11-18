@@ -2,6 +2,14 @@
 permalink: /
 title: Home
 layout: home
+role: "Graduate Researcher · MetaMobility Lab, CMU"
+interests:
+  - Wearable robotics
+  - Exoskeleton control
+  - Biomechanics
+  - Musculoskeletal simulation
+  - Reinforcement learning
+  - Neuromuscular control
 redirect_from:
   - /about/
   - /about.html

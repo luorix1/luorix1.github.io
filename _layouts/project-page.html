@@ -1,222 +1,164 @@
-<!DOCTYPE html>
-<html lang="{{ site.locale | default: 'en-US' | slice: 0, 2 }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% assign page_desc = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 %}
-  <title>{{ page.title | strip_html }}</title>
-  <meta name="description" content="{{ page_desc }}">
-  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' }}">{% endif %}
-  <meta name="author" content="{% for a in page.authors %}{{ a.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+---
+layout: default
+---
+<article class="pp">
+  <header class="pp-hero">
+    <div class="pp-wrap pp-hero__inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/publications/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Publications</a>
+      </nav>
 
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ page.title | strip_html }}">
-  <meta property="og:description" content="{{ page_desc }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  {% if page.teaser %}
-  <meta property="og:image" content="{{ page.teaser | absolute_url }}">
-  {% endif %}
+      {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.title | strip_html }}">
-  <meta name="twitter:description" content="{{ page_desc }}">
-  {% if page.teaser %}
-  <meta name="twitter:image" content="{{ page.teaser | absolute_url }}">
-  {% endif %}
+      <h1 class="pp-title">{{ page.title }}</h1>
 
-  <meta name="citation_title" content="{{ page.title | strip_html }}">
-  {% for a in page.authors %}
-  <meta name="citation_author" content="{{ a.name }}">
-  {% endfor %}
-  {% if page.year %}<meta name="citation_publication_date" content="{{ page.year }}">{% endif %}
-  {% if page.pdf_url %}<meta name="citation_pdf_url" content="{{ page.pdf_url }}">{% endif %}
-  <meta name="theme-color" content="#0f172a">
+      {% if page.summary %}<p class="pp-summary">{{ page.summary }}</p>{% endif %}
 
-  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/project-page.css' | relative_url }}?v=3">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-</head>
-<body class="project-page">
-  <a class="pp-skip" href="#pp-main">Skip to content</a>
+      {% if page.authors %}
+      <p class="pp-authors">
+        {%- for a in page.authors %}
+        <span class="pp-author{% if a.name contains 'Jinwoo Hwang' %} is-me{% endif %}">
+          {%- if a.url %}<a href="{{ a.url }}"{% if a.url contains 'http' %} rel="noopener"{% endif %}>{% endif %}{{ a.name }}{% if a.url %}</a>{% endif %}{% if a.affil or a.equal %}<sup>{{ a.affil | join: ',' }}{% if a.equal %}*{% endif %}</sup>{% endif -%}
+        </span>{% unless forloop.last %}<span class="pp-author-sep" aria-hidden="true">,</span>{% endunless %}
+        {%- endfor %}
+      </p>
+      {% endif %}
 
-  <button type="button" class="pp-scroll-top" id="pp-scroll-top" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-  </button>
-
-  <main id="pp-main">
-    <header class="pp-hero">
-      <div class="pp-wrap pp-hero__inner">
-        <nav class="pp-topnav" aria-label="Site">
-          <a href="{{ '/' | relative_url }}">← Home</a>
-        </nav>
-
-        {% if page.eyebrow %}<p class="pp-eyebrow">{{ page.eyebrow }}</p>{% endif %}
-
-        <h1 class="pp-title">{{ page.title }}</h1>
-
-        {% if page.summary %}
-        <p class="pp-summary">{{ page.summary }}</p>
+      {% if page.affiliations %}
+      <p class="pp-affiliations">
+        {% if page.affiliations.first %}
+        {% for af in page.affiliations %}<span class="pp-affiliation"><sup>{{ forloop.index }}</sup>{{ af }}</span>{% endfor %}
+        {% else %}
+        <span class="pp-affiliation">{{ page.affiliations }}</span>
         {% endif %}
+      </p>
+      {% endif %}
 
-        {% if page.authors %}
-        <p class="pp-authors">
-          {% for a in page.authors %}
-          <span class="pp-author">
-            {% if a.url %}<a href="{{ a.url }}"{% if a.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>{% endif %}
-            {{ a.name }}{% if a.affil or a.equal %}<sup>{{ a.affil | join: ',' }}{% if a.equal %}*{% endif %}</sup>{% endif %}
-            {% if a.url %}</a>{% endif %}
-          </span>
-          {% unless forloop.last %}<span class="pp-author-sep" aria-hidden="true">·</span>{% endunless %}
-          {% endfor %}
-        </p>
-        {% endif %}
+      {% if page.equal_contribution %}
+      <p class="pp-equal"><sup>*</sup>{{ page.equal_contribution_text | default: "Indicates equal contribution" }}</p>
+      {% endif %}
 
-        {% if page.equal_contribution %}
-        <p class="pp-equal"><sup>*</sup>{{ page.equal_contribution_text | default: "Indicates equal contribution" }}</p>
-        {% endif %}
-
-        {% if page.affiliations %}
-        <p class="pp-affiliations">
-          {% if page.affiliations.first %}
-          {% for af in page.affiliations %}<span class="pp-affiliation"><sup>{{ forloop.index }}</sup>{{ af }}</span>{% unless forloop.last %}<span class="pp-author-sep" aria-hidden="true"> · </span>{% endunless %}{% endfor %}
-          {% else %}
-          {{ page.affiliations }}
+      {% if page.links.size > 0 or page.bibtex %}
+      <div class="pp-links">
+        {% for link in page.links %}
+        <a class="btn btn--primary" href="{% if link.url contains 'http' %}{{ link.url }}{% else %}{{ link.url | replace: ' ', '%20' | relative_url }}{% endif %}"{% if link.url contains 'http' %} rel="noopener"{% endif %}>
+          {% if link.icon == 'arxiv' %}<i class="ai ai-arxiv" aria-hidden="true"></i>
+          {% elsif link.icon == 'pdf' or link.icon == 'paper' %}<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+          {% elsif link.icon == 'github' %}<i class="fa-brands fa-github" aria-hidden="true"></i>
+          {% elsif link.icon == 'youtube' or link.icon == 'video' %}<i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          {% elsif link.icon == 'code' %}<i class="fa-solid fa-code" aria-hidden="true"></i>
+          {% elsif link.icon == 'data' %}<i class="fa-solid fa-database" aria-hidden="true"></i>
+          {% elsif link.icon == 'website' %}<i class="fa-solid fa-globe" aria-hidden="true"></i>
+          {% elsif link.icon %}<i class="fa-solid fa-{{ link.icon }}" aria-hidden="true"></i>
           {% endif %}
-        </p>
-        {% endif %}
-
-        {% if page.links %}
-        <div class="pp-links">
-          {% for link in page.links %}
-          <a class="pp-btn" href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank" rel="noopener noreferrer"{% endif %}>
-            {% if link.icon == 'arxiv' %}<i class="ai ai-arxiv" aria-hidden="true"></i>
-            {% elsif link.icon == 'pdf' or link.icon == 'paper' %}<i class="fas fa-file-pdf" aria-hidden="true"></i>
-            {% elsif link.icon == 'github' %}<i class="fab fa-github" aria-hidden="true"></i>
-            {% elsif link.icon == 'youtube' or link.icon == 'video' %}<i class="fab fa-youtube" aria-hidden="true"></i>
-            {% elsif link.icon == 'code' %}<i class="fas fa-code" aria-hidden="true"></i>
-            {% elsif link.icon == 'data' %}<i class="fas fa-database" aria-hidden="true"></i>
-            {% elsif link.icon == 'website' %}<i class="fas fa-globe" aria-hidden="true"></i>
-            {% elsif link.icon %}<i class="fas fa-{{ link.icon }}" aria-hidden="true"></i>
-            {% endif %}
-            <span>{{ link.label }}</span>
-          </a>
-          {% endfor %}
-        </div>
+          <span>{{ link.label }}</span>
+        </a>
+        {% endfor %}
+        {% if page.bibtex %}
+        <a class="btn" href="#bibtex"><i class="fa-solid fa-quote-right" aria-hidden="true"></i><span>Cite</span></a>
         {% endif %}
       </div>
-    </header>
-
-    {% if page.presentation_video %}
-    <section class="pp-section pp-section--lift">
-      <div class="pp-wrap">
-        <div class="pp-section-heading">
-          <h2 class="pp-section-title">{{ page.presentation_video_title | default: "Presentation video" }}</h2>
-        </div>
-        <div class="pp-card">
-          <video
-            controls
-            loop
-            playsinline
-            preload="metadata"
-            title="{{ page.presentation_video_title | default: 'Presentation video' }}"
-          >
-            <source
-              src="{% if page.presentation_video contains 'http' %}{{ page.presentation_video }}{% else %}{{ page.presentation_video | relative_url }}{% endif %}"
-              type="video/mp4"
-            >
-          </video>
-        </div>
-      </div>
-    </section>
-    {% elsif page.show_presentation_placeholder %}
-    <section class="pp-section pp-section--lift">
-      <div class="pp-wrap">
-        <div class="pp-section-heading">
-          <h2 class="pp-section-title">{{ page.presentation_video_title | default: "Presentation video" }}</h2>
-        </div>
-        <div class="pp-card">
-          <div class="pp-placeholder-box">Set <code>presentation_video</code> in front matter</div>
-        </div>
-      </div>
-    </section>
-    {% endif %}
-
-    {% if page.highlights %}
-    <section class="pp-section pp-section--muted" id="highlights">
-      <div class="pp-wrap">
-        <div class="pp-section-heading">
-          <h2 class="pp-section-title">{{ page.highlights_title | default: "Why this matters" }}</h2>
-        </div>
-        <div class="pp-feature-grid">
-          {% for item in page.highlights %}
-          <article class="pp-feature-card">
-            {% if item.icon %}
-            <div class="pp-feature-icon"><i class="fas fa-{{ item.icon }}" aria-hidden="true"></i></div>
-            {% endif %}
-            {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
-            {% if item.text %}<p>{{ item.text }}</p>{% endif %}
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    {% endif %}
-
-    <div class="pp-body">
-      {{ content }}
+      {% endif %}
     </div>
+  </header>
 
-    {% if page.stats %}
-    <section class="pp-section" id="results">
-      <div class="pp-wrap">
-        <div class="pp-section-heading">
-          <h2 class="pp-section-title">{{ page.stats_title | default: "Main results" }}</h2>
-        </div>
-        <div class="pp-stats">
-          {% for s in page.stats %}
-          <div class="pp-stat-card">
-            <span class="pp-stat-value">{{ s.value }}</span>
-            <span class="pp-stat-label">{{ s.label }}</span>
-          </div>
-          {% endfor %}
-        </div>
-        {% if page.stats_figure %}
-        <figure class="pp-figure">
-          <img
-            src="{% if page.stats_figure contains 'http' %}{{ page.stats_figure }}{% else %}{{ page.stats_figure | relative_url }}{% endif %}"
-            alt="{{ page.stats_figure_alt | default: 'Main results' }}"
-            loading="lazy"
-          >
-          {% if page.stats_caption %}<figcaption>{{ page.stats_caption }}</figcaption>{% endif %}
-        </figure>
-        {% endif %}
+  {% if page.presentation_video %}
+  <section class="pp-section">
+    <div class="pp-wrap">
+      <div class="pp-section-heading">
+        <h2 class="pp-section-title">{{ page.presentation_video_title | default: "Presentation video" }}</h2>
       </div>
-    </section>
-    {% endif %}
-
-    {% if page.bibtex %}
-    <section class="pp-section pp-section--muted" id="bibtex">
-      <div class="pp-wrap">
-        <div class="pp-bibtex-head">
-          <div>
-            <p class="pp-kicker">Citation</p>
-            <h2 class="pp-section-title pp-section-title--left">BibTeX</h2>
-          </div>
-          <button type="button" class="pp-copy-btn" id="pp-copy-bibtex" data-target="pp-bibtex-code">
-            <i class="fas fa-copy" aria-hidden="true"></i>
-            <span class="pp-copy-label">Copy</span>
-          </button>
-        </div>
-        <pre id="pp-bibtex-code" class="pp-bibtex"><code>{{ page.bibtex | strip }}</code></pre>
+      <div class="pp-card">
+        <video controls playsinline preload="metadata" title="{{ page.presentation_video_title | default: 'Presentation video' }}">
+          <source src="{% if page.presentation_video contains 'http' %}{{ page.presentation_video }}{% else %}{{ page.presentation_video | relative_url }}{% endif %}" type="video/mp4">
+        </video>
       </div>
-    </section>
-    {% endif %}
-  </main>
+    </div>
+  </section>
+  {% endif %}
 
-  <script src="{{ '/assets/js/project-page.js' | relative_url }}" defer></script>
-</body>
-</html>
+  {% if page.highlights %}
+  <section class="pp-section pp-section--muted" id="highlights">
+    <div class="pp-wrap">
+      <div class="pp-section-heading">
+        <h2 class="pp-section-title">{{ page.highlights_title | default: "Why this matters" }}</h2>
+      </div>
+      <div class="pp-feature-grid">
+        {% for item in page.highlights %}
+        <article class="pp-feature-card">
+          {% if item.icon %}<div class="pp-feature-icon"><i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i></div>{% endif %}
+          {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+          {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="pp-body">
+    {{ content }}
+  </div>
+
+  {% if page.stats %}
+  <section class="pp-section" id="results">
+    <div class="pp-wrap">
+      <div class="pp-section-heading">
+        <h2 class="pp-section-title">{{ page.stats_title | default: "Main results" }}</h2>
+      </div>
+      <div class="pp-stats">
+        {% for s in page.stats %}
+        <div class="pp-stat-card">
+          <span class="pp-stat-value">{{ s.value }}</span>
+          <span class="pp-stat-label">{{ s.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      {% if page.stats_figure %}
+      <figure class="pp-figure">
+        <img src="{% if page.stats_figure contains 'http' %}{{ page.stats_figure }}{% else %}{{ page.stats_figure | relative_url }}{% endif %}" alt="{{ page.stats_figure_alt | default: 'Main results' }}" loading="lazy">
+        {% if page.stats_caption %}<figcaption>{{ page.stats_caption }}</figcaption>{% endif %}
+      </figure>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.bibtex %}
+  <section class="pp-section pp-section--muted" id="bibtex">
+    <div class="pp-wrap">
+      <div class="pp-section-heading">
+        <h2 class="pp-section-title">Citation</h2>
+      </div>
+      <div class="bib-block">
+        <button type="button" class="copy-btn" data-copy="#pp-bibtex-code" aria-label="Copy BibTeX">
+          <i class="fa-regular fa-copy" aria-hidden="true"></i><span>Copy</span>
+        </button>
+        <pre class="code"><code id="pp-bibtex-code">{{ page.bibtex | strip | escape }}</code></pre>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {%- assign others = site.data.publications | where_exp: 'p', 'p.hidden != true' | where_exp: 'p', 'p.project_url' | where_exp: 'p', 'p.project_url != page.url' -%}
+  {% if others.size > 0 %}
+  <section class="pp-section pp-more" aria-labelledby="more-heading">
+    <div class="pp-wrap">
+      <div class="pp-section-heading">
+        <h2 class="pp-section-title" id="more-heading">More publications</h2>
+      </div>
+      <div class="mini-grid">
+        {% for p in others limit: 3 %}
+        {%- assign d = site.publications | where: 'url', p.project_url | first -%}
+        {%- assign t = p.thumbnail | default: d.teaser -%}
+        <a class="mini-card" href="{{ p.project_url | relative_url }}">
+          <span class="mini-card__thumb">{% if t %}<img src="{{ t | relative_url }}" alt="" loading="lazy" width="960" height="720">{% endif %}</span>
+          <span class="mini-card__meta">{{ p.venue_short | default: p.venue }} · {{ p.year }}</span>
+          <span class="mini-card__title">{{ p.title }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>

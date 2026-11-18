@@ -13,8 +13,11 @@ redirect_from:
 
 <p class="lead">
   A web-formatted version of my resume, excluding the leadership and activities section.
-  <a class="resume-download" href="{{ resume_path | relative_url }}" download="Hwang_Jinwoo_Resume.docx">Download the DOCX</a>.
 </p>
+<div class="resume-actions">
+  <a class="btn btn--primary" href="{{ resume_path | relative_url }}" download="Hwang_Jinwoo_Resume.docx"><i class="fa-solid fa-download" aria-hidden="true"></i>Download resume (DOCX)</a>
+  <a class="btn" href="{{ '/publications/' | relative_url }}"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Publications</a>
+</div>
 
 <section class="section">
   <h2 class="section__title">Education</h2>

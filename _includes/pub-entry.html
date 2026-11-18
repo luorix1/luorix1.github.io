@@ -1,0 +1,98 @@
+{%- comment -%}
+  One publication row with thumbnail, metadata, and expandable Abstract / BibTeX panels.
+  Usage: {% include pub-entry.html pub=pub %}
+  Thumbnail: pub.thumbnail (+ optional pub.thumbnail_hover), falling back to the
+  linked project page's `teaser`. BibTeX: pub.bibtex, falling back to the project page's.
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign doc = nil -%}
+{%- if pub.project_url -%}{%- assign doc = site.publications | where: 'url', pub.project_url | first -%}{%- endif -%}
+{%- assign thumb = pub.thumbnail | default: doc.teaser -%}
+{%- assign bib = pub.bibtex | default: doc.bibtex | strip -%}
+{%- assign abs = pub.abstract | strip -%}
+{%- assign pid = pub.id | default: pub.title | slugify | truncate: 48, '' -%}
+{%- assign main_url = pub.project_url | default: pub.paper_url -%}
+{%- if main_url -%}{%- unless main_url contains 'http' -%}{%- assign main_url = main_url | relative_url -%}{%- endunless -%}{%- endif -%}
+{%- assign status_class = 'is-neutral' -%}
+{%- assign status_lc = pub.status | downcase -%}
+{%- if status_lc contains 'accepted' or status_lc contains 'published' -%}{%- assign status_class = 'is-accepted' -%}
+{%- elsif status_lc contains 'review' -%}{%- assign status_class = 'is-review' -%}{%- endif -%}
+{%- capture search_text -%}{{ pub.title }} {{ pub.authors }} {{ pub.venue }} {{ pub.venue_short }} {{ pub.year }} {{ pub.type }} {{ pub.status }}{%- endcapture -%}
+<article class="pub{% if include.compact %} pub--compact{% endif %}" id="pub-{{ pid }}" data-type="{{ pub.type }}" data-search="{{ search_text | downcase | strip_html | escape }}">
+  <div class="pub__media">
+    {%- capture thumb_class -%}pub__thumb{% if thumb and pub.thumbnail_hover %} has-hover{% endif %}{%- endcapture -%}
+    {% if main_url %}<a class="{{ thumb_class }}" href="{{ main_url }}" tabindex="-1" aria-hidden="true">{% else %}<div class="{{ thumb_class }}">{% endif %}
+      {% if thumb %}
+      <img class="pub__img" src="{{ thumb | relative_url }}" alt="" loading="lazy" decoding="async" width="960" height="720">
+      {% if pub.thumbnail_hover %}
+      <img class="pub__img pub__img--hover" src="{{ pub.thumbnail_hover | relative_url }}" alt="" loading="lazy" decoding="async" width="960" height="720">
+      {% endif %}
+      {% else %}
+      <span class="pub__placeholder"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+      {% endif %}
+      {% if pub.venue_short %}<span class="pub__badge pub__badge--{{ pub.type }}">{{ pub.venue_short }}</span>{% endif %}
+    {% if main_url %}</a>{% else %}</div>{% endif %}
+  </div>
+
+  <div class="pub__body">
+    <h3 class="pub__title">
+      {% if main_url %}<a href="{{ main_url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+    </h3>
+    <p class="pub__authors">{{ pub.authors | replace: 'J. Hwang', '<strong class="me">J. Hwang</strong>' }}</p>
+    <p class="pub__venue">
+      <em>{{ pub.venue }}</em>{% if pub.month %}, {{ pub.month }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}
+      {% if pub.status %}<span class="pill {{ status_class }}">{{ pub.status }}</span>{% endif %}
+    </p>
+
+    <div class="pub__actions">
+      {% if abs != '' %}
+      <button type="button" class="chip chip--toggle" aria-expanded="false" aria-controls="pub-{{ pid }}-abs" data-panel>
+        <i class="fa-solid fa-align-left" aria-hidden="true"></i>Abstract
+      </button>
+      {% endif %}
+      {% if bib != '' %}
+      <button type="button" class="chip chip--toggle" aria-expanded="false" aria-controls="pub-{{ pid }}-bib" data-panel>
+        <i class="fa-solid fa-quote-right" aria-hidden="true"></i>BibTeX
+      </button>
+      {% endif %}
+      {% if pub.paper_url %}
+        {% assign pu = pub.paper_url %}{% unless pu contains 'http' %}{% assign pu = pu | relative_url %}{% endunless %}
+        {% if pu contains 'arxiv.org' %}
+        <a class="chip" href="{{ pu }}" rel="noopener"><i class="ai ai-arxiv" aria-hidden="true"></i>arXiv</a>
+        {% else %}
+        <a class="chip" href="{{ pu }}" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>PDF</a>
+        {% endif %}
+      {% endif %}
+      {% if pub.project_url %}
+      <a class="chip" href="{{ main_url }}"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
+      {% endif %}
+      {% if pub.doi %}
+      <a class="chip" href="{{ pub.doi }}" rel="noopener"><i class="ai ai-doi" aria-hidden="true"></i>DOI</a>
+      {% endif %}
+      {% if pub.code_url %}
+      <a class="chip" href="{{ pub.code_url }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+      {% endif %}
+      {% if pub.slides_url %}
+        {% assign su = pub.slides_url %}{% unless su contains 'http' %}{% assign su = su | replace: ' ', '%20' | relative_url %}{% endunless %}
+      <a class="chip" href="{{ su }}"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a>
+      {% endif %}
+      {% if pub.video_url %}
+      <a class="chip" href="{{ pub.video_url }}" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i>Video</a>
+      {% endif %}
+    </div>
+
+    {% if abs != '' %}
+    <div class="pub__panel pub__panel--abstract" id="pub-{{ pid }}-abs" hidden>
+      {{ abs | markdownify }}
+    </div>
+    {% endif %}
+    {% if bib != '' %}
+    <div class="pub__panel pub__panel--bib" id="pub-{{ pid }}-bib" hidden>
+      <button type="button" class="copy-btn" data-copy="#pub-{{ pid }}-bibcode" aria-label="Copy BibTeX">
+        <i class="fa-regular fa-copy" aria-hidden="true"></i><span>Copy</span>
+      </button>
+      <pre class="code"><code id="pub-{{ pid }}-bibcode">{{ bib | escape }}</code></pre>
+    </div>
+    {% endif %}
+  </div>
+</article>

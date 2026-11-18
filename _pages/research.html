@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 permalink: /publications/
-wide: false
+wide: true
 plain: true
 redirect_from:
   - /research/
@@ -10,79 +10,67 @@ redirect_from:
   - /projects/
   - /projects.html
 ---
+{% assign pubs = site.data.publications | where_exp: 'p', 'p.hidden != true' %}
+{% assign n_journal = pubs | where: 'type', 'journal' | size %}
+{% assign n_conf = pubs | where: 'type', 'conference' | size %}
+{% assign n_workshop = pubs | where: 'type', 'workshop' | size %}
 
-{% if site.author.googlescholar %}
 <p class="lead">
-  For a complete, up-to-date list of publications, please see my
-  <a href="{{ site.author.googlescholar }}">Google Scholar</a> profile.
-  Selected works are listed below.
+  Selected works{% if site.author.googlescholar %}. For a complete and up-to-date list, see my
+  <a href="{{ site.author.googlescholar }}" rel="noopener">Google Scholar</a> profile{% endif %}.
+  Some entries are under review or pending publication; their status is shown next to each one.
 </p>
-{% else %}
-<p class="lead">Selected works are listed below.</p>
-{% endif %}
-
-<p class="pub-note">
-  Note: some of the works below are currently under review or pending publication.
-  Their status is indicated next to each entry, and details may change before final publication.
-</p>
-
-{% assign pubs = site.data.publications | where_exp: 'p', 'p.hidden != true' | sort: 'year' | reverse %}
-{% assign journals = pubs | where: 'type', 'journal' %}
-{% assign conferences = pubs | where: 'type', 'conference' %}
-{% assign workshops = pubs | where: 'type', 'workshop' %}
 
 {% if pubs.size == 0 %}
 <p class="lead">Nothing here yet. Add entries to <code>_data/publications.yml</code>.</p>
 {% else %}
 
-{% if journals.size > 0 %}
-<section class="pub-section" aria-labelledby="journal-heading">
-  <h2 id="journal-heading" class="pub-section__title">Journal Articles</h2>
-  <ol class="pub-cite-list">
-    {% for pub in journals %}
-    <li>{% include pub-cite.html pub=pub %}</li>
-    {% endfor %}
-  </ol>
-</section>
-{% endif %}
+<div class="pub-toolbar" data-pub-toolbar>
+  <div class="segmented" role="group" aria-label="Filter by type">
+    <button type="button" class="segmented__btn is-active" data-filter="all" aria-pressed="true">All <span class="count">{{ pubs.size }}</span></button>
+    {% if n_journal > 0 %}<button type="button" class="segmented__btn" data-filter="journal" aria-pressed="false">Journal <span class="count">{{ n_journal }}</span></button>{% endif %}
+    {% if n_conf > 0 %}<button type="button" class="segmented__btn" data-filter="conference" aria-pressed="false">Conference <span class="count">{{ n_conf }}</span></button>{% endif %}
+    {% if n_workshop > 0 %}<button type="button" class="segmented__btn" data-filter="workshop" aria-pressed="false">Workshop <span class="count">{{ n_workshop }}</span></button>{% endif %}
+  </div>
+  <label class="search">
+    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    <span class="visually-hidden">Search publications</span>
+    <input type="search" placeholder="Search title, author, venue…" data-pub-search autocomplete="off">
+  </label>
+</div>
 
-{% if conferences.size > 0 %}
-<section class="pub-section" aria-labelledby="conference-heading">
-  <h2 id="conference-heading" class="pub-section__title">Refereed Conference Proceedings</h2>
-  <ol class="pub-cite-list">
-    {% for pub in conferences %}
-    <li>{% include pub-cite.html pub=pub %}</li>
-    {% endfor %}
-  </ol>
-</section>
-{% endif %}
-
-{% if workshops.size > 0 %}
-<section class="pub-section" aria-labelledby="workshop-heading">
-  <h2 id="workshop-heading" class="pub-section__title">Workshop Papers</h2>
-  <ol class="pub-cite-list">
-    {% for pub in workshops %}
-    <li>{% include pub-cite.html pub=pub %}</li>
-    {% endfor %}
-  </ol>
-</section>
-{% endif %}
-
+<div class="pub-list" data-pub-list>
+  {% assign by_year = pubs | group_by: 'year' | sort: 'name' | reverse %}
+  {%- comment -%} Years newest first; entries within a year keep their order in the YAML file. {%- endcomment -%}
+  {% for group in by_year %}
+  <section class="pub-year" data-pub-year aria-labelledby="year-{{ group.name }}">
+    <h2 class="pub-year__label" id="year-{{ group.name }}">{{ group.name }}</h2>
+    <div class="pub-year__items">
+      {% for pub in group.items %}
+      {% include pub-entry.html pub=pub %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+  <p class="pub-empty" data-pub-empty hidden>No publications match your search.</p>
+</div>
 {% endif %}
 
 {% assign talks = site.data.presentations | where: 'on_publications', true %}
 {% if talks.size > 0 %}
-<section class="pub-section" aria-labelledby="presentation-heading">
-  <h2 id="presentation-heading" class="pub-section__title">Presentations</h2>
-  <ol class="pub-cite-list">
+<section class="section talks" aria-labelledby="talks-heading">
+  <h2 id="talks-heading" class="section__title">Presentations</h2>
+  <ul class="talk-list">
     {% for talk in talks %}
-    <li>
-      <p class="pub-cite">
-        {% if talk.authors %}<span class="pub-cite__authors">{{ talk.authors | replace: 'J. Hwang', '<strong>J. Hwang</strong>' }}</span>, {% endif %}
-        {% if talk.title %}<em class="pub-cite__title">{{ talk.title }}</em>, {{ talk.venue }}{% else %}{{ talk.venue }}{% endif %}{% if talk.location %}, {{ talk.location }}{% endif %}{% unless talk.venue contains talk.year %}{% if talk.year %}, {{ talk.year }}{% endif %}{% endunless %}{% if talk.type %} ({{ talk.type }}){% endif %}.
-      </p>
+    <li class="talk">
+      <span class="talk__year">{{ talk.year }}</span>
+      <span class="talk__icon" aria-hidden="true"><i class="fa-solid fa-{% if talk.type == 'Poster' %}image{% else %}microphone-lines{% endif %}"></i></span>
+      <span class="talk__body">
+        {% if talk.title %}<strong class="talk__title">{{ talk.title }}</strong>{% endif %}
+        <span class="talk__venue">{{ talk.venue }}{% if talk.location %}, {{ talk.location }}{% endif %}{% if talk.type %} · {{ talk.type }}{% endif %}</span>
+      </span>
     </li>
     {% endfor %}
-  </ol>
+  </ul>
 </section>
 {% endif %}

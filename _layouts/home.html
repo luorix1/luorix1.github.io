@@ -1,68 +1,97 @@
 ---
 layout: default
 ---
+{% assign a = site.author %}
 <div class="container container--wide home">
   <header class="hero">
-    {% if site.author.name %}
-    <h1 class="hero__name">{{ site.author.name }}</h1>
-    {% endif %}
-    {% if site.author.bio %}<p class="hero__tagline">{{ site.author.bio }}</p>{% endif %}
+    <div class="hero__text">
+      <p class="eyebrow">{{ page.role | default: 'Graduate Researcher' }}</p>
+      <h1 class="hero__name">{{ a.name }}</h1>
+      {% if a.bio %}<p class="hero__tagline">{{ a.bio }}</p>{% endif %}
+      <p class="hero__meta">
+        {% if a.employer %}<span><i class="fa-solid fa-building-columns" aria-hidden="true"></i>{{ a.employer }}</span>{% endif %}
+        {% if a.location %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ a.location }}</span>{% endif %}
+      </p>
+      {% include site-social.html variant="buttons" %}
+    </div>
+    <div class="hero__photo">
+      <img src="{{ '/images/profile-square.webp' | relative_url }}" alt="Portrait of {{ a.name }}" width="640" height="640">
+    </div>
   </header>
+
+  {% if page.interests %}
+  <ul class="interests" role="list" aria-label="Research interests">
+    {% for item in page.interests %}<li>{{ item }}</li>{% endfor %}
+  </ul>
+  {% endif %}
 
   {% if content != blank %}
   <section class="section" aria-labelledby="about-heading">
-    <h2 id="about-heading" class="section__title">About Me</h2>
-    <div class="prose">
+    <h2 id="about-heading" class="section__title">About</h2>
+    <div class="prose prose--lead">
       {{ content }}
     </div>
   </section>
   {% endif %}
 
-  <section class="section" aria-labelledby="positions-heading">
-    <h2 id="positions-heading" class="section__title">Academic Positions</h2>
-    <ul class="cv-list">
-      <li>
-        <span class="cv-list__when">Aug 2025 – Present</span>
-        <span class="cv-list__what">Graduate Researcher · MS in Mechanical Engineering (Research Track) · <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a> · Carnegie Mellon University</span>
-      </li>
-      <li>
-        <span class="cv-list__when">2024 – 2025</span>
-        <span class="cv-list__what">Research Intern · <a href="https://sites.google.com/snu.ac.kr/jkim/">Wearable Robotics Lab</a> · Seoul National University</span>
-      </li>
-      <li>
-        <span class="cv-list__when">2019 – 2025</span>
-        <span class="cv-list__what">Undergraduate Student · Electrical and Computer Engineering · Seoul National University</span>
-      </li>
-    </ul>
+  {% assign featured = site.data.publications | where: 'featured', true | where_exp: 'p', 'p.hidden != true' %}
+  {% if featured.size > 0 %}
+  <section class="section" aria-labelledby="selected-heading">
+    <div class="section__head">
+      <h2 id="selected-heading" class="section__title">Selected publications</h2>
+      <a class="section__link" href="{{ '/publications/' | relative_url }}">All publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="pub-list pub-list--home">
+      {% for pub in featured %}
+      {% include pub-entry.html pub=pub compact=true %}
+      {% endfor %}
+    </div>
   </section>
+  {% endif %}
 
-  <section class="section" aria-labelledby="education-heading">
-    <h2 id="education-heading" class="section__title">Education</h2>
-    <ul class="cv-list">
-      <li>
-        <span class="cv-list__when">2025 – Present</span>
-        <span class="cv-list__what">MS in Mechanical Engineering (Research Track) · Carnegie Mellon University</span>
-      </li>
-      <li>
-        <span class="cv-list__when">2019 – 2025</span>
-        <span class="cv-list__what">BS in Electrical and Computer Engineering · Seoul National University</span>
-      </li>
-    </ul>
-  </section>
+  <div class="two-col">
+    <section class="section" aria-labelledby="positions-heading">
+      <h2 id="positions-heading" class="section__title">Experience</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__when">Aug 2025 – Present</span>
+          <span class="timeline__what"><strong>Graduate Researcher</strong>, <a href="https://metamobility.cmu.edu/home" rel="noopener">MetaMobility Lab</a></span>
+          <span class="timeline__where">Carnegie Mellon University</span>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__when">2024 – 2025</span>
+          <span class="timeline__what"><strong>Research Intern</strong>, <a href="https://sites.google.com/snu.ac.kr/jkim/" rel="noopener">Wearable Robotics Lab</a></span>
+          <span class="timeline__where">Seoul National University</span>
+        </li>
+      </ol>
+    </section>
 
-  <section class="section" aria-labelledby="contact-heading">
-    <h2 id="contact-heading" class="section__title">Contact</h2>
-    <div class="contact">
-      {% if site.author.name %}<p class="contact__name">{{ site.author.name }}</p>{% endif %}
-      {% if site.author.employer %}<p>{{ site.author.employer }}</p>{% endif %}
-      {% if site.author.location %}<p>{{ site.author.location }}</p>{% endif %}
-      {% if site.author.email %}
-      <p>Email: <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-      {% endif %}
-      {% include site-social.html %}
-      <p class="contact__resume">
-        <a href="{{ site.author.resume | default: '/files/Hwang_Jinwoo_Resume.docx' | relative_url }}" download="Hwang_Jinwoo_Resume.docx">Full resume</a>
+    <section class="section" aria-labelledby="education-heading">
+      <h2 id="education-heading" class="section__title">Education</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__when">2025 – Present</span>
+          <span class="timeline__what"><strong>MS in Mechanical Engineering</strong> (Research Track)</span>
+          <span class="timeline__where">Carnegie Mellon University</span>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__when">2019 – 2025</span>
+          <span class="timeline__what"><strong>BS in Electrical and Computer Engineering</strong></span>
+          <span class="timeline__where">Seoul National University</span>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <section class="section contact-card" aria-labelledby="contact-heading">
+    <div>
+      <h2 id="contact-heading" class="contact-card__title">Get in touch</h2>
+      <p class="contact-card__text">
+        {% if a.employer %}{{ a.employer }}{% endif %}{% if a.location %} · {{ a.location }}{% endif %}
       </p>
     </div>
+    {% if a.email %}
+    <a class="btn btn--primary" href="mailto:{{ a.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ a.email }}</a>
+    {% endif %}
   </section>
 </div>

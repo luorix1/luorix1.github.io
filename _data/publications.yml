@@ -1,18 +1,24 @@
-# One entry per publication.
+# One entry per publication (rendered on /publications/ and, if featured, on the home page).
 # Required: title, authors, venue, year, type (journal | conference | workshop)
-# Optional: month, status, paper_url, project_url, code_url, slides_url, doi,
-#           abstract (markdown preview under the citation on /research/),
-#           equal_contribution_note, featured (bool),
-#           hidden (bool; omit the entry from /publications/ without deleting it)
-# List is grouped by type on /research/; use featured: true for highlights elsewhere.
+# Optional:
+#   venue_short      short badge shown on the thumbnail (e.g. "WACV")
+#   status           e.g. "Manuscript under review" (shown as a pill)
+#   thumbnail        image shown in the list (any aspect; 4:3 looks best)
+#   thumbnail_hover  second image that fades in on hover (e.g. a results figure)
+#   paper_url, project_url, code_url, slides_url, video_url, doi
+#   abstract         markdown; shown when "Abstract" is clicked
+#   bibtex           shown when "BibTeX" is clicked. If omitted, the `bibtex`
+#                    from the linked project page (project_url) is used.
+#   featured (bool)  also show on the home page
+#   hidden (bool)    omit from the site without deleting the entry
 # For a complete publication list, point visitors to Google Scholar in _config.yml → author.googlescholar.
-#
-# Abstract previews: edit the `abstract` field (markdown allowed, e.g. **bold**).
-# Leave blank to hide the preview until you write one.
 
 - title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
   authors: "J. Hwang, I. Park, C. Song, V. Phan, E. Halilaj, and I. Kang"
   venue: "IEEE Transactions on Biomedical Engineering"
+  venue_short: "IEEE TBME"
+  thumbnail: "/images/publications/kinematics-joint-moments/thumb.webp"
+  thumbnail_hover: "/images/publications/kinematics-joint-moments/thumb-hover.webp"
   year: 2026
   type: journal
   status: "Manuscript under review"
@@ -25,6 +31,9 @@
 - title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
   authors: "S. Kim, S. Noh, S. J. Yun, J. Hwang, Y. Kwon, B. Lim, Y. Lee, H. G. Seo, K. Kim, and J. Kim"
   venue: "Journal of NeuroEngineering and Rehabilitation"
+  venue_short: "JNER"
+  thumbnail: "/images/publications/personalized-hip-assistance/thumb.webp"
+  thumbnail_hover: "/images/publications/personalized-hip-assistance/thumb-hover.webp"
   year: 2026
   type: journal
   status: "Manuscript under review"
@@ -38,6 +47,7 @@
 - title: "Paper title (ICRA placeholder — update later)"
   authors: "J. Hwang et al."
   venue: "IEEE International Conference on Robotics and Automation (ICRA)"
+  venue_short: "ICRA"
   year: 2026
   type: conference
   status: "Manuscript in preparation"
@@ -50,6 +60,9 @@
 - title: "Evaluation of Personalized Hip Assistance for Gait Improvement in Individuals with Parkinson’s Disease"
   authors: "S. Kim, J. Hwang, S. Noh, S. J. Yun, Y. Kwon, H. G. Seo, K. Kim, and J. Kim"
   venue: "7th International Conference on NeuroRehabilitation (ICNR), Seoul, Republic of Korea"
+  venue_short: "ICNR"
+  thumbnail: "/images/publications/personalized-hip-assistance/thumb-icnr.webp"
+  thumbnail_hover: "/images/publications/personalized-hip-assistance/thumb-icnr-hover.webp"
   year: 2026
   type: conference
   status: "Extended abstract accepted"
@@ -60,6 +73,9 @@
 - title: "Booster-SHOT: Boosting Stacked Homography Transformations for Multiview Pedestrian Detection with Attention"
   authors: "J. Hwang, P. Benz, and P. Kim"
   venue: "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+  venue_short: "WACV"
+  thumbnail: "/images/publications/boostershot/thumb.webp"
+  thumbnail_hover: "/images/publications/boostershot/thumb-hover.webp"
   year: 2024
   type: conference
   project_url: "/publications/boostershot/"
@@ -73,6 +89,9 @@
 - title: "Privacy Safe Representation Learning via Frequency Filtering Encoder"
   authors: "J. Jeong, M. Cho, P. Benz, J. Hwang, J. Kim, S. Lee, and T. H. Kim"
   venue: "IJCAI-ECAI Workshop on Artificial Intelligence Safety (AISafety)"
+  venue_short: "AISafety"
+  thumbnail: "/images/publications/privacy-frequency-filtering/thumb.webp"
+  thumbnail_hover: "/images/publications/privacy-frequency-filtering/thumb-hover.webp"
   year: 2022
   type: workshop
   project_url: "/publications/privacy-frequency-filtering/"

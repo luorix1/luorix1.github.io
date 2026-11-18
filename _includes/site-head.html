@@ -1,0 +1,53 @@
+{%- assign _desc = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+{%- assign _title = site.title | default: site.name -%}
+{%- if page.title and page.url != '/' -%}{%- assign _title = page.title | strip_html | append: ' · ' | append: _title -%}{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ _title }}</title>
+<meta name="description" content="{{ _desc }}">
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' }}">{% endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta property="og:type" content="{% if page.collection == 'publications' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page.title | default: site.title | strip_html }}">
+<meta property="og:description" content="{{ _desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- assign _og = page.teaser | default: '/images/profile-square.webp' %}
+<meta property="og:image" content="{{ _og | absolute_url }}">
+<meta name="twitter:card" content="{% if page.teaser %}summary_large_image{% else %}summary{% endif %}">
+
+{% if page.collection == 'publications' %}
+<meta name="citation_title" content="{{ page.title | strip_html }}">
+{% for a in page.authors %}<meta name="citation_author" content="{{ a.name }}">
+{% endfor %}
+{% if page.year %}<meta name="citation_publication_date" content="{{ page.year }}">{% endif %}
+{% if page.pdf_url %}<meta name="citation_pdf_url" content="{{ page.pdf_url }}">{% endif %}
+{% endif %}
+
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+
+<script>
+  /* Apply a saved theme before first paint to avoid a flash. */
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+    document.documentElement.classList.add("js");
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% if page.layout == 'project-page' %}
+<link rel="stylesheet" href="{{ '/assets/css/project-page.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% endif %}
+{% if site.atom_feed.hide != true %}<link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}">{% endif %}

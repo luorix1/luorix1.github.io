@@ -1,8 +1,10 @@
-{% include base_path %}
 {% assign current_path = page.url | default: '/' %}
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="site-header__inner container container--wide">
-    <a class="site-logo" href="{{ '/' | relative_url }}">{{ site.title | default: site.name }}</a>
+    <a class="site-logo" href="{{ '/' | relative_url }}">
+      <span class="site-logo__mark" aria-hidden="true">JH</span>
+      <span class="site-logo__name">{{ site.title | default: site.name }}</span>
+    </a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
         {% for link in site.data.navigation.main %}
@@ -10,25 +12,20 @@
         {% if link.url == '/' %}
           {% if current_path == '/' %}{% assign is_active = true %}{% endif %}
         {% elsif link.url == '/publications/' %}
-          {% if current_path == '/publications/' or current_path contains '/publication' or current_path contains '/projects/' %}
-            {% assign is_active = true %}
-          {% endif %}
-        {% else %}
-          {% if current_path == link.url %}
-            {% assign is_active = true %}
-          {% elsif current_path contains link.url %}
-            {% assign is_active = true %}
-          {% endif %}
+          {% if current_path contains '/publication' or current_path contains '/projects/' %}{% assign is_active = true %}{% endif %}
+        {% elsif current_path contains link.url %}
+          {% assign is_active = true %}
         {% endif %}
         <li>
-          {% if link.url contains 'http' %}
-          <a href="{{ link.url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
-          {% else %}
-          <a href="{{ link.url | relative_url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
-          {% endif %}
+          <a href="{% if link.url contains 'http' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
         </li>
         {% endfor %}
       </ul>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon theme-toggle__moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-toggle__sun" aria-hidden="true"></i>
+      </button>
     </nav>
   </div>
+  <div class="read-progress" id="read-progress" aria-hidden="true"></div>
 </header>

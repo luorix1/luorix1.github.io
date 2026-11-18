@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ site.locale | default: 'en-US' | slice: 0, 2 }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    {% if page.title and page.url != '/' %}{{ page.title | strip_html }} · {% endif %}{{ site.title | default: site.name }}
-  </title>
-  {% if site.description %}
- <meta name="description" content="{{ site.description }}">
-  {% endif %}
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=5">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-  {% assign _dev_url = site.url | downcase %}
-  {% if jekyll.environment == "development" %}
-  {% if _dev_url contains "localhost" or _dev_url contains "127.0.0.1" or _dev_url contains "0.0.0.0" %}
-  <script src="http://127.0.0.1:{{ site.livereload_port | default: 35729 }}/livereload.js?snipver=1&amp;port={{ site.livereload_port | default: 35729 }}"></script>
-  {% endif %}
-  {% endif %}
+  {% include site-head.html %}
 </head>
-<body>
+<body class="{% if page.layout == 'project-page' %}is-project{% endif %}">
   <a class="skip-link" href="#site-main">Skip to content</a>
   {% include site-nav.html %}
   <main id="site-main" class="site-main">
     {{ content }}
   </main>
   {% include site-footer.html %}
+
+  <button type="button" class="to-top" id="to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
+    <button type="button" class="lightbox__close" aria-label="Close">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>
