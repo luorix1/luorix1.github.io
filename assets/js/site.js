@@ -194,6 +194,78 @@
     } catch (e) {}
   }
 
+  /* ---------- Project skill filter (/projects/?skill=...) ---------- */
+  var skillBar = $("[data-skill-filter]");
+  if (skillBar) {
+    var skillBtns = $$("[data-skill]", skillBar);
+    var projects = $$(".project[data-skills]");
+    var groups = $$("[data-project-group]");
+    var projEmpty = $("[data-project-empty]");
+
+    var setSkill = function (skill, updateUrl) {
+      if (!skillBtns.some(function (b) { return b.getAttribute("data-skill") === skill; })) skill = "all";
+      skillBtns.forEach(function (b) {
+        var on = b.getAttribute("data-skill") === skill;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      var shown = 0;
+      projects.forEach(function (p) {
+        var ok = skill === "all" || (p.getAttribute("data-skills") || "").indexOf("|" + skill + "|") !== -1;
+        p.hidden = !ok;
+        if (ok) shown++;
+      });
+      groups.forEach(function (g) {
+        g.hidden = $$(".project:not([hidden])", g).length === 0;
+      });
+      if (projEmpty) projEmpty.hidden = shown !== 0;
+      if (updateUrl) {
+        try {
+          var url = new URL(window.location.href);
+          if (skill !== "all") url.searchParams.set("skill", skill); else url.searchParams.delete("skill");
+          window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+        } catch (e) {}
+      }
+    };
+
+    skillBtns.forEach(function (b) {
+      b.addEventListener("click", function () { setSkill(b.getAttribute("data-skill"), true); });
+    });
+    try {
+      var initial = new URLSearchParams(window.location.search).get("skill");
+      if (initial) setSkill(initial, false);
+    } catch (e) {}
+  }
+
+  /* ---------- Project page outline: highlight the current IMRD/IDEC part ---------- */
+  var outline = $("[data-outline]");
+  if (outline) {
+    var outlineLinks = $$("a[href^='#']", outline);
+    var parts = outlineLinks.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var spyTicking = false;
+    var spy = function () {
+      // Active part = the last one whose top has scrolled past 40% of the viewport
+      var line = window.innerHeight * 0.4;
+      var current = null;
+      parts.forEach(function (p) { if (p.getBoundingClientRect().top <= line) current = p.id; });
+      outlineLinks.forEach(function (a) {
+        var on = a.getAttribute("href") === "#" + current;
+        a.classList.toggle("is-active", on);
+        if (on) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+      });
+      spyTicking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!spyTicking) { spyTicking = true; window.requestAnimationFrame(spy); }
+    }, { passive: true });
+    spy();
+  }
+
+  /* ---------- Print button (resume) ---------- */
+  $$("[data-print]").forEach(function (btn) {
+    btn.addEventListener("click", function () { window.print(); });
+  });
+
   /* ---------- Deep link to a publication (#pub-...) ---------- */
   if (window.location.hash.indexOf("#pub-") === 0) {
     var target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));

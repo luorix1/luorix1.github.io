@@ -1,30 +1,132 @@
-# Optional catalog for project pages (not shown in the top nav).
-# Long-form pages live under _pages/ or _publications/.
+# Portfolio projects shown on /projects/ and summarized at the top of each project page.
+#
+# featured: true  -> full project description (IMRD or IDEC) with its own page
+# format          -> "IMRD" (Introduction, Methods, Results, Discussion) for research
+#                    "IDEC" (Introduction, Design, Evaluation, Conclusion) for design projects
+# url             -> project page; the page looks itself up here by URL
+# objective       -> one sentence: what the project set out to do
+# impact          -> one sentence: social value (who benefits and why)
+# role            -> one or two sentences: my specific contribution
+# result          -> headline outcome shown on the card
+# skills          -> names from _data/skills.yml (used by the skill filter)
 
-- title: "Evaluating Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
+- id: kinematics
+  featured: true
+  format: IMRD
+  title: "Device-Agnostic Joint Moment Estimation for Exoskeletons"
+  kind: "Research · First author"
+  year: 2026
+  url: /publications/kinematics-joint-moments/
+  thumbnail: /images/publications/kinematics-joint-moments/thumb.webp
+  thumbnail_hover: /images/publications/kinematics-joint-moments/thumb-hover.webp
+  objective: "Train one biological joint-moment estimator on open-source data and run it on any wearable that can measure joint kinematics."
+  impact: "Exoskeleton controllers today need new data for every device; reusing public data lowers the cost of bringing assistance to more people."
+  role: "First author. I designed the kinematics-based framework, aggregated the open-source training data, trained the estimators, and evaluated them on three wearable platforms."
+  result: "R² up to 0.85 with no device-specific fine-tuning"
+  skills: ["Machine learning", "Biomechanics & simulation", "Wearable robotics & control", "Embedded systems & sensing"]
+
+- id: parkinsons
+  featured: true
+  format: IMRD
+  title: "Personalized Hip Exoskeleton Assistance for Parkinson’s Disease"
+  kind: "Clinical research · Co-author"
+  year: 2026
+  url: /publications/personalized-hip-assistance/
+  thumbnail: /images/publications/personalized-hip-assistance/thumb.webp
+  thumbnail_hover: /images/publications/personalized-hip-assistance/thumb-hover.webp
+  objective: "Tune a hip exoskeleton to each person with Parkinson’s disease so that it lengthens their stride toward healthy values."
+  impact: "Short, shuffling steps and freezing of gait cause falls and loss of independence for millions of people with Parkinson’s disease."
+  role: "I built the IMU-based stride-length pipeline that scored every candidate controller during optimization and supported gait analysis during evaluation."
+  result: "+23% stride length across 10 participants"
+  skills: ["Wearable robotics & control", "Experimental design & analysis", "Embedded systems & sensing"]
+
+- id: aerial-righting
+  featured: true
+  format: IDEC
+  title: "Spine–Tail Coordination for Aerial Righting in a Multi-Link Robot"
+  kind: "Course design project · 24-775"
   year: 2025
-  description: "Spine–tail aerial righting with MuJoCo, learning-based control, and hardware tests."
-  url: "/projects/aerial-righting/"
-  report_url: "https://drive.google.com/file/d/17U8vsB2_QIyJAHGgTMYTSeoXzvY_FC2b/view?usp=sharing"
-  poster_url: "https://drive.google.com/file/d/1VESNB0DVD6kp11nX7SPKapXAHo_yUA91/view?usp=sharing"
-  video_url: "https://youtu.be/zh_afIG5tD8?si=M9-uuBIkWfsQ_fZE"
+  url: /projects/aerial-righting/
+  thumbnail: /images/projects/aerial-righting/thumb.webp
+  objective: "Determine whether an active tail improves mid-air righting of a cat-inspired robot beyond what its two-degree-of-freedom spine achieves alone."
+  impact: "Robots that reorient while falling land on their feet, protecting hardware in search-and-rescue, legged locomotion, and exploration."
+  role: "Team member. I contributed to the MuJoCo simulation, the learning-based controller, and the drop-test evaluation."
+  result: "Spine alone rights the robot; tail added no significant gain"
+  skills: ["Biomechanics & simulation", "Machine learning", "Embedded systems & sensing"]
 
-- title: "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
-  year: 2026
-  description: "Open-source-trained moment estimators deployed across hip exo, knee exo, and IMU kinematics without target-device fine-tuning."
-  url: "/publications/kinematics-joint-moments/"
-  report_url: "https://arxiv.org/abs/2610.09150"
-  tags: ["exoskeleton", "biomechanics"]
+- id: ethereal
+  featured: true
+  format: IDEC
+  title: "Ethereal: A Tactile Pin-Array Interface for 3D CAD"
+  kind: "Product design · Two-person team"
+  year: 2025
+  url: /projects/ethereal/
+  thumbnail: /images/projects/ethereal/thumb.webp
+  objective: "Let people create and edit 3D models by shaping a physical surface that stays synchronized with a digital twin on screen."
+  impact: "Mouse-and-screen CAD is hard to learn; a surface you can touch makes 3D modelling more intuitive for designers and novices."
+  role: "One of two team members; I shared the design, hardware, and software of the prototype."
+  result: "CES 2025 Innovation Awards Honoree"
+  skills: ["Embedded systems & sensing", "Software engineering"]
 
-- title: "Personalized Hip Assistance to Improve Gait Performance in Individuals with Parkinson’s Disease"
-  year: 2026
-  description: "Human-in-the-loop personalized WIM hip assistance for gait improvement in Parkinson’s disease."
-  url: "/publications/personalized-hip-assistance/"
-  report_url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
-  tags: ["parkinsons", "hip-assistance", "hilo"]
+- id: boostershot
+  featured: true
+  format: IMRD
+  title: "Booster-SHOT: Attention for Multiview Pedestrian Detection"
+  kind: "Research · First author · WACV 2024"
+  year: 2024
+  url: /publications/boostershot/
+  thumbnail: /images/publications/boostershot/thumb.webp
+  thumbnail_hover: /images/publications/boostershot/thumb-hover.webp
+  objective: "Improve how a calibrated multi-camera system fuses its views to locate every pedestrian on a bird’s-eye-view map."
+  impact: "Reliable crowd localization supports safety monitoring in stations, stadiums, and other crowded public spaces where people occlude each other."
+  role: "First author. I proposed the Homography Attention Module, built Booster-SHOT, and ran the experiments; the module is patented in Korea and the US."
+  result: "State-of-the-art 92.9% / 94.2% MODA"
+  skills: ["Machine learning"]
 
-- title: "Paper title (ICRA placeholder — update later)"
-  year: 2026
-  description: "Placeholder project page for an upcoming ICRA submission."
-  url: "/publications/icra-placeholder/"
-  tags: ["icra", "placeholder"]
+- id: privacy
+  featured: true
+  format: IMRD
+  title: "Privacy-Safe Image Encoding via Frequency Filtering"
+  kind: "Research · Co-author · IJCAI-ECAI workshop"
+  year: 2022
+  url: /publications/privacy-frequency-filtering/
+  thumbnail: /images/publications/privacy-frequency-filtering/thumb.webp
+  thumbnail_hover: /images/publications/privacy-frequency-filtering/thumb-hover.webp
+  objective: "Design a client-side image encoder that keeps images useful for a recognition task while preventing attackers from reconstructing them."
+  impact: "Cloud vision services receive images that can reveal identity and sensitive attributes; users need protection before data leaves their device."
+  role: "Co-author (4th of 7) on the Deeping Source research team."
+  result: "Attacker reconstructions reduced to chance-level gender recognition"
+  skills: ["Machine learning"]
+
+# ---- Additional projects (short cards, no full description) ----
+
+- id: remote-proctor
+  title: "Remote Proctoring System for COVID-era Exams"
+  kind: "Software · Desktop clients"
+  year: 2021
+  url: https://github.com/luorix1/WebcamStream_Windows
+  thumbnail: /images/projects/other/remote-proctor.webp
+  objective: "Built Windows and macOS clients with RTSP streaming, recording, and login so that proctors could monitor remote exams fairly."
+  skills: ["Software engineering", "Machine learning"]
+
+- id: heritart
+  title: "Heritart: AR Media-Art Experience"
+  kind: "Mobile app · Two-person team"
+  year: 2023
+  thumbnail: /images/projects/other/heritart.webp
+  objective: "Built an AR camera app that detects artwork on-device and renders an interactive 3D model above it, plus the website backend."
+  skills: ["Software engineering", "Machine learning"]
+
+- id: vaily
+  title: "Vaily: Ethical-Consumerism App"
+  kind: "Mobile app"
+  thumbnail: /images/projects/other/vaily.webp
+  objective: "Developed an app for finding, buying, and reviewing eco-friendly and fair-trade products; reached 500+ downloads."
+  skills: ["Software engineering"]
+
+- id: quantkorea
+  title: "QuantKorea: Interview-Prep Platform"
+  kind: "Full-stack web"
+  thumbnail: /images/projects/other/quantkorea.webp
+  objective: "Built and deployed a Django e-learning site on AWS that gives Korean students affordable prep for quantitative-trading interviews."
+  skills: ["Software engineering"]

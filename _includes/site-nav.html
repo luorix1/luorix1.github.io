@@ -1,4 +1,5 @@
 {% assign current_path = page.url | default: '/' %}
+{% assign as_project = site.data.projects | where: 'url', current_path | first %}
 <header class="site-header" id="site-header">
   <div class="site-header__inner container container--wide">
     <a class="site-logo" href="{{ '/' | relative_url }}">
@@ -11,8 +12,10 @@
         {% assign is_active = false %}
         {% if link.url == '/' %}
           {% if current_path == '/' %}{% assign is_active = true %}{% endif %}
+        {% elsif link.url == '/projects/' %}
+          {% if current_path contains '/projects/' or as_project %}{% assign is_active = true %}{% endif %}
         {% elsif link.url == '/publications/' %}
-          {% if current_path contains '/publication' or current_path contains '/projects/' %}{% assign is_active = true %}{% endif %}
+          {% if current_path contains '/publication' %}{% unless as_project %}{% assign is_active = true %}{% endunless %}{% endif %}
         {% elsif current_path contains link.url %}
           {% assign is_active = true %}
         {% endif %}

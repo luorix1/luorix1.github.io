@@ -7,8 +7,6 @@ plain: true
 redirect_from:
   - /research/
   - /research.html
-  - /projects/
-  - /projects.html
 ---
 {% assign pubs = site.data.publications | where_exp: 'p', 'p.hidden != true' %}
 {% assign n_journal = pubs | where: 'type', 'journal' | size %}

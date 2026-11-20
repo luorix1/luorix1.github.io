@@ -11,8 +11,12 @@
       autoplay=true
   %}
 {% endcomment %}
+{% if include.inline %}
+<div class="pp-wrap pp-media">
+{% else %}
 <section class="pp-section{% if include.lift %} pp-section--lift{% endif %}">
   <div class="pp-wrap">
+{% endif %}
     {% if include.title or include.title_light %}
     <div class="pp-section-heading">
       <h2 class="pp-section-title">
@@ -39,5 +43,9 @@
       {% endif %}
     </div>
     {% if include.caption %}<p class="pp-caption">{{ include.caption }}</p>{% endif %}
+{% if include.inline %}
+</div>
+{% else %}
   </div>
 </section>
+{% endif %}

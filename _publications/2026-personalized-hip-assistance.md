@@ -58,17 +58,6 @@ links:
     url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
     icon: paper
 
-highlights_title: "Why this matters"
-highlights:
-  - icon: user-friends
-    title: "Personalization for heterogeneous PD gait"
-    text: "Inter-individual variability in Parkinsonian gait motivates per-person tuning of assistance magnitude (κ) and timing (β) rather than a one-size-fits-all profile."
-  - icon: walking
-    title: "Stride length as the optimization target"
-    text: "Human-in-the-loop CMA-ES minimizes the gap between measured and age-/sex-/height-matched healthy stride length, a clinically meaningful hypokinesia marker."
-  - icon: chart-line
-    title: "Benefits beyond the assisted joint"
-    text: "Assistance improved cadence, hip ROM, foot-to-floor angle, and whole-body kinematics, with FoG eliminated in one participant and dual-task gains largely preserved."
 
 stats_title: "Main results"
 stats:
@@ -92,75 +81,136 @@ bibtex: |
     url={https://doi.org/10.21203/rs.3.rs-10612204/v1},
     note={Preprint}
   }
-
 ---
 
-{% include project-pullquote.html
-    text="Personalized hip assistance can increase stride length toward healthy levels and drive whole-body gait improvements that persist under dual-task demands."
-%}
-
-{% include project-figure.html
-    title="Device control and human-in-the-loop optimization"
-    src="/images/publications/personalized-hip-assistance/fig1-device-hilo.png"
-    alt="WIM hip assistance control law and CMA-ES human-in-the-loop optimization workflow"
-    caption="Fig. 1. Operating principles of the WIM device and the human-in-the-loop optimization framework. (A) The controller filters the inter-thigh angle into a hip motion state buffer; assistance torque is the state from β samples earlier (β × 0.01 s) scaled by the gain κ, so κ sets the torque magnitude and β its timing. Flexion torque is applied to the swing leg and equal extension torque to the stance leg, saturated at 6 Nm; the yellow and green shaded regions mark the allowable bounds of κ and β. (B) Each control law (κ, β) is applied during walking, IMU sensors estimate stride length, and the gap between the measured and an age-, sex-, and height-matched healthy target stride length is the cost. CMA-ES uses these costs to sample the next generation of control laws."
-%}
-
-{% include project-figure.html
-    title="Study protocol"
-    src="/images/publications/personalized-hip-assistance/fig2-protocol.png"
-    alt="Optimization day corridor setup and biomechanics evaluation protocol"
-    caption="Fig. 2. Study protocol. (A) Optimization Day: participants walked a 128 m hospital corridor loop wearing WIM and an IMU sensor, with an occupational therapist holding a safety belt. Optimization ran over two days, followed by a validation of 40-s ASSIST OFF and ASSIST ON trials in randomized order. (B) Overall timeline: Screening Day, robot familiarization before each session, two Optimization Days, and a Biomechanics Evaluation Day. (C) Biomechanics Evaluation Day: an oval track (10.8 m straights) surrounded by motion capture cameras. Participants completed 2-min trials under NO EXO, ASSIST OFF, and ASSIST ON (randomized order), first as single-task walking and then while performing a cognitive dual task."
-%}
-
-{% include project-figure.html
-    title="Participant-specific assistance"
-    src="/images/publications/personalized-hip-assistance/fig3-optimized-params.png"
-    alt="Optimized gain and time delay and resulting torque profiles across participants"
-    caption="Fig. 3. Optimized assistance across the 10 participants. (A) Optimized gain (κ) and time delay (β) converged to different values for each participant. (B) The resulting torque profiles, averaged across strides and aligned to the peak inter-thigh angle (0% gait cycle), differ in shape, peak magnitude, and timing. Positive torque is hip flexion assistance to the left leg and extension to the right. (C) Share of the gait cycle spent at the 6 Nm torque limit, which ranged from near 0% (P04, P05) to about 45%. Together, these show why one fixed assistance profile is a poor fit for heterogeneous Parkinsonian gait."
-%}
-
-{% include project-figure.html
-    title="Gait metrics after optimization"
-    src="/images/publications/personalized-hip-assistance/fig4-gait-metrics.png"
-    alt="Bar plots of stride length, cadence, hip ROM, and related gait metrics with and without assistance"
-    caption="Fig. 4. IMU-based gait metrics on Optimization Day (n = 10, 40-s trials). Bars show group means, lines show individual participants, and dashed lines show healthy-adult reference values from the literature. With ASSIST ON versus ASSIST OFF, stride length increased by 23.0 ± 32.9% (p &lt; 0.05), with gains in every participant. Cadence fell from 128 to 116 steps/min, approaching the healthy value of 107 (p &lt; 0.05). Hip range of motion rose from 28.3° to 34.4° (p &lt; 0.05), foot-to-floor angle nearly doubled from 6.6° to 12.2° (p &lt; 0.001), indicating a shift toward heel strike, and stride time variability fell from 4.1% to 2.0%. Walking speed did not change significantly. * p &lt; 0.05, *** p &lt; 0.001."
-%}
-
-{% include project-method-pair.html
-    title="Freezing of gait and dual-task walking"
-    left_title="FoG case (P05)"
-    left_src="/images/publications/personalized-hip-assistance/fig5-fog.png"
-    left_alt="Stride length time series and freezing percentage with assistance on versus off"
-    left_caption="Fig. 5. Freezing of gait in participant P05. (A) Stride length over a 40-s trial: with ASSIST ON (red), stride length stayed near 1 m throughout. With ASSIST OFF (gray), it was shorter and dropped to zero during a freezing episode (shaded box). The dashed line is the matched healthy stride length. (B) Time spent freezing fell from 20% with ASSIST OFF to 0% with ASSIST ON."
-    right_title="Dual-task"
-    right_src="/images/publications/personalized-hip-assistance/fig7-dual-task.png"
-    right_alt="Gait metrics under single-task and dual-task conditions with and without assistance"
-    right_caption="Fig. 7. Single- versus dual-task walking (n = 3: P02–P04; hatched bars are dual task). (A) The added cognitive task generally reduced walking speed and stride length, confirming higher task demand. (B) Under dual-task walking, ASSIST ON still produced the longest strides, larger hip range of motion and foot-to-floor angle, and lower stride length and stride time variability than NO EXO and ASSIST OFF. Digit span accuracy decreased with ASSIST ON in all three participants."
-%}
-
-{% include project-figure.html
-    title="Whole-body kinematics"
-    src="/images/publications/personalized-hip-assistance/fig6-kinematics.png"
-    alt="Hip knee ankle kinematics and additional gait parameters under three assistance conditions"
-    caption="Fig. 6. Motion-capture kinematics on the Biomechanics Evaluation Day (n = 2: P01, P02) under NO EXO, ASSIST OFF, and ASSIST ON. Curves are averaged across strides, sides, and participants, with 0% of the gait cycle at heel strike. Panels A–C show the angle profile, range of motion, angular velocity profile, and peak velocity for each joint; arrows mark changes with assistance. (A) Hip: range of motion increased, along with peak extension velocity in loading response and peak flexion velocity in pre-swing. (B) Knee: range of motion and swing-phase peak flexion velocity increased. (C) Ankle: range of motion and push-off peak plantarflexion velocity increased. (D) Step length, toe clearance, and foot-to-floor angle increased and average trunk flexion decreased (a more upright posture). Step width and maximum trailing limb angle showed no consistent trend. Gains extend beyond the assisted hip joint."
-%}
-
-<section class="pp-section">
+<section class="pp-section pp-part" id="introduction">
   <div class="pp-wrap pp-wrap--narrow">
-    <div class="pp-section-heading">
-      <h2 class="pp-section-title">Takeaways</h2>
-    </div>
+    <h2 class="pp-part__title"><span class="pp-part__num">1</span>Introduction</h2>
     <div class="pp-prose">
       <p>
-        Parkinson’s disease commonly causes gait impairments such as reduced stride length,
-        shuffling, festination, stooped posture, and freezing of gait. To address the limited
-        effectiveness of conventional interventions, this study tested whether personalized hip
-        assistance from a wearable robot could improve gait in individuals with PD. Using
-        <strong>human-in-the-loop optimization</strong> for 10 participants, personalized assistance increased
-        stride length by <strong>23%</strong>, improved cadence, stride-time variability, hip ROM, and
-        foot-to-floor angle, reduced freezing in one participant, and largely preserved benefits under
-        <strong>dual-task</strong> walking.
+        Parkinson’s disease (PD) often shortens steps into a shuffle. It also stoops posture and causes
+        <strong>freezing of gait</strong>, brief episodes in which the feet seem stuck to the floor. These impairments
+        raise the risk of falls and threaten independence, and medication and conventional therapy only partly relieve them.
+      </p>
+      <p>
+        Wearable robots can assist walking, but Parkinsonian gait varies widely from person to person, so a single
+        fixed assistance profile rarely fits everyone. This study tested whether hip assistance <strong>personalized
+        for each individual</strong> through human-in-the-loop optimization could lengthen stride toward healthy values
+        and improve whole-body gait, including while people walked and performed a mental task at the same time.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="pp-section pp-part" id="methods">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">2</span>Methods</h2>
+    <div class="pp-prose">
+      <p>
+        Ten participants with PD (modified Hoehn and Yahr stage 2.5–4) walked with the WIM hip exoskeleton. Its
+        controller applies a delayed, scaled copy of the inter-thigh angle as torque. A gain κ therefore sets the
+        magnitude of assistance, and a delay β sets its timing (Figure 1A).
+      </p>
+      <p>
+        Over two optimization days, the <strong>CMA-ES</strong> algorithm proposed new (κ, β) pairs. For each pair,
+        foot-mounted IMUs estimated stride length, and the gap from an age-, sex-, and height-matched healthy target
+        served as the cost (Figure 1B). <strong>My contribution was this IMU pipeline.</strong> It converted raw foot-IMU
+        signals into stride-length estimates for every optimization step and later supplied spatiotemporal metrics
+        for the evaluation.
+      </p>
+      <p>
+        On a separate evaluation day, motion capture compared three conditions: no exoskeleton, exoskeleton with
+        assistance off, and exoskeleton with optimized assistance on. Participants first walked normally and then
+        while performing a cognitive dual task (Figure 2).
+      </p>
+    </div>
+  </div>
+  {% include project-figure.html
+    inline=true
+    title="Figure 1. Controller and human-in-the-loop optimization"
+    src="/images/publications/personalized-hip-assistance/fig1-device-hilo.png"
+    alt="WIM hip assistance control law and CMA-ES human-in-the-loop optimization workflow"
+    caption="(A) Assistance torque is the filtered inter-thigh angle from β samples earlier, scaled by κ and saturated at 6 Nm. (B) Each candidate (κ, β) is applied during walking; IMUs estimate stride length, and the gap to a healthy target is the cost that CMA-ES minimizes."
+  %}
+  {% include project-figure.html
+    inline=true
+    title="Figure 2. Study protocol"
+    src="/images/publications/personalized-hip-assistance/fig2-protocol.png"
+    alt="Optimization day corridor setup and biomechanics evaluation protocol"
+    caption="(A) Optimization in a 128 m hospital corridor loop with a therapist holding a safety belt. (B) Timeline: screening, two optimization days, and a biomechanics evaluation day. (C) Motion-capture evaluation under three conditions, in single- and dual-task walking."
+  %}
+</section>
+
+<section class="pp-section pp-part" id="results">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">3</span>Results</h2>
+    <div class="pp-prose">
+      <p>
+        Optimized parameters differed for every participant (Figure 3), which confirms that one assistance profile
+        does not fit all. With personalized assistance, stride length increased by <strong>23%</strong> (p &lt; 0.05),
+        and every participant improved. Cadence fell from 128 to 116 steps/min, closer to the healthy value of 107.
+        Hip range of motion rose from 28.3° to 34.4°, and foot-to-floor angle nearly doubled, from 6.6° to 12.2°
+        (Figure 4).
+      </p>
+      <p>
+        One participant who froze for 20% of a trial without assistance did not freeze at all with it (Figure 5).
+        During dual-task walking, assistance still produced the longest strides. Motion capture also showed larger
+        ranges of motion at the knee and ankle, not only at the assisted hip (Figures 6–7). Participants rated
+        usability 5.4 out of 7 on average.
+      </p>
+    </div>
+  </div>
+  {% include project-stats.html %}
+  {% include project-figure.html
+    inline=true
+    title="Figure 3. Participant-specific assistance"
+    src="/images/publications/personalized-hip-assistance/fig3-optimized-params.png"
+    alt="Optimized gain and time delay and resulting torque profiles across participants"
+    caption="(A) Optimized gain κ and delay β converged to different values for each participant. (B) Resulting torque profiles differ in shape, magnitude, and timing. (C) Share of the gait cycle at the 6 Nm limit ranged from near 0% to about 45%."
+  %}
+  {% include project-figure.html
+    inline=true
+    title="Figure 4. Gait metrics after optimization"
+    src="/images/publications/personalized-hip-assistance/fig4-gait-metrics.png"
+    alt="Bar plots of stride length, cadence, hip ROM, and related gait metrics with and without assistance"
+    caption="IMU-based gait metrics (n = 10). Bars are group means, lines are individual participants, and dashed lines are healthy reference values. * p &lt; 0.05, *** p &lt; 0.001."
+  %}
+  {% include project-method-pair.html
+    inline=true
+    title="Figures 5 and 7. Freezing of gait and dual-task walking"
+    left_title="Freezing of gait (P05)"
+    left_src="/images/publications/personalized-hip-assistance/fig5-fog.png"
+    left_alt="Stride length time series and freezing percentage with assistance on versus off"
+    left_caption="Without assistance (gray), stride length dropped to zero during a freeze; with assistance (red), it stayed near 1 m. Time frozen fell from 20% to 0%."
+    right_title="Dual-task walking (n = 3)"
+    right_src="/images/publications/personalized-hip-assistance/fig7-dual-task.png"
+    right_alt="Gait metrics under single-task and dual-task conditions with and without assistance"
+    right_caption="Under an added cognitive task, assistance still produced the longest strides and the largest hip range of motion."
+  %}
+  {% include project-figure.html
+    inline=true
+    title="Figure 6. Whole-body kinematics"
+    src="/images/publications/personalized-hip-assistance/fig6-kinematics.png"
+    alt="Hip knee ankle kinematics and additional gait parameters under three assistance conditions"
+    caption="Motion-capture kinematics (n = 2). Range of motion increased at the hip, knee, and ankle; step length and toe clearance increased; trunk posture became more upright."
+  %}
+</section>
+
+<section class="pp-section pp-part" id="discussion">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">4</span>Discussion</h2>
+    <div class="pp-prose">
+      <p>
+        Personalized hip assistance was effective. It lengthened stride in every participant, improved gait at joints
+        the device does not actuate, and kept most of its benefit under cognitive load, the condition in which people
+        with PD are most prone to freezing. The wide spread of optimized parameters supports personalization over a
+        single preset.
+      </p>
+      <p>
+        The study also has limits. Walking speed did not change significantly, and digit-span accuracy fell with
+        assistance in all three dual-task participants, so walking with the device may still demand attention. The
+        dual-task and motion-capture analyses included only three and two participants. A larger trial is needed
+        before clinical recommendations.
       </p>
     </div>
   </div>

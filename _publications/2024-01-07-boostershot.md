@@ -46,17 +46,6 @@ links:
     url: "/files/Booster-SHOT_%20Boosting%20Stacked%20Homography%20Transformations%20for%20Multiview%20Pedestrian%20Detection%20with%20Attention.pptx"
     icon: file-powerpoint
 
-highlights_title: "Why this matters"
-highlights:
-  - icon: network-wired
-    title: "Better multiview aggregation"
-    text: "Homography-based attention improves how features from calibrated camera views are fused into a bird’s-eye-view occupancy map."
-  - icon: puzzle-piece
-    title: "Plug-in attention module"
-    text: "HAM’s channel gate and spatial gate drop into existing end-to-end detectors (MVDet, SHOT, MVDeTr) and improve their performance."
-  - icon: trophy
-    title: "State-of-the-art performance"
-    text: "Booster-SHOT combines HAM with stacked homography transformations and view-coherent augmentation to reach state-of-the-art MODA."
 
 stats_title: "Main results"
 stats:
@@ -80,39 +69,95 @@ bibtex: |
   }
 ---
 
-{% include project-pullquote.html
-    text="Attention-guided homography fusion improves multiview pedestrian detection and bird’s-eye-view occupancy mapping."
-%}
-
-<section class="pp-section">
+<section class="pp-section pp-part" id="introduction">
   <div class="pp-wrap pp-wrap--narrow">
-    <div class="pp-section-heading">
-      <h2 class="pp-section-title">Abstract</h2>
-    </div>
+    <h2 class="pp-part__title"><span class="pp-part__num">1</span>Introduction</h2>
     <div class="pp-prose">
       <p>
-        Improving multi-view aggregation is integral for multiview pedestrian detection, which aims to obtain a bird’s-eye-view pedestrian occupancy map from images captured through a set of calibrated cameras. Inspired by the success of attention modules for deep neural networks, we first propose a <strong>Homography Attention Module (HAM)</strong> which is shown to boost the performance of existing end-to-end multiview detection approaches by utilizing a novel channel gate and spatial gate. Additionally, we propose <strong>Booster-SHOT</strong>, an end-to-end convolutional approach to multiview pedestrian detection incorporating our proposed HAM as well as elements from previous approaches such as view-coherent augmentation or stacked homography transformations. Booster-SHOT achieves <strong>92.9%</strong> and <strong>94.2%</strong> for MODA on Wildtrack and MultiviewX respectively, outperforming the state-of-the-art by 1.4% on Wildtrack and 0.5% on MultiviewX, achieving state-of-the-art performance overall for standard evaluation metrics used in multi-view pedestrian detection.
+        Crowded spaces such as train stations, stadiums, and stores are often covered by several overlapping cameras.
+        A single camera misses people who are hidden behind others. When calibrated views are combined on a shared
+        <strong>bird’s-eye-view (BEV)</strong> ground plane, however, each person’s position can be recovered, which
+        supports crowd-safety monitoring and space analytics.
+      </p>
+      <p>
+        End-to-end multiview detectors build this BEV map by projecting each view’s image features through
+        homographies, but they treat every feature channel and image region equally. The objective of this work was
+        to let the network <strong>choose which features to project</strong> for each homography plane, and thereby
+        locate pedestrians more accurately.
       </p>
     </div>
   </div>
 </section>
 
-{% include project-figure.html
-    title="Framework at a glance"
+<section class="pp-section pp-part" id="methods">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">2</span>Methods</h2>
+    <div class="pp-prose">
+      <p>
+        I proposed the <strong>Homography Attention Module (HAM)</strong>, which inserts two gates between the image
+        encoder and the homography projection (Figure 1). A channel gate scores feature channels separately for each
+        homography plane and keeps the top-K. A spatial gate then re-weights image regions within the selected
+        features (Figure 2).
+      </p>
+      <p>
+        <strong>Booster-SHOT</strong> combines HAM with stacked homography transformations and view-coherent data
+        augmentation in one convolutional detector. I evaluated it on the real-world Wildtrack and synthetic
+        MultiviewX benchmarks using multiple-object detection accuracy (MODA). I also inserted HAM into three existing
+        detectors (MVDet, SHOT, and MVDeTr) to test whether it generalizes.
+      </p>
+    </div>
+  </div>
+  {% include project-figure.html
+    inline=true
+    title="Figure 1. Architecture"
     src="/images/publications/boostershot/overview.png"
     alt="Overview of multiview detection with the homography attention module"
-    caption="Multiview images are encoded into image features, passed through the Homography Attention Module (HAM), and projected onto stacked homography planes. A BEV heatmap generator then produces the pedestrian occupancy map. Inside HAM, a channel gate selects channels for each homography and a spatial gate re-weights each selected feature map before projection."
+    caption="Multiview images are encoded, passed through HAM, and projected onto stacked homography planes; a BEV heatmap generator outputs the pedestrian occupancy map."
     narrow=true
-%}
-
-{% include project-method-pair.html
-    title="Homography Attention Module"
+  %}
+  {% include project-method-pair.html
+    inline=true
+    title="Figure 2. Inside the Homography Attention Module"
     left_title="Channel gate"
     left_src="/images/publications/boostershot/channel-gate.png"
     left_alt="Channel gate with channel selection and top-K selection modules"
-    left_caption="A shared MLP over max- and average-pooled features produces a distinct channel score for each homography; the top-K channels are selected per homography."
+    left_caption="A shared MLP over pooled features scores channels for each homography; the top-K channels are kept."
     right_title="Spatial gate"
     right_src="/images/publications/boostershot/spatial-gate.png"
     right_alt="Spatial gate with pooling, concatenation, and CNN attention map"
-    right_caption="Channel-wise max and average pooling are concatenated and passed through a CNN to produce a spatial attention map that re-weights the selected features."
-%}
+    right_caption="Pooled maps pass through a small CNN to produce a spatial attention map that re-weights the selected features."
+  %}
+</section>
+
+<section class="pp-section pp-part" id="results">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">3</span>Results</h2>
+    <div class="pp-prose">
+      <p>
+        Booster-SHOT achieved <strong>92.9% MODA on Wildtrack</strong> and <strong>94.2% on MultiviewX</strong>,
+        exceeding the previous state of the art by 1.4 and 0.5 points. HAM also improved each of the three existing
+        detectors it was added to, which shows that the module works as a plug-in rather than only inside
+        Booster-SHOT.
+      </p>
+    </div>
+  </div>
+  {% include project-stats.html %}
+</section>
+
+<section class="pp-section pp-part" id="discussion">
+  <div class="pp-wrap pp-wrap--narrow">
+    <h2 class="pp-part__title"><span class="pp-part__num">4</span>Discussion</h2>
+    <div class="pp-prose">
+      <p>
+        Letting each homography plane select its own features is a lightweight way to improve multiview aggregation.
+        Because HAM attaches to existing detectors, teams can adopt it without redesigning their pipelines. The module
+        is now patented in Korea and the United States.
+      </p>
+      <p>
+        The method still requires calibrated cameras, and it was evaluated on two benchmarks, one of them synthetic.
+        Testing on larger real deployments with moving or partially calibrated cameras would show how far the gains
+        carry over to practice.
+      </p>
+    </div>
+  </div>
+</section>

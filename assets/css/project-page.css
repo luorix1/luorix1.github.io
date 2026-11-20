@@ -425,6 +425,226 @@
   border-top: 1px solid var(--border);
 }
 
+/* ---------- At a glance (objective / impact / role / skills) ---------- */
+
+.pp-glance {
+  padding: 2rem 0 0;
+}
+
+.glance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.glance__item {
+  padding: 1.15rem 1.35rem 1.25rem;
+  background: var(--surface);
+}
+
+.glance__item--objective {
+  grid-column: 1 / -1;
+  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+
+.glance dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.glance dd {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.glance__item--objective dd {
+  font-size: 1.08rem;
+  font-weight: 550;
+}
+
+/* ---------- Sticky IMRD / IDEC outline ---------- */
+
+.pp-outline {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 20;
+  margin-top: 1.5rem;
+  background: var(--header-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: saturate(1.6) blur(12px);
+  backdrop-filter: saturate(1.6) blur(12px);
+}
+
+.pp-outline__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pp-outline__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.pp-outline__label {
+  flex: none;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border-radius: 6px;
+}
+
+.pp-outline__list {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pp-outline__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  border-radius: 8px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.pp-outline__num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  transition: inherit;
+}
+
+.pp-outline__list a:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.pp-outline__list a.is-active {
+  color: var(--accent);
+}
+
+.pp-outline__list a.is-active .pp-outline__num {
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- IMRD / IDEC parts ---------- */
+
+.pp-part {
+  scroll-margin-top: calc(var(--header-h) + 3.5rem);
+}
+
+.pp-part + .pp-part {
+  border-top: 1px solid var(--border);
+}
+
+.pp-part__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.8rem);
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+
+.pp-part__num {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.pp-prose ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.pp-prose li + li {
+  margin-top: 0.4rem;
+}
+
+.pp-media {
+  margin-top: 2.25rem;
+}
+
+.pp-media__title {
+  max-width: 50rem;
+  margin: 0 auto 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-2);
+  text-align: center;
+}
+
+.pp-media .pp-stats {
+  margin-bottom: 0;
+}
+
+.pp-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.pp-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pp-section-heading--split {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 760px) {
@@ -483,5 +703,37 @@
 
   .pp-pullquote {
     padding-left: 1rem;
+  }
+
+  .glance {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .glance__item {
+    padding: 1rem 1.1rem;
+  }
+
+  .pp-outline__label {
+    display: none;
+  }
+
+  .pp-outline__list a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.84rem;
+  }
+
+  .pp-media__title {
+    text-align: left;
+  }
+
+  .pp-section-heading--split {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media print {
+  .pp-outline {
+    display: none;
   }
 }
