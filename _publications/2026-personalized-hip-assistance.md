@@ -19,7 +19,7 @@ year: 2026
 teaser: /images/publications/personalized-hip-assistance/fig2-protocol.png
 pdf_url: "https://assets-eu.researchsquare.com/files/rs-10612204/v1/0f628074-b2b2-48e3-a042-9d89179075de.pdf?c=1787562298"
 
-summary: "Personalized WIM hip assistance, tuned with human-in-the-loop optimization to raise stride length toward healthy norms, improves spatiotemporal and kinematic gait outcomes in people with Parkinson’s disease—and those gains largely persist under dual-task walking."
+summary: "A hip exoskeleton tuned to each person with Parkinson’s disease lengthened every participant’s stride, by 23% on average, and kept helping while they performed a mental task."
 
 authors:
   - name: Seonjeong Kim
@@ -94,9 +94,9 @@ bibtex: |
       </p>
       <p>
         Wearable robots can assist walking, but Parkinsonian gait varies widely from person to person, so a single
-        fixed assistance profile rarely fits everyone. This study tested whether hip assistance <strong>personalized
-        for each individual</strong> through human-in-the-loop optimization could lengthen stride toward healthy values
-        and improve whole-body gait, including while people walked and performed a mental task at the same time.
+        fixed assistance profile rarely fits everyone. The objective of this study was to test whether hip assistance
+        <strong>personalized for each individual</strong> through human-in-the-loop optimization could lengthen stride
+        toward healthy values and improve whole-body gait, even while people performed a mental task as they walked.
       </p>
     </div>
   </div>
@@ -153,9 +153,9 @@ bibtex: |
         (Figure 4).
       </p>
       <p>
-        One participant who froze for 20% of a trial without assistance did not freeze at all with it (Figure 5).
-        During dual-task walking, assistance still produced the longest strides. Motion capture also showed larger
-        ranges of motion at the knee and ankle, not only at the assisted hip (Figures 6–7). Participants rated
+        One participant who froze for 20% of a trial without assistance did not freeze at all with it (Figure 5A).
+        During dual-task walking, assistance still produced the longest strides (Figure 5B). Motion capture also
+        showed larger ranges of motion at the knee and ankle, not only at the assisted hip (Figure 6). Participants rated
         usability 5.4 out of 7 on average.
       </p>
     </div>
@@ -177,12 +177,12 @@ bibtex: |
   %}
   {% include project-method-pair.html
     inline=true
-    title="Figures 5 and 7. Freezing of gait and dual-task walking"
-    left_title="Freezing of gait (P05)"
+    title="Figure 5. Freezing of gait and dual-task walking"
+    left_title="(A) Freezing of gait, participant P05"
     left_src="/images/publications/personalized-hip-assistance/fig5-fog.png"
     left_alt="Stride length time series and freezing percentage with assistance on versus off"
     left_caption="Without assistance (gray), stride length dropped to zero during a freeze; with assistance (red), it stayed near 1 m. Time frozen fell from 20% to 0%."
-    right_title="Dual-task walking (n = 3)"
+    right_title="(B) Dual-task walking (n = 3)"
     right_src="/images/publications/personalized-hip-assistance/fig7-dual-task.png"
     right_alt="Gait metrics under single-task and dual-task conditions with and without assistance"
     right_caption="Under an added cognitive task, assistance still produced the longest strides and the largest hip range of motion."

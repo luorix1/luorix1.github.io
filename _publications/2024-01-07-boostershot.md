@@ -19,7 +19,7 @@ year: 2024
 teaser: /images/publications/boostershot/overview.png
 pdf_url: https://openaccess.thecvf.com/content/WACV2024/papers/Hwang_Booster-SHOT_Boosting_Stacked_Homography_Transformations_for_Multiview_Pedestrian_Detection_With_WACV_2024_paper.pdf
 
-summary: "A Homography Attention Module selects channels and spatial regions per homography plane, boosting end-to-end multiview pedestrian detection to state-of-the-art MODA on Wildtrack and MultiviewX."
+summary: "An attention module that lets each camera view choose which features to share sets a new state of the art for locating pedestrians seen by several overlapping cameras."
 
 authors:
   - name: Jinwoo Hwang

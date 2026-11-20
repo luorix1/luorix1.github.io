@@ -94,7 +94,7 @@
   thumbnail_hover: /images/publications/privacy-frequency-filtering/thumb-hover.webp
   objective: "Design a client-side image encoder that keeps images useful for a recognition task while preventing attackers from reconstructing them."
   impact: "Cloud vision services receive images that can reveal identity and sensitive attributes; users need protection before data leaves their device."
-  role: "Co-author (4th of 7) on the Deeping Source research team."
+  role: "Co-author (4th of 7). I organized the user study that tested whether people could recognize gender from attacker reconstructions, and ran part of the ablation experiments."
   result: "Attacker reconstructions reduced to chance-level gender recognition"
   skills: ["Machine learning"]
 

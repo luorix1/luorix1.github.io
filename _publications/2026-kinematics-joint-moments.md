@@ -15,7 +15,7 @@ year: 2026
 teaser: /images/publications/kinematics-joint-moments/overview.png
 pdf_url: https://arxiv.org/pdf/2610.09150
 
-summary: "Joint angles and angular velocities serve as a shared intermediate representation, decoupling wearable sensing hardware from downstream biological joint moment estimation."
+summary: "One joint-moment estimator, trained only on public biomechanics data, works on a hip exoskeleton, a knee exoskeleton, and an IMU suite without any device-specific data."
 
 authors:
   - name: Jinwoo Hwang
@@ -77,8 +77,8 @@ bibtex: |
         Lower-limb exoskeletons can reduce the effort of walking and help people with mobility impairments stay active.
         Many exoskeleton controllers depend on an estimate of the user’s <strong>biological joint moments</strong>, the torque
         the user’s own muscles produce at each joint. These estimators are usually trained on one device’s raw sensor
-        signals, so every new exoskeleton needs its own data-collection study. The growing body of open-source
-        biomechanics data also goes unused.
+        signals, so every new exoskeleton needs its own costly data-collection study. Meanwhile, the growing body of
+        open-source biomechanics data goes unused because it was recorded with different sensors.
       </p>
       <p>
         This project asked whether <strong>joint kinematics</strong> (joint angles and angular velocities) can serve as
@@ -100,6 +100,10 @@ bibtex: |
   <div class="pp-wrap pp-wrap--narrow">
     <h2 class="pp-part__title"><span class="pp-part__num">2</span>Methods</h2>
     <div class="pp-prose">
+      <p>
+        I led this project as first author: I designed the framework, built the training set, and trained and
+        evaluated every estimator.
+      </p>
       <p>
         The framework separates sensing from estimation (Figure 1). I aggregated open-source walking datasets and
         processed them in <strong>OpenSim</strong> to obtain reference joint kinematics and joint moments. A causal
