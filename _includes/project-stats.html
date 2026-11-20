@@ -1,0 +1,16 @@
+{% comment %}
+  Headline numbers from the page's `stats:` front matter, rendered inside a section.
+  {% include project-stats.html %}
+{% endcomment %}
+{% if page.stats %}
+<div class="pp-wrap pp-media">
+  <div class="pp-stats">
+    {% for s in page.stats %}
+    <div class="pp-stat-card">
+      <span class="pp-stat-value">{{ s.value }}</span>
+      <span class="pp-stat-label">{{ s.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

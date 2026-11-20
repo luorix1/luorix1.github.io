@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
+{%- assign proj = site.data.projects | where: 'url', page.url | first -%}
+{%- assign fmt = proj.format | default: page.format -%}
 <article class="pp">
   <header class="pp-hero">
     <div class="pp-wrap pp-hero__inner">
       <nav class="breadcrumb" aria-label="Breadcrumb">
+        {% if proj %}
+        <a href="{{ '/projects/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>All projects</a>
+        {% else %}
         <a href="{{ '/publications/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Publications</a>
+        {% endif %}
       </nav>
 
       {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
@@ -62,6 +68,54 @@ layout: default
     </div>
   </header>
 
+  {% if proj and fmt %}
+  {% if fmt == 'IDEC' %}
+    {% assign outline = 'introduction:Introduction,design:Design,evaluation:Evaluation,conclusion:Conclusion' | split: ',' %}
+    {% assign fmt_long = 'Introduction · Design · Evaluation · Conclusion' %}
+  {% else %}
+    {% assign outline = 'introduction:Introduction,methods:Methods,results:Results,discussion:Discussion' | split: ',' %}
+    {% assign fmt_long = 'Introduction · Methods · Results · Discussion' %}
+  {% endif %}
+  <section class="pp-glance" aria-label="Project at a glance">
+    <div class="pp-wrap">
+      <dl class="glance">
+        <div class="glance__item glance__item--objective">
+          <dt><i class="fa-solid fa-bullseye" aria-hidden="true"></i>Objective</dt>
+          <dd>{{ proj.objective }}</dd>
+        </div>
+        <div class="glance__item">
+          <dt><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>Why it matters</dt>
+          <dd>{{ proj.impact }}</dd>
+        </div>
+        <div class="glance__item">
+          <dt><i class="fa-solid fa-user-gear" aria-hidden="true"></i>My role</dt>
+          <dd>{{ proj.role }}</dd>
+        </div>
+        <div class="glance__item">
+          <dt><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>Skills applied</dt>
+          <dd>
+            <ul class="skill-tags" role="list">
+              {% for sk in proj.skills %}<li><a href="{{ '/projects/' | relative_url }}?skill={{ sk | url_encode }}">{{ sk }}</a></li>{% endfor %}
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <nav class="pp-outline" aria-label="On this page" data-outline>
+    <div class="pp-wrap pp-outline__inner">
+      <span class="pp-outline__label" title="{{ fmt_long }}">{{ fmt }}</span>
+      <ol class="pp-outline__list">
+        {% for o in outline %}{% assign kv = o | split: ':' %}
+        <li><a href="#{{ kv[0] }}"><span class="pp-outline__num">{{ forloop.index }}</span>{{ kv[1] }}</a></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </nav>
+  {% endif %}
+
+  {% unless fmt %}
   {% if page.presentation_video %}
   <section class="pp-section">
     <div class="pp-wrap">
@@ -96,11 +150,13 @@ layout: default
   </section>
   {% endif %}
 
+  {% endunless %}
+
   <div class="pp-body">
     {{ content }}
   </div>
 
-  {% if page.stats %}
+  {% if page.stats and fmt == nil %}
   <section class="pp-section" id="results">
     <div class="pp-wrap">
       <div class="pp-section-heading">
@@ -140,20 +196,19 @@ layout: default
   </section>
   {% endif %}
 
-  {%- assign others = site.data.publications | where_exp: 'p', 'p.hidden != true' | where_exp: 'p', 'p.project_url' | where_exp: 'p', 'p.project_url != page.url' -%}
+  {%- assign others = site.data.projects | where: 'featured', true | where_exp: 'p', 'p.url != page.url' -%}
   {% if others.size > 0 %}
   <section class="pp-section pp-more" aria-labelledby="more-heading">
     <div class="pp-wrap">
-      <div class="pp-section-heading">
-        <h2 class="pp-section-title" id="more-heading">More publications</h2>
+      <div class="pp-section-heading pp-section-heading--split">
+        <h2 class="pp-section-title" id="more-heading">More projects</h2>
+        <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="mini-grid">
         {% for p in others limit: 3 %}
-        {%- assign d = site.publications | where: 'url', p.project_url | first -%}
-        {%- assign t = p.thumbnail | default: d.teaser -%}
-        <a class="mini-card" href="{{ p.project_url | relative_url }}">
-          <span class="mini-card__thumb">{% if t %}<img src="{{ t | relative_url }}" alt="" loading="lazy" width="960" height="720">{% endif %}</span>
-          <span class="mini-card__meta">{{ p.venue_short | default: p.venue }} · {{ p.year }}</span>
+        <a class="mini-card" href="{{ p.url | relative_url }}">
+          <span class="mini-card__thumb">{% if p.thumbnail %}<img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy" width="960" height="720">{% endif %}</span>
+          <span class="mini-card__meta">{{ p.kind | split: ' · ' | first }} · {{ p.year }}</span>
           <span class="mini-card__title">{{ p.title }}</span>
         </a>
         {% endfor %}

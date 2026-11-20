@@ -1,0 +1,80 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+wide: true
+plain: true
+description: "Engineering projects in wearable robotics, biomechanics, machine learning, and embedded systems, each described with its objective, my role, methods, and results."
+redirect_from:
+  - /portfolio/
+  - /projects.html
+---
+{% assign featured = site.data.projects | where: 'featured', true %}
+{% assign others = site.data.projects | where_exp: 'p', 'p.featured != true' %}
+
+<p class="lead">
+  Each project below links to a full description that states the objective, my role, how the work was done, and how well it worked.
+  Research projects follow the IMRD format (Introduction, Methods, Results, Discussion), and design projects follow IDEC
+  (Introduction, Design, Evaluation, Conclusion). Filter by skill to see where I have applied it.
+</p>
+
+<div class="skill-filter" data-skill-filter role="group" aria-label="Filter projects by skill">
+  <button type="button" class="skill-filter__btn is-active" data-skill="all" aria-pressed="true">All projects <span class="count">{{ site.data.projects.size }}</span></button>
+  {% for sk in site.data.skills %}
+  {% assign n = 0 %}
+  {% for p in site.data.projects %}{% if p.skills contains sk.name %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+  {% if n > 0 %}
+  <button type="button" class="skill-filter__btn" data-skill="{{ sk.name | escape }}" aria-pressed="false"><i class="fa-solid fa-{{ sk.icon }}" aria-hidden="true"></i>{{ sk.name }} <span class="count">{{ n }}</span></button>
+  {% endif %}
+  {% endfor %}
+</div>
+
+<section class="section" data-project-group aria-labelledby="featured-heading">
+  <h2 id="featured-heading" class="section__title">Featured projects</h2>
+  <div class="project-grid">
+    {% for p in featured %}
+    <article class="project" data-skills="|{{ p.skills | join: '|' | escape }}|">
+      <a class="project__thumb{% if p.thumbnail_hover %} has-hover{% endif %}" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        <img class="project__img" src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy" width="960" height="720">
+        {% if p.thumbnail_hover %}<img class="project__img project__img--hover" src="{{ p.thumbnail_hover | relative_url }}" alt="" loading="lazy" width="960" height="720">{% endif %}
+        <span class="project__format" title="{% if p.format == 'IDEC' %}Introduction · Design · Evaluation · Conclusion{% else %}Introduction · Methods · Results · Discussion{% endif %}">{{ p.format }}</span>
+      </a>
+      <div class="project__body">
+        <p class="project__kind">{{ p.kind }} · {{ p.year }}</p>
+        <h3 class="project__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+        <p class="project__objective">{{ p.objective }}</p>
+        {% if p.result %}<p class="project__result"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i>{{ p.result }}</p>{% endif %}
+        <ul class="skill-tags skill-tags--sm" role="list" aria-label="Skills">
+          {% for sk in p.skills %}<li>{{ sk }}</li>{% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if others.size > 0 %}
+<section class="section" data-project-group aria-labelledby="more-heading">
+  <h2 id="more-heading" class="section__title">More projects</h2>
+  <div class="project-grid project-grid--compact">
+    {% for p in others %}
+    <article class="project project--compact" data-skills="|{{ p.skills | join: '|' | escape }}|">
+      <div class="project__thumb">
+        <img class="project__img project__img--cover" src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy" width="960" height="720">
+      </div>
+      <div class="project__body">
+        <p class="project__kind">{{ p.kind }}{% if p.year %} · {{ p.year }}{% endif %}</p>
+        <h3 class="project__title">{% if p.url %}<a href="{{ p.url }}" rel="noopener">{{ p.title }} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p class="project__objective">{{ p.objective }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<p class="pub-empty" data-project-empty hidden>No projects use this skill yet.</p>
+
+<p class="lead lead--small">
+  Looking for papers? See <a href="{{ '/publications/' | relative_url }}">Publications</a> for abstracts, BibTeX, and PDFs.
+</p>

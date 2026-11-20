@@ -1,22 +1,15 @@
 ---
 permalink: /
-title: Home
+title: About
 layout: home
 role: "Graduate Researcher · MetaMobility Lab, CMU"
-interests:
-  - Wearable robotics
-  - Exoskeleton control
-  - Biomechanics
-  - Musculoskeletal simulation
-  - Reinforcement learning
-  - Neuromuscular control
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am a second-year student in the MS in Mechanical Engineering (Research Track), working with Professor Inseung Kang at the [MetaMobility Lab](https://metamobility.cmu.edu/home) at Carnegie Mellon University. I am interested in understanding how people move and in using simulation to help enhance human mobility.
+I am a second-year M.S. student in Mechanical Engineering (Research Track) at Carnegie Mellon University, advised by Professor Inseung Kang in the [MetaMobility Lab](https://metamobility.cmu.edu/home). I design the estimation and control behind wearable robots so that people with mobility impairments can walk farther and more safely.
 
-My recent work explores joint kinematics as a device-agnostic interface for estimating biological joint moments: estimators trained only on open-source biomechanics datasets that [transfer across hip and knee exoskeletons and a wearable IMU suite](/publications/kinematics-joint-moments/) without device-specific fine-tuning. Before CMU, at the Wearable Robotics Lab at Seoul National University, I worked on [human-in-the-loop personalization of hip assistance for people with Parkinson’s disease](/publications/personalized-hip-assistance/), which increased stride length and improved whole-body gait. Earlier, I worked in computer vision, including [multiview pedestrian detection](/publications/boostershot/) (WACV 2024) and [privacy-preserving representation learning](/publications/privacy-frequency-filtering/).
+My work combines **machine learning**, **biomechanics and musculoskeletal simulation**, and **hands-on testing with real exoskeletons and human participants**. At CMU, I built a [joint-moment estimator](/publications/kinematics-joint-moments/) that is trained only on open-source data yet transfers to a hip exoskeleton, a knee exoskeleton, and an IMU suite without fine-tuning (R² up to 0.85). At Seoul National University, I developed the IMU gait pipeline for a [personalized hip-assistance study](/publications/personalized-hip-assistance/) that increased stride length by 23% in people with Parkinson’s disease.
 
-I am currently building musculoskeletal simulations (Hyfydy/SCONE, MuJoCo Warp) to train reinforcement learning–based controllers through imitation learning and adversarial motion priors, with the goal of bridging the sim-to-real gap for assistive devices. Alongside this, I am learning more about neuromuscular control—how the nervous system coordinates muscles during locomotion—so that these models better reflect how people actually move.
+Before focusing on robotics, I worked as a software, computer-vision, and machine-learning engineer at three startups. There I published at WACV, co-invented a patented attention module, and helped deliver 11 client contracts. I am now training reinforcement-learning controllers in musculoskeletal simulation (Hyfydy/SCONE, MuJoCo Warp) to bring assistive controllers from simulation to real devices.

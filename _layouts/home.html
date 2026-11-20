@@ -19,31 +19,48 @@ layout: default
     </div>
   </header>
 
-  {% if page.interests %}
-  <ul class="interests" role="list" aria-label="Research interests">
-    {% for item in page.interests %}<li>{{ item }}</li>{% endfor %}
-  </ul>
-  {% endif %}
-
   {% if content != blank %}
   <section class="section" aria-labelledby="about-heading">
-    <h2 id="about-heading" class="section__title">About</h2>
+    <h2 id="about-heading" class="section__title">About me</h2>
     <div class="prose prose--lead">
       {{ content }}
     </div>
   </section>
   {% endif %}
 
-  {% assign featured = site.data.publications | where: 'featured', true | where_exp: 'p', 'p.hidden != true' %}
-  {% if featured.size > 0 %}
-  <section class="section" aria-labelledby="selected-heading">
+  <section class="section" aria-labelledby="skills-heading">
     <div class="section__head">
-      <h2 id="selected-heading" class="section__title">Selected publications</h2>
-      <a class="section__link" href="{{ '/publications/' | relative_url }}">All publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <h2 id="skills-heading" class="section__title">Core skills</h2>
+      <a class="section__link" href="{{ '/resume/' | relative_url }}">Resume <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>
-    <div class="pub-list pub-list--home">
-      {% for pub in featured %}
-      {% include pub-entry.html pub=pub compact=true %}
+    <ul class="skill-grid" role="list">
+      {% for sk in site.data.skills %}
+      <li>
+        <a class="skill-card" href="{{ '/projects/' | relative_url }}?skill={{ sk.name | url_encode }}" aria-label="{{ sk.name }}: see projects">
+          <span class="skill-card__icon" aria-hidden="true"><i class="fa-solid fa-{{ sk.icon }}"></i></span>
+          <span class="skill-card__name">{{ sk.name }}</span>
+          <span class="skill-card__tools">{{ sk.tools | join: ' · ' }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% assign featured = site.data.projects | where: 'featured', true %}
+  {% if featured.size > 0 %}
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="section__head">
+      <h2 id="featured-heading" class="section__title">Featured projects</h2>
+      <a class="section__link" href="{{ '/projects/' | relative_url }}">All {{ site.data.projects.size }} projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="mini-grid mini-grid--home">
+      {% for p in featured limit: 3 %}
+      <a class="mini-card" href="{{ p.url | relative_url }}">
+        <span class="mini-card__thumb">{% if p.thumbnail %}<img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy" width="960" height="720">{% endif %}</span>
+        <span class="mini-card__meta">{{ p.kind | split: ' · ' | first }} · {{ p.year }}</span>
+        <span class="mini-card__title">{{ p.title }}</span>
+        {% if p.result %}<span class="mini-card__result">{{ p.result }}</span>{% endif %}
+      </a>
       {% endfor %}
     </div>
   </section>

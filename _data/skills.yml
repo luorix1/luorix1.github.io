@@ -1,0 +1,27 @@
+# Core skills, in priority order for the target employer
+# (wearable / rehabilitation robotics R&D).
+# `name` must match the strings used in _data/projects.yml `skills:` so the
+# Projects page skill filter and the resume stay consistent.
+- name: "Wearable robotics & control"
+  icon: person-walking
+  tools: ["Hip & knee exoskeletons", "Human-in-the-loop optimization (CMA-ES)", "Assistance personalization"]
+
+- name: "Biomechanics & simulation"
+  icon: bone
+  tools: ["OpenSim", "MuJoCo / MuJoCo Warp", "Hyfydy / SCONE", "Motion capture", "IMU gait analysis"]
+
+- name: "Machine learning"
+  icon: brain
+  tools: ["Deep learning (TCN, CNN, attention)", "Reinforcement & imitation learning", "Computer vision"]
+
+- name: "Embedded systems & sensing"
+  icon: microchip
+  tools: ["NVIDIA Jetson", "CAN / I2C", "IMUs (Xsens)", "Microcontrollers & linear actuators"]
+
+- name: "Experimental design & analysis"
+  icon: chart-line
+  tools: ["Human-subject studies", "Statistical testing", "Dataset aggregation"]
+
+- name: "Software engineering"
+  icon: code
+  tools: ["Python, PyTorch", "Full-stack web (Django, AWS)", "iOS / Android apps"]
