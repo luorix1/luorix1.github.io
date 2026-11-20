@@ -69,9 +69,61 @@
 
   $$("[data-panel]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      setPanel(btn, btn.getAttribute("aria-expanded") !== "true");
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      // A click turns a hover preview into a normal toggle; closing it by
+      // click keeps hover from reopening it until the pointer leaves.
+      delete btn.dataset.hoverOpen;
+      if (!open) btn.dataset.hoverSuppress = "1";
+      setPanel(btn, open);
     });
   });
+
+  /* ---------- Hover preview of abstracts (mouse/trackpad only) ---------- */
+  var canHover = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (canHover) {
+    var absBtnOf = function (pub) {
+      return $("[data-panel][aria-controls$='-abs']", pub);
+    };
+    var closeHoverPreview = function (btn) {
+      if (btn && btn.dataset.hoverOpen) {
+        delete btn.dataset.hoverOpen;
+        setPanel(btn, false);
+      }
+    };
+    var enterTimer = null;
+
+    $$(".pub").forEach(function (pub) {
+      var btn = absBtnOf(pub);
+      var leaveTimer = null;
+
+      pub.addEventListener("mouseenter", function () {
+        clearTimeout(leaveTimer);
+        clearTimeout(enterTimer);
+        enterTimer = setTimeout(function () {
+          // Collapse other previews, keeping this entry under the pointer
+          // even if a preview above it shrinks.
+          var before = pub.getBoundingClientRect().top;
+          $$("[data-panel][data-hover-open]").forEach(function (b) {
+            if (b !== btn) closeHoverPreview(b);
+          });
+          var shift = pub.getBoundingClientRect().top - before;
+          if (shift) window.scrollBy({ top: shift, behavior: "instant" });
+          if (!btn || btn.dataset.hoverSuppress || btn.getAttribute("aria-expanded") === "true") return;
+          btn.dataset.hoverOpen = "1";
+          setPanel(btn, true);
+        }, 200);
+      });
+
+      pub.addEventListener("mouseleave", function () {
+        clearTimeout(enterTimer);
+        if (!btn) return;
+        delete btn.dataset.hoverSuppress;
+        leaveTimer = setTimeout(function () {
+          closeHoverPreview(btn);
+        }, 350);
+      });
+    });
+  }
 
   /* ---------- Copy to clipboard ---------- */
   function copyText(text) {
